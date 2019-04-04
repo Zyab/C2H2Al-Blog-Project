@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
@@ -11,7 +12,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $user = New \App\User();
+        $user = New User();
         $user->id = 1;
         $user->name = "Hieu";
         $user->email = "hieu@gmail.com";
@@ -22,7 +23,7 @@ class UsersTableSeeder extends Seeder
         $user->gender = "Male";
         $user->save();
 
-        $user = New \App\User();
+        $user = New User();
         $user->id = 2;
         $user->name = "Chung";
         $user->email = "chung@gmail.com";
