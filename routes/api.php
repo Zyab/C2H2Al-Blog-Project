@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::post('users/{id}/update', 'API\UserController@changeInfo');
+Route::get('users/{id}/info', 'API\UserController@showInfo');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
