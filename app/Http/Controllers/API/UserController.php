@@ -17,7 +17,7 @@ class UserController extends Controller
 
     public function changeInfo(Request $request, $id)
     {
-        $user = $this->userService->getById($id);
+        $user = $this->userService->findById($id);
         $newUser = $this->userService->update($request, $user);
 
         return response()->json([
@@ -29,11 +29,35 @@ class UserController extends Controller
 
     public function showInfo($id)
     {
-        $user = $this->userService->getById($id);
+        $user = $this->userService->findById($id);
         return response()->json([
             'status' => '200',
             'user' => $user
         ]);
     }
+    public function getAll(){
+        $users = $this->userService->getAll();
+        return response()->json([
+           'user' => $users
+        ]);
+    }
+    public function destroy($id){
+        $user = $this->userService->destroy($id);
+        return response()->json([
+           'user' => $user
+        ]);
+    }
+    public function store(Request $request)
+    {
+        $dataUser = $this->userService->create($request->all());
 
+        return response()->json($dataUser['user']);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $dataUser = $this->userService->update($request->all(), $id);
+
+        return response()->json($dataUser['user']);
+    }
 }

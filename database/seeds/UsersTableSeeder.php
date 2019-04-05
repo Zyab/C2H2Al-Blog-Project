@@ -21,6 +21,7 @@ class UsersTableSeeder extends Seeder
         $user->image = "";
         $user->dob = "28/07/1990";
         $user->gender = "Male";
+        $user->token = "";
         $user->save();
 
         $user = New User();
@@ -32,7 +33,19 @@ class UsersTableSeeder extends Seeder
         $user->image = "";
         $user->dob = "12/6/1992";
         $user->gender = "Male";
+        $user->token = "";
         $user->save();
 
+        $user = New User();
+        $user->id = 3;
+        $user->name = "Huy";
+        $user->email = "huy@gmail.com";
+        $user->password = bcrypt("123456789");
+        $user->address = "Ha Noi";
+        $user->image = "";
+        $user->dob = "12/6/1992";
+        $user->gender = "Male";
+        $user->token = "";
+        $user->save();
     }
 }
