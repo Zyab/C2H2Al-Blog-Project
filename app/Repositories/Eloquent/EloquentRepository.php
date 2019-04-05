@@ -42,10 +42,10 @@ abstract class EloquentRepository implements RepositoryInterface
         return $result;
     }
 
-    public function create($data)
+    public function create($object)
     {
         try {
-            $object = $this->model->create($data);
+            $object = $this->model->create($object);
         } catch (\Exception $e) {
             return null;
         }
