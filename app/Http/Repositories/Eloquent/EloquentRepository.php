@@ -41,6 +41,6 @@ abstract class EloquentRepository implements Repository
     }
     public function destroy($object)
     {
-        $object->delete();
+        $object->delete();adfadf
     }
 }
