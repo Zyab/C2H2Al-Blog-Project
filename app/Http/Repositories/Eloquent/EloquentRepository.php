@@ -3,10 +3,11 @@
 namespace App\Http\Repositories\Eloquent;
 
 use App\Http\Repositories\Repository;
+use App\User;
 
 abstract class EloquentRepository implements Repository
 {
-    protected $user;
+    protected $model;
 
     public function __construct()
     {
