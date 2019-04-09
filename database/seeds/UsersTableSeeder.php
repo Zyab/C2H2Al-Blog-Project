@@ -2,6 +2,7 @@
 
 use App\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UsersTableSeeder extends Seeder
 {
@@ -12,40 +13,16 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $user = new User();
-        $user->id = 1;
-        $user->name = "Hieu";
-        $user->email = "hieu@gmail.com";
-        $user->password = bcrypt("123456");
-        $user->address = "Ha Nam";
-        $user->image = "";
-        $user->dob = "28/07/1990";
-        $user->gender = "Male";
-        $user->token = "";
+        $user = new \App\User();
+        $user->name = 'Anh';
+        $user->email = 'anh@gmail.com';
+        $user->password = Hash::make('123456');
         $user->save();
 
-        $user = New User();
-        $user->id = 2;
-        $user->name = "Chung";
-        $user->email = "chung@gmail.com";
-        $user->password = bcrypt("123456789");
-        $user->address = "Ha Noi";
-        $user->image = "";
-        $user->dob = "12/6/1992";
-        $user->gender = "Male";
-        $user->token = "";
-        $user->save();
-
-        $user = New User();
-        $user->id = 3;
-        $user->name = "Huy";
-        $user->email = "huy@gmail.com";
-        $user->password = bcrypt("123456789");
-        $user->address = "Ha Noi";
-        $user->image = "";
-        $user->dob = "12/6/1992";
-        $user->gender = "Male";
-        $user->token = "";
+        $user = new \App\User();
+        $user->name = 'Lan';
+        $user->email = 'lan@gmail.com';
+        $user->password = Hash::make('123456');
         $user->save();
     }
 }
