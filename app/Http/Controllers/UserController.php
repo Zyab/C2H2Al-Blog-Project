@@ -26,6 +26,9 @@ class UserController extends Controller
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->email_verified_at = $request->input('email_verified_at');
+        $user->age = $request->input('age');
+        $user->address = $request->input('address');
+        $user->phone = $request->input('phone');
         $user->password = $request->input('password');
         $user->save();
 
@@ -37,6 +40,9 @@ class UserController extends Controller
         $user->email = $request->input('email');
         $user->email_verified_at = $request->input('email_verified_at');
         $user->password = $request->input('password');
+        $user->age = $request->input('age');
+        $user->address = $request->input('address');
+        $user->phone = $request->input('phone');
         $user->save();
         return response() ->json($user);
     }
