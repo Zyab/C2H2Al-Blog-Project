@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('home-page.header2')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top: 80px; margin-bottom: 50px">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
