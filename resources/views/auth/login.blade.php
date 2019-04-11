@@ -64,7 +64,7 @@
                                     type="submit">LOGIN
                             </button>
                             <h4>or sign in with:</h4>
-                            <a  class="btn-floating btn-fb btn-sm" style="color: #1d68a7; font-size: 50px"  >
+                            <a  class="btn-floating btn-fb btn-sm" style="color: #1d68a7; font-size: 50px" href="facebook.com" >
                                 <i class="fab fa-facebook"></i>
                             </a>
                             <a  class="btn-floating btn-tw btn-sm" style="color: #4bb1b1; font-size: 50px">
