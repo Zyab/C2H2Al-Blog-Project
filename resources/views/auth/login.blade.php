@@ -5,6 +5,11 @@
         <div class="row justify-content-center">
             <div class="col-md-7">
                 <div class="card">
+                    @if(session('successMsg'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('successMsg') }}
+                        </div>
+                    @endif
                     <h5 class="card-header info-color white-text text-center py-4"
                         style="background: #009688!important ; color: white">
                         <strong>{{ __('LOGIN') }}</strong>
