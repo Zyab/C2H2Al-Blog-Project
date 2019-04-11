@@ -20,9 +20,6 @@ Route::delete('/{userId}/delete', 'UserController@destroy')->name('user.destroy'
 Route::post('/store', 'UserController@store')->name('user.store');
 Route::put('/{userId}/update', 'UserController@update')->name('user.update');
 });
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
 
 Route::group(['prefix' => 'posts'], function () {
     Route::get('/list', 'PostApiController@getAll')->name('posts.all');
@@ -30,4 +27,17 @@ Route::group(['prefix' => 'posts'], function () {
     Route::post('/store', 'PostApiController@store')->name('posts.store');
     Route::put('/update/{postsId}', 'PostApiController@update')->name('posts.update');
     Route::delete('/destroy/{postsId}', 'PostApiController@destroy')->name('posts.destroy');
+});
+Route::group([
+
+	'middleware' => 'api',
+
+], function () {
+
+	Route::post('login', 'AuthController@login');
+	Route::post('logout', 'AuthController@logout');
+	Route::post('refresh', 'AuthController@refresh');
+	Route::post('me', 'AuthController@me');
+	Route::post('register','AuthController@register');
+
 });
