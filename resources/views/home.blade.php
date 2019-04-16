@@ -12,7 +12,6 @@
                             @else
                                 @foreach($posts as $key => $post)
                                     <div class="col-md-6">
-
                                         <div class="card">
                                             <!-- Card image -->
                                             <div class="view overlay">
@@ -40,11 +39,11 @@
                                                         <i class="fas fa-angle-double-right"></i></h5></a>
 
                                             </div>
+                                        </div>
                                     </div>
                                 @endforeach
                             @endif
-                                    </div>
-
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-2" style="margin-bottom: 20px">
