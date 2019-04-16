@@ -7,79 +7,45 @@
                 <div class="col-md-10" style="margin-bottom: 20px">
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="col-md-6">
-{{--                                @if(count($posts)=== 0)--}}
-{{--                                    <p class="text-danger">Chưa có bài viết nào</p>--}}
-{{--                                @else--}}
-{{--                                @foreach($posts as $key => $post)--}}
-                                <div class="card">
-                                    <!-- Card image -->
-                                    <div class="view overlay">
-                                        <img class="card-img-top"
-                                             src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%28131%29.jpg"
-                                             alt="Card image cap">
-                                        <a>
-                                            <div class="mask rgba-white-slight"></div>
-                                        </a>
-                                    </div>
+                            @if(count($posts)=== 0)
+                                <p class="text-danger">Chưa có bài viết nào</p>
+                            @else
+                                @foreach($posts as $key => $post)
+                                    <div class="col-md-6">
 
-                                    <!-- Card content -->
-                                    <div class="card-body">
+                                        <div class="card">
+                                            <!-- Card image -->
+                                            <div class="view overlay">
+                                                <img class="card-img-top"
+                                                     src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%28131%29.jpg"
+                                                     alt="Card image cap">
+                                                <a>
+                                                    <div class="mask rgba-white-slight"></div>
+                                                </a>
+                                            </div>
 
-                                        <!-- Social shares button -->
-                                        <a class="activator waves-effect waves-light mr-4"><i
-                                                    class="fas fa-share-alt"></i></a>
-                                        <!-- Title -->
-                                        <h4 class="card-title">Card title</h4>
-                                        <hr>
-                                        <!-- Text -->
-                                        <p class="card-text">Some quick example text to build on the card title and make
-                                            up the bulk of the card's content.</p>
-                                        <!-- Link -->
-                                        <a href="#!" class="black-text d-flex justify-content-end"><h5>Read more <i
-                                                        class="fas fa-angle-double-right"></i></h5></a>
+                                            <!-- Card content -->
+                                            <div class="card-body">
 
-                                    </div>
+                                                <!-- Social shares button -->
+                                                <a class="activator waves-effect waves-light mr-4"><i
+                                                            class="fas fa-share-alt"></i></a>
+                                                <!-- Title -->
+                                                <h4 class="card-title">{{ $post->title }}</h4>
+                                                <hr>
+                                                <!-- Text -->
+                                                <p class="card-text">{{ $post->description }}</p>
+                                                <!-- Link -->
+                                                <a href="{{ route('blog.show', $post->id) }}" class="black-text d-flex justify-content-end"><h5>Read more
+                                                        <i class="fas fa-angle-double-right"></i></h5></a>
 
-                                </div>
-                            </div>
-{{--                            @endforeach--}}
-{{--                            @endif--}}
-                            <div class="col-md-6">
-                                <!-- Card deck -->
-                                <div class="card-deck">
-
-                                    <!-- Card -->
-                                    <div class="card ">
-
-                                        <!--Card image-->
-                                        <div class="view overlay">
-                                            <img class="card-img-top"
-                                                 src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
-                                                 alt="Card image cap">
-                                            <a href="#!">
-                                                <div class="mask rgba-white-slight"></div>
-                                            </a>
-                                        </div>
-
-                                        <!--Card content-->
-                                        <div class="card-body">
-
-                                            <!--Title-->
-                                            <h4 class="card-title">Card title</h4>
-                                            <!--Text-->
-                                            <p class="card-text">Some quick example text to build on the card title and
-                                                make up the bulk of the card's content.</p>
-                                            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                                            <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+                                            </div>
 
                                         </div>
-
                                     </div>
+                                @endforeach
+                            @endif
 
-                                </div>
-                                <!-- Card deck -->
-                            </div>
                         </div>
 
                     </div>
@@ -116,6 +82,5 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection

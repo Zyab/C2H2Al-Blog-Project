@@ -22,8 +22,8 @@ class PostsTableSeeder extends Seeder
 
 
         $post = new Post();
-        $post->title = 'Hướng dẫn xây dựng ứng dụng nghe nhạc dành cho Android';
-        $post->description = ' ứng dụng nghe nhạc';
+        $post->title = 'Hướng dẫn xây dựng ứng dụng nghe nhạc dành cho iOS';
+        $post->description = ' ứng dụng choi game';
         $post->content = 'Trong phiên hướng dẫn này chúng ta sẽ xây dựngc với quy mô tương tự. ';
         $post->image = "https://codegym.vn/wp-content/uploads/2019/01/hoc-lap-trinh-php-o-dau-tot-nhat-6-1.jpg";
         $post->user_id = 1;
