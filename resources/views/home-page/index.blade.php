@@ -172,7 +172,6 @@
             </div>
         </div>
     </div>
-
 </div>
 @yield('content')
         <div class="row justify-content-center">

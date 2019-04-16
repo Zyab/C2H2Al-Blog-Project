@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -11,6 +14,14 @@ class HomeController extends Controller
      *
      * @return void
      */
+
+    public function index()
+    {
+        $idUserLogin = Auth::user()->id;
+        $posts = Post::where('user_id', '=', $idUserLogin )->get();
+        return view('home', compact('posts'));
+    }
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -21,8 +32,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+
+    public function changePassword()
     {
-        return view('home');
+//        $user = User::findOrFail($request->id);
+        return view('auth.change-password');
+    }
+    public function updatePassword()
+    {
+        return redirect()->route('home');
     }
 }
