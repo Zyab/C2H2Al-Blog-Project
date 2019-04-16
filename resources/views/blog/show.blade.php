@@ -21,7 +21,6 @@
                                  class="rounded-circle" alt="woman avatar"
                                  style="height: 150px; width: 150px; margin-top: 20px">
                         </div>
-
                         <!-- Content -->
                         <div class="card-body">
                             <!-- Name -->
@@ -34,12 +33,7 @@
                             <a class="btn peach-gradient btn-lg" href="{{route('home')}}"
                                style="background: #009688; color: whitesmoke"> Danh sách bài viết</a>
                         </div>
-
-
                     </div>
-
-                    <!-- Card -->
-                    <!-- Card Light -->
                 </div>
             </div>
         </div>
