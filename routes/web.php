@@ -25,6 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix'=> 'blog'], function (){
    Route::get('create', 'PostController@create')->name('blog.create');
    Route::get('list', 'PostController@getAllPost')->name('blog.list');
+   Route::get('show/{id}', 'HomeController@show')->name('blog.show');
 });
 Route::group(['prefix'=> 'user'], function (){
     Route::get('edit/{id}', 'UserController@edit')->name('user.edit');
