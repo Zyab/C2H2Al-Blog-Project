@@ -12,6 +12,13 @@ class UserController extends Controller
         $users = User::all();
         return response()->json($users);
     }
+    public function edit($id)
+    {
+        $user = User::find($id);
+       return view('auth.edit',compact('user'));
+    }
+
+
     public function show($id) {
         return User::findOrFail($id);
     }
@@ -44,6 +51,6 @@ class UserController extends Controller
         $user->address = $request->input('address');
         $user->phone = $request->input('phone');
         $user->save();
-        return response() ->json($user);
+        return response()->json($user);
     }
 }

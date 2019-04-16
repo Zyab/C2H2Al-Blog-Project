@@ -8,10 +8,6 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6">
-{{--                                @if(count($posts)=== 0)--}}
-{{--                                    <p class="text-danger">Chưa có bài viết nào</p>--}}
-{{--                                @else--}}
-{{--                                @foreach($posts as $key => $post)--}}
                                 <div class="card">
                                     <!-- Card image -->
                                     <div class="view overlay">
@@ -43,8 +39,6 @@
 
                                 </div>
                             </div>
-{{--                            @endforeach--}}
-{{--                            @endif--}}
                             <div class="col-md-6">
                                 <!-- Card deck -->
                                 <div class="card-deck">
@@ -72,9 +66,7 @@
                                                 make up the bulk of the card's content.</p>
                                             <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
                                             <button type="button" class="btn btn-light-blue btn-md">Read more</button>
-
                                         </div>
-
                                     </div>
 
                                 </div>
@@ -94,7 +86,6 @@
                                  class="rounded-circle" alt="woman avatar"
                                  style="height: 150px; width: 150px; margin-top: 20px">
                         </div>
-
                         <!-- Content -->
                         <div class="card-body">
                             <!-- Name -->
@@ -107,15 +98,12 @@
                             <a class="btn peach-gradient btn-lg" href="{{route('blog.list')}}"
                                style="background: #009688; color: whitesmoke"> Danh sách bài viết</a>
                         </div>
-
-
                     </div>
-
-                    <!-- Card -->
-                    <!-- Card Light -->
                 </div>
             </div>
         </div>
     </div>
     </div>
 @endsection
+
+
