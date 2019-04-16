@@ -36,7 +36,7 @@
                                                 <!-- Text -->
                                                 <p class="card-text">{{ $post->description }}</p>
                                                 <!-- Link -->
-                                                <a href="{{ route('blog.show', $post->id) }}" class="black-text d-flex justify-content-end"><h5>Read more
+                                                <a href="{{ route('post.show', $post->id) }}" class="black-text d-flex justify-content-end"><h5>Read more
                                                         <i class="fas fa-angle-double-right"></i></h5></a>
 
                                             </div>
@@ -67,10 +67,10 @@
                             <h4 class="card-title">{{ Auth::user()->name }}</h4>
                             <hr>
                             <!-- Quotation -->
-                            <a class="btn peach-gradient btn-lg" href="{{route('blog.create')}}"
+                            <a class="btn peach-gradient btn-lg" href="{{route('post.create')}}"
                                style="background: #009688; color: whitesmoke"> Thêm mới bài viết</a>
                             <hr>
-                            <a class="btn peach-gradient btn-lg" href="{{route('blog.list')}}"
+                            <a class="btn peach-gradient btn-lg" href="{{route('post.list')}}"
                                style="background: #009688; color: whitesmoke"> Danh sách bài viết</a>
                         </div>
 

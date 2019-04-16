@@ -22,10 +22,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::group(['prefix'=> 'blog'], function (){
-   Route::get('create', 'PostController@create')->name('blog.create');
-   Route::get('list', 'PostController@getAllPost')->name('blog.list');
-   Route::get('show/{id}', 'HomeController@show')->name('blog.show');
+Route::group(['prefix'=> 'post'], function (){
+   Route::get('create', 'PostController@create')->name('post.create');
+   Route::get('list', 'PostController@getAllPost')->name('post.list');
+   Route::get('show/{id}', 'PostController@show')->name('post.show');
+   Route::get('edit/{id}', 'PostController@edit')->name('post.edit');
+   Route::post('edit/{id}', 'PostController@update')->name('post.update');
 });
 
 Route::get('/change-password', 'Auth\ChangePasswordController@index')->name('password.change');

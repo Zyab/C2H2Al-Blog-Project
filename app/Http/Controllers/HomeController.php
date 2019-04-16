@@ -14,6 +14,14 @@ class HomeController extends Controller
      *
      * @return void
      */
+
+    public function index()
+    {
+        $idUserLogin = Auth::user()->id;
+        $posts = Post::where('user_id', '=', $idUserLogin )->get();
+        return view('home', compact('posts'));
+    }
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -24,18 +32,6 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        $idUserLogin = Auth::user()->id;
-        $posts = Post::where('user_id', '=', $idUserLogin )->get();
-        return view('home', compact('posts'));
-    }
-
-    public function show($id)
-    {
-        $post = Post::findOrFail($id);
-        return view('blog.show', compact('post'));
-    }
 
     public function changePassword()
     {
