@@ -27,7 +27,7 @@
                             <h4 class="card-title">{{ Auth::user()->name }}</h4>
                             <hr>
                             <!-- Quotation -->
-                            <a class="btn peach-gradient btn-lg" href="{{route('blog.create')}}"
+                            <a class="btn peach-gradient btn-lg" href="{{route('post.create')}}"
                                style="background: #009688; color: whitesmoke"> Thêm mới bài viết</a>
                             <hr>
                             <a class="btn peach-gradient btn-lg" href="{{route('home')}}"

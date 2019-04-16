@@ -12,7 +12,6 @@
                             @else
                                 @foreach($posts as $key => $post)
                                     <div class="col-md-6">
-
                                         <div class="card">
                                             <!-- Card image -->
                                             <div class="view overlay">
@@ -36,21 +35,32 @@
                                                 <!-- Text -->
                                                 <p class="card-text">{{ $post->description }}</p>
                                                 <!-- Link -->
+
                                                 <a href="{{ route('blog.show', $post->id) }}"
                                                    class="black-text d-flex justify-content-end"><h5>Read more
+
+                                                <a href="{{ route('post.show', $post->id) }}" class="black-text d-flex justify-content-end"><h5>Read more
+
                                                         <i class="fas fa-angle-double-right"></i></h5></a>
 
                                             </div>
                                         </div>
+
                                         @endforeach
                                         @endif
                                     </div>
+
+                                    </div>
+                                @endforeach
+                            @endif
+
                         </div>
                     </div>
                     <div class="col-md-2" style="margin-bottom: 20px">
                         <div class="card testimonial-card">
                             <div class="card-up indigo lighten-1"></div>
 
+<<<<<<< HEAD
                             <!-- Avatar -->
                             <div class="avatar mx-auto white">
                                 <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg"
@@ -69,6 +79,25 @@
                                 <a class="btn peach-gradient btn-lg" href="{{route('blog.list')}}"
                                    style="background: #009688; color: whitesmoke"> Danh sách bài viết</a>
                             </div>
+=======
+                        <!-- Avatar -->
+                        <div class="avatar mx-auto white">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg"
+                                 class="rounded-circle" alt="woman avatar"
+                                 style="height: 150px; width: 150px; margin-top: 20px">
+                        </div>
+                        <!-- Content -->
+                        <div class="card-body">
+                            <!-- Name -->
+                            <h4 class="card-title">{{ Auth::user()->name }}</h4>
+                            <hr>
+                            <!-- Quotation -->
+                            <a class="btn peach-gradient btn-lg" href="{{route('post.create')}}"
+                               style="background: #009688; color: whitesmoke"> Thêm mới bài viết</a>
+                            <hr>
+                            <a class="btn peach-gradient btn-lg" href="{{route('post.list')}}"
+                               style="background: #009688; color: whitesmoke"> Danh sách bài viết</a>
+>>>>>>> e42a90586fe5e23771305d52cd35f94abf489434
                         </div>
                     </div>
                 </div>
