@@ -9,9 +9,6 @@
 </head>
 <body>
 <textarea name="editor1">
-
-
-
 </textarea>
 </body>
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
