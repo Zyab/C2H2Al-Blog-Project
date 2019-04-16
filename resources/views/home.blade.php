@@ -35,10 +35,6 @@
                                                 <!-- Text -->
                                                 <p class="card-text">{{ $post->description }}</p>
                                                 <!-- Link -->
-
-                                                <a href="{{ route('blog.show', $post->id) }}"
-                                                   class="black-text d-flex justify-content-end"><h5>Read more
-
                                                 <a href="{{ route('post.show', $post->id) }}" class="black-text d-flex justify-content-end"><h5>Read more
 
                                                         <i class="fas fa-angle-double-right"></i></h5></a>
@@ -51,8 +47,7 @@
                                     </div>
 
                                     </div>
-                                @endforeach
-                            @endif
+
 
                         </div>
                     </div>
