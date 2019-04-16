@@ -40,13 +40,10 @@
                                                         <i class="fas fa-angle-double-right"></i></h5></a>
 
                                             </div>
-
-                                        </div>
                                     </div>
                                 @endforeach
                             @endif
-
-                        </div>
+                                    </div>
 
                     </div>
                 </div>
@@ -60,7 +57,6 @@
                                  class="rounded-circle" alt="woman avatar"
                                  style="height: 150px; width: 150px; margin-top: 20px">
                         </div>
-
                         <!-- Content -->
                         <div class="card-body">
                             <!-- Name -->
@@ -73,14 +69,11 @@
                             <a class="btn peach-gradient btn-lg" href="{{route('blog.list')}}"
                                style="background: #009688; color: whitesmoke"> Danh sách bài viết</a>
                         </div>
-
-
                     </div>
-
-                    <!-- Card -->
-                    <!-- Card Light -->
                 </div>
             </div>
         </div>
     </div>
 @endsection
+
+

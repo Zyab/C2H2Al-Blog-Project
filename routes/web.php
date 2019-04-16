@@ -27,6 +27,10 @@ Route::group(['prefix'=> 'blog'], function (){
    Route::get('list', 'PostController@getAllPost')->name('blog.list');
    Route::get('show/{id}', 'HomeController@show')->name('blog.show');
 });
+Route::group(['prefix'=> 'user'], function (){
+    Route::get('edit/{id}', 'UserController@edit')->name('user.edit');
+});
+
 
 Route::get('/change-password', 'Auth\ChangePasswordController@index')->name('password.change');
 Route::post('/change-password', 'Auth\ChangePasswordController@changePassword')->name('password.update');
