@@ -28,6 +28,8 @@ Route::group(['prefix'=> 'post'], function (){
    Route::get('show/{id}', 'PostController@show')->name('post.show');
    Route::get('edit/{id}', 'PostController@edit')->name('post.edit');
    Route::post('edit/{id}', 'PostController@update')->name('post.update');
+   Route::get('search', 'PostController@search')->name('post.search');
+
 });
 Route::group(['prefix'=> 'user'], function (){
     Route::get('edit/{id}', 'UserController@edit')->name('user.edit');

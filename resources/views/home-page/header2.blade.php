@@ -31,6 +31,14 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
+
+                    <form class="form-inline my-2 my-lg-0" action="{{ route('post.search') }}" method="get">
+                        @csrf
+                        <input class="form-control mr-sm-2" type="search" aria-label="Search" name="keyword" placeholder="Search" value="{{ (isset($_GET['keyword'])) ? $_GET['keyword'] : '' }}">
+                        <button class="btn btn-default" style="color: white" type="submit">Search</button>
+                    </form>
+
+
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item active">
