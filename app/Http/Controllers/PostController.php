@@ -13,11 +13,11 @@ class PostController extends Controller
         return view('post.create');
     }
 
-//    public function getAllPost(){
-//        $user = User::all();
-//        $posts = Auth::user()->posts;
-//            return view('home', compact('posts','user'));
-//    }
+    public function getAllPost(){
+        $user = User::all();
+        $posts = Auth::user()->posts;
+            return view('post.postsList', compact('posts','user'));
+    }
 
     public function show($id)
     {
@@ -40,6 +40,13 @@ class PostController extends Controller
         return view('post.list', compact('posts'));
     }
 
+    public function delete($id)
+    {
+        $post = Post::findOrFail($id);
+        $post->delete();
+        return redirect()->route('post.list', compact('post'));
+    }
+
     public function store(Request $request){
 //        dd($request);
         $post = new Post();
@@ -54,5 +61,6 @@ class PostController extends Controller
         $post->user_id = Auth::user()->id;
         $post->save();
         return redirect()->route('home');
+
     }
 }

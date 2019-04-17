@@ -1,3 +1,4 @@
+
 @extends('home')
 @section('main')
 <div class="row">
@@ -34,3 +35,4 @@
     </div>
 </div>
 @endsection
+
