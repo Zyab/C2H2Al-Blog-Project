@@ -40,7 +40,7 @@
                                 <div class="mask rgba-black-light"></div>
                             </div>
                             <div class="carousel-caption">
-                                <h3 class="h3-responsive">Light mask</h3>
+                                <h2 class="h3-responsive">Light mask</h2>
                                 <p>First text</p>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                 <div class="card">
                     <!-- Card image -->
                     <div class="view overlay">
-                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%28131%29.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img(115).jpg" alt="Card image cap">
                         <a>
                             <div class="mask rgba-white-slight"></div>
                         </a>
@@ -117,7 +117,7 @@
                 <div class="card">
                     <!-- Card image -->
                     <div class="view overlay">
-                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%28131%29.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img(117).jpg" alt="Card image cap">
                         <a>
                             <div class="mask rgba-white-slight"></div>
                         </a>
@@ -146,7 +146,7 @@
                 <div class="card">
                     <!-- Card image -->
                     <div class="view overlay">
-                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%28131%29.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img(117).jpg" alt="Card image cap">
                         <a>
                             <div class="mask rgba-white-slight"></div>
                         </a>

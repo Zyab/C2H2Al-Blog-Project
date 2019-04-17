@@ -1,10 +1,16 @@
 @extends('home')
 @section('main')
-                    <ul class="list-group">
-                        <li class="list-group-item">{{ $post->title }}</li>
-                        <li class="list-group-item">{{ $post->description }}</li>
-                        <li class="list-group-item">{{ $post->content }}</li>
-                        <li class="list-group-item">{{ $post->image }}</li>
-                    </ul>
+<div class="container" style="background: whitesmoke">
+    <div class="col-md-12">
+        <h3>{{$post->title}}</h3>
+        <hr>
+        <br>
+        <img class="card-img-top"
+             src="{{asset('storage/'.$post->image)}}"
+             alt="Card image cap" >
+        <br>
+        <p>{!! $post->content !!}</p>
+    </div>
 
+</div>
 @endsection
