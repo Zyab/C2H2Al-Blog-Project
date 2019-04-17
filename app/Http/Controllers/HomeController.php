@@ -19,7 +19,7 @@ class HomeController extends Controller
     {
         $idUserLogin = Auth::user()->id;
         $posts = Post::where('user_id', '=', $idUserLogin )->get();
-        return view('home', compact('posts'));
+        return view('post.list', compact('posts'));
     }
 
     public function __construct()
