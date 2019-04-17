@@ -31,6 +31,7 @@ Route::group(['prefix'=> 'post'], function (){
 });
 Route::group(['prefix'=> 'user'], function (){
     Route::get('edit/{id}', 'UserController@edit')->name('user.edit');
+    Route::post('edit/{id}', 'UserController@update')->name('user.update');
 });
 
 
