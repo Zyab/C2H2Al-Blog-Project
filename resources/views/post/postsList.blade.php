@@ -14,10 +14,10 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Title</th>
-                <th scope="col">Content</th>
                 <th scope="col">Description</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
+                <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
@@ -28,13 +28,11 @@
                     <tr>
                         <th scope="row">{{ ++$key }}</th>
                         <td>{{ $post->title }}</td>
-                        <td>{{ $post->content }}</td>
                         <td>{{ $post->description }}</td>
-                        <td><img src="{{asset("storage/$post->image")}}" alt="" width="150px" height="150px"></td>
+                        <td><img src="{{asset("storage/$post->image")}}" alt="" width="300px" height="300px"></td>
                         <td>
-                            <a  class="btn btn-success" href="#">sửa</a>
-                            <a class="btn btn-danger" href="{{route('post.delete',$post->id)}}" class="text-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">xóa</a>
-
+                            <a  class="btn btn-success" href="#">sửa</a></td>
+                          <td>  <a class="btn btn-danger" href="{{route('post.delete',$post->id)}}" class="text-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">xóa</a>
                         </td>
                     </tr>
                 @endforeach

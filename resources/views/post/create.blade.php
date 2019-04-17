@@ -26,7 +26,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleFormControlFile1">Image</label>
-                <input type="file" name="image" class="form-control-file" required>
+                <input type="file" name="image" class="form-control-file">
             </div>
 
             <button type="submit" class="btn btn-primary">Create</button>

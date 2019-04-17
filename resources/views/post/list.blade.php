@@ -5,13 +5,17 @@
                                 <p class="text-danger">Chưa có bài viết nào</p>
                             @else
                                 @foreach($posts as $key => $post)
+
+
+
+
                                     <div class="col-md-6" style="margin-bottom: 20px">
                                         <div class="card">
                                             <!-- Card image -->
                                             <div class="view overlay">
                                                 <img class="card-img-top"
                                                      src="{{asset('storage/'.$post->image)}}"
-                                                     alt="Card image cap">
+                                                     alt="Card image cap" style="width: 100%; height: 500px">
                                                 <a>
                                                     <div class="mask rgba-white-slight"></div>
                                                 </a>
@@ -24,7 +28,7 @@
                                                 <a class="activator waves-effect waves-light mr-4"><i
                                                             class="fas fa-share-alt"></i></a>
                                                 <!-- Title -->
-                                                <h4 class="card-title">{{ $post->title }}</h4>
+                                                <b><h4 class="card-title">{{ $post->title }}</h4></b>
                                                 <hr>
                                                 <!-- Text -->
                                                 <p class="card-text">{{ $post->description }}</p>
