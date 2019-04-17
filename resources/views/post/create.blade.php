@@ -6,12 +6,18 @@
         <h2>Add new post</h2>
     </div>
     <div class="col-md-12">
-        <form method="post" action="{{ route('posts.store') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('post.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label >Title</label>
                 <input type="text" class="form-control" name="title" required>
             </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Description</label>
+                <input type="text" name="description" class="form-control" required>
+            </div>
+
             <div class="form-group">
                 <label >Content</label>
                 {{--<textarea class="form-control" rows="3" name="content" required></textarea>--}}
@@ -22,14 +28,7 @@
                 <label for="exampleFormControlFile1">Image</label>
                 <input type="file" name="image" class="form-control-file" required>
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlFile1">Description</label>
-                <input type="text" name="description" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlFile1">user_id </label>
-                <input type="text" name="user_id" class="form-control" required>
-            </div>
+
             <button type="submit" class="btn btn-primary">Create</button>
             <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Cancel</button>
         </form>
