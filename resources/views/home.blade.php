@@ -6,7 +6,7 @@
         <div class="col-md-10">
             <div class="row">
                 <div class="col-md-10" style="margin-bottom: 20px">
-                    @yield('content')
+                    @yield('main')
 
                 </div>
                 <div class="col-md-2" style="margin-bottom: 20px">
@@ -16,7 +16,7 @@
 
                         <!-- Avatar -->
                         <div class="avatar mx-auto white">
-                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg"
+                            <img src="{{asset('storage/'.Auth::user()->image)}}"
                                  class="rounded-circle" alt="woman avatar"
                                  style="height: 150px; width: 150px; margin-top: 20px">
                         </div>

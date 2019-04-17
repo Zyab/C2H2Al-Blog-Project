@@ -1,5 +1,5 @@
 @extends('home')
-@section('content')
+@section('main')
                         <div class="row">
                             @if(count($posts)=== 0)
                                 <p class="text-danger">Chưa có bài viết nào</p>

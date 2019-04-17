@@ -42,15 +42,19 @@ class UserController extends Controller
         return response()->json($user);
     }
     public function update(Request $request, $id) {
+//        dd($request);
         $user = User::findOrFail($id);
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->email_verified_at = $request->input('email_verified_at');
-        $user->password = $request->input('password');
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $path = $image->store('images', 'public');
+            $user->image = $path;
+        }
         $user->age = $request->input('age');
         $user->address = $request->input('address');
         $user->phone = $request->input('phone');
         $user->save();
-        return response()->json($user);
+        return redirect()->route('home');
     }
 }
