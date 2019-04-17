@@ -40,4 +40,19 @@ class PostController extends Controller
         return view('post.list', compact('posts'));
     }
 
+    public function store(Request $request){
+//        dd($request);
+        $post = new Post();
+        $post->title = $request->input('title');
+        $post->content = $request->input('editor1');
+        if ($request->hasFile('image')) {
+            $image = $request->image;
+            $path = $image->store('images', 'public');
+            $post->image = $path;
+        }
+        $post->description = $request->input('description');
+        $post->user_id = Auth::user()->id;
+        $post->save();
+        return redirect()->route('home');
+    }
 }

@@ -24,6 +24,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix'=> 'post'], function (){
    Route::get('create', 'PostController@create')->name('post.create');
+   Route::post('create', 'PostController@store')->name('post.store');
    Route::get('list', 'PostController@getAllPost')->name('post.list');
    Route::get('show/{id}', 'PostController@show')->name('post.show');
    Route::get('edit/{id}', 'PostController@edit')->name('post.edit');
