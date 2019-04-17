@@ -5,12 +5,12 @@
                                 <p class="text-danger">Chưa có bài viết nào</p>
                             @else
                                 @foreach($posts as $key => $post)
-                                    <div class="col-md-6">
+                                    <div class="col-md-6" style="margin-bottom: 20px">
                                         <div class="card">
                                             <!-- Card image -->
                                             <div class="view overlay">
                                                 <img class="card-img-top"
-                                                     src="{{$post->image}}"
+                                                     src="{{asset('storage/'.$post->image)}}"
                                                      alt="Card image cap">
                                                 <a>
                                                     <div class="mask rgba-white-slight"></div>
