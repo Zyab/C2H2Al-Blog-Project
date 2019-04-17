@@ -99,9 +99,13 @@ class AuthController extends Controller
 	public function update(Request $request)
 	{
 		$user = $this->guard()->user();
-
-		$user->fill($request->data)->save();
-
+		$user->fill($request->all());
+		if ($request->image) {
+			$image = $request->image;
+			$path = Storage::disk('public')->put('image', $image);
+			$user->image = $path;
+		}
+		$user->save();
 		return $user;
 	}
 
@@ -126,6 +130,12 @@ class AuthController extends Controller
 	{
 		$user = $this->guard()->user();
 		return $user->posts;
+	}
+	public function deleteBlog($id) {
+		$user = $this->guard()->user();
+		$post = Post::findOrFail($id);
+		$post->delete();
+		return response()->json('Delete Successfully', $post);
 	}
 
 }

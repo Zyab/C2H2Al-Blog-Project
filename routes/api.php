@@ -42,3 +42,4 @@ Route::middleware('jwt.auth')->post('update', 'AuthController@update');
 Route::middleware('jwt.auth')->post('create-blog', 'AuthController@createBlog');
 Route::middleware('jwt.auth')->post('upload-image', 'AuthController@uploadImage');
 Route::middleware('jwt.auth')->get('show-blogs', 'AuthController@showBlogs');
+Route::middleware('jwt.auth')->delete('delete-blog/{id}', 'AuthController@deleteBlog');
