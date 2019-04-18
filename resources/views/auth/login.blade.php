@@ -12,17 +12,16 @@
                     @endif
                     <h5 class="card-header info-color white-text text-center py-4"
                         style="background: #009688!important ; color: white">
-                        <strong>{{ __('LOGIN') }}</strong>
+                        <strong>{{ 'LOGIN' }}</strong>
                     </h5>
                     <div class="card-body px-lg-5 pt-0">
                         <form method="POST" action="{{ route('login') }}" class="text-center ">
                             @csrf
-
                             <div class="md-form" style="padding-top: 15px">
-                                <h5 for="email">{{ __('EMAIL') }}</h5>
+                                <h5 for="exampleInputEmail1"></h5>
                                 <input id="email" type="email"
                                        class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
-                                       value="{{ old('email') }}" placeholder="Enter Your Email" required autofocus>
+                                       value="{{ old('email') }}" placeholder="Enter Your Email" >
                                 <div class="col-md-6">
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">

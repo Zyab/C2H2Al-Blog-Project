@@ -22,7 +22,9 @@
             </thead>
             <tbody>
             @if(count($posts) == 0)
-                <tr><td colspan="4">Không có dữ liệu</td></tr>
+                <tr>
+                    <td colspan="4">Không có dữ liệu</td>
+                </tr>
             @else
                 @foreach($posts as $key => $post)
                     <tr>
@@ -31,8 +33,14 @@
                         <td>{{ $post->description }}</td>
                         <td><img src="{{asset("storage/$post->image")}}" alt="" width="300px" height="300px"></td>
                         <td>
-                            <a  class="btn btn-success" href="#">sửa</a></td>
-                          <td>  <a class="btn btn-danger" href="{{route('post.delete',$post->id)}}" class="text-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">xóa</a>
+                            <a class="btn btn-success" href="#">Edit</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" href="{{ route('post.show', $post->id) }}">View</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger" href="{{route('post.delete',$post->id)}}" class="text-danger"
+                               onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a>
                         </td>
                     </tr>
                 @endforeach
