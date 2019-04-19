@@ -22,7 +22,6 @@
                 <label >Content</label>
                 {{--<textarea class="form-control" rows="3" name="content" required></textarea>--}}
                 <textarea name="editor1"></textarea>
-
             </div>
             <div class="form-group">
                 <label for="exampleFormControlFile1">Image</label>

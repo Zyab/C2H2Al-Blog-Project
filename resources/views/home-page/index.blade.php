@@ -10,177 +10,158 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    {{--    <link rel="stylesheet" href="{{asset('css/hieu.css')}}">--}}
 </head>
 <body>
+<header>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+        <div class="container">
 
-<div class="row justify-content-center">
-    <div class="col-md-10">
-        @include('home-page.header')
-    </div>
-</div>
-<div class="row justify-content-center">
-    <div class="col-md-10">
-        <div class="row">
-            <div class="col-md-12" style="margin-bottom: 20px; margin-top: 10px">
-                <!--Carousel Wrapper-->
-                <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
-                    <!--Indicators-->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-2" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-2" data-slide-to="2"></li>
-                    </ol>
-                    <!--/.Indicators-->
-                    <!--Slides-->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                            <div class="view">
-                                <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
-                                     alt="First slide">
-                                <div class="mask rgba-black-light"></div>
-                            </div>
-                            <div class="carousel-caption">
-                                <h2 class="h3-responsive">Light mask</h2>
-                                <p>First text</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <!--Mask color-->
-                            <div class="view">
-                                <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
-                                     alt="Second slide">
-                                <div class="mask rgba-black-strong"></div>
-                            </div>
-                            <div class="carousel-caption">
-                                <h3 class="h3-responsive">Strong mask</h3>
-                                <p>Secondary text</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <!--Mask color-->
-                            <div class="view">
-                                <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
-                                     alt="Third slide">
-                                <div class="mask rgba-black-slight"></div>
-                            </div>
-                            <div class="carousel-caption">
-                                <h3 class="h3-responsive">Slight mask</h3>
-                                <p>Third text</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/.Slides-->
-                    <!--Controls-->
-                    <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                    <!--/.Controls-->
-                </div>
-                <!--/.Carousel Wrapper-->
-            </div>
-            <div class="col-md-4" style="margin-bottom: 20px">
-                <!-- Card Light -->
-                <div class="card">
-                    <!-- Card image -->
-                    <div class="view overlay">
-                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img(115).jpg" alt="Card image cap">
-                        <a>
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
-
-                    <!-- Card content -->
-                    <div class="card-body">
-
-                        <!-- Social shares button -->
-                        <a class="activator waves-effect waves-light mr-4"><i class="fas fa-share-alt"></i></a>
-                        <!-- Title -->
-                        <h4 class="card-title">Card title</h4>
-                        <hr>
-                        <!-- Text -->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <!-- Link -->
-                        <a href="#!" class="black-text d-flex justify-content-end"><h5>Read more <i class="fas fa-angle-double-right"></i></h5></a>
-
-                    </div>
-
-                </div>
-                <!-- Card Light -->
-            </div>
-            <div class="col-md-4" style="margin-bottom: 20px">
-                <!-- Card Light -->
-                <div class="card">
-                    <!-- Card image -->
-                    <div class="view overlay">
-                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img(117).jpg" alt="Card image cap">
-                        <a>
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
-
-                    <!-- Card content -->
-                    <div class="card-body">
-
-                        <!-- Social shares button -->
-                        <a class="activator waves-effect waves-light mr-4"><i class="fas fa-share-alt"></i></a>
-                        <!-- Title -->
-                        <h4 class="card-title">Card title</h4>
-                        <hr>
-                        <!-- Text -->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <!-- Link -->
-                        <a href="#!" class="black-text d-flex justify-content-end"><h5>Read more <i class="fas fa-angle-double-right"></i></h5></a>
-
-                    </div>
-
-                </div>
-                <!-- Card Light -->
-            </div>
-            <div class="col-md-4" style="margin-bottom: 20px">
-                <!-- Card Light -->
-                <div class="card">
-                    <!-- Card image -->
-                    <div class="view overlay">
-                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img(117).jpg" alt="Card image cap">
-                        <a>
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
-
-                    <!-- Card content -->
-                    <div class="card-body">
-
-                        <!-- Social shares button -->
-                        <a class="activator waves-effect waves-light mr-4"><i class="fas fa-share-alt"></i></a>
-                        <!-- Title -->
-                        <h4 class="card-title">Card title</h4>
-                        <hr>
-                        <!-- Text -->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <!-- Link -->
-                        <a href="#!" class="black-text d-flex justify-content-end"><h5>Read more <i class="fas fa-angle-double-right"></i></h5></a>
-
-                    </div>
-
-                </div>
-                <!-- Card Light -->
+            <a class="navbar-brand" href="#"><strong> <i class="fas fa-home"></i> HOME</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+                    aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <ul class="navbar-nav ml-auto nav-flex-icons">
+                    @if (Route::has('login'))
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{{ url('/home') }}">TRANG CÁ NHÂN</a>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{{ route('login') }}">LOGIN</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="{{ route('register') }}">REGISTER</a>
+                                </li>
+                            @endif
+                        @endauth
+                    @endif
+                </ul>
             </div>
         </div>
+    </nav>
+    <!-- Navbar -->
+    <!-- Full Page Intro -->
+    <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/img%20%2848%29.jpg'); height: 600px;
+     background-repeat: no-repeat; background-size: cover; background-position: center center; color: white; padding-top: 200px; margin-bottom: 20px">
+        <!-- Mask & flexbox options-->
+        <div class="mask rgba-black-light align-items-center">
+            <!-- Content -->
+            <div class="container">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-md-12 mb-4 white-text text-center">
+                        <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown"
+                            data-wow-delay="0.3s"><strong>Minimalist intro</strong></h1>
+                        <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
+                        <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>Photography
+                                & design</strong></h5>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </div>
+            <!-- Content -->
+        </div>
+        <!-- Mask & flexbox options-->
     </div>
-</div>
-@yield('content')
+    <!-- Full Page Intro -->
+</header>
+<div class="row justify-content-center">
+    <div class="col-md-10 justify-content-center">
         <div class="row justify-content-center">
-        <div class="col-md-10">
-        <div class="footer">
-            @include('home-page.footer')
+            <div class="col-md-10 justify-content-center">
+                <div class="row justify-content-center">
+                    <!-- Card -->
+                    <div class="card card-cascade wider reverse">
+                        <!-- Card image -->
+                        <div class="view view-cascade overlay">
+                            <img class="card-img-top" src="https://colorlib.com/activello/wp-content/uploads/sites/10/2015/11/photo-1429734160945-4f85244d6a5a-1170x550.jpg"
+                                 alt="Card image cap">
+                            <a href="#!">
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+
+                        <!-- Card content -->
+                        <div class="card-body card-body-cascade text-center">
+
+                            <!-- Title -->
+                            <h4 class="card-title"><strong>My adventure</strong></h4>
+                            <!-- Subtitle -->
+                            <h6 class="font-weight-bold indigo-text py-2">Photography</h6>
+                            <!-- Text -->
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Exercitationem perspiciatis voluptatum a, quo nobis, non commodi quia repellendus sequi
+                                nulla voluptatem dicta reprehenderit, placeat laborum ut beatae ullam suscipit veniam.
+                            </p>
+                            <!-- Linkedin -->
+                            <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
+                            <!-- Twitter -->
+                            <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>
+                            <!-- Dribbble -->
+                            <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-2" style="margin-bottom: 20px">
+                <!-- Card Light -->
+                <div class="card">
+                    <!-- Card image -->
+                    <div class="view overlay">
+                        <img class="card-img-top"
+                             src="https://colorlib.com/activello/wp-content/uploads/sites/10/2015/11/photo-1438109491414-7198515b166b1.jpg"
+                             alt="Card image cap">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <!-- Card content -->
+                    <div class="card-body">
+                        <!-- Social shares button -->
+                        <!-- Title -->
+                        <h4 class="card-title" style="text-align: center">About me</h4>
+                        <hr>
+                        <!-- Text -->
+                        <p class="card-text">My name is Activello and I am an awesome WordPress blog theme for
+                            photography, food, travel and other blogs. I was created by colorlib..</p>
+                        <!-- Link -->
+                        <hr>
+                        <h4 class="widget-title" style="text-align: center">Follow Me</h4>
+                        <!-- social icons -->
+                        <p style="text-align: center">
+                            <a href="https://www.facebook.com/colorlib"
+                               style="color: black; font-size: 20px; letter-spacing: 5px"><i
+                                        class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.facebook.com/colorlib"
+                               style="color: black; font-size: 20px; letter-spacing: 5px"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/colorlib"
+                               style="color: black;font-size: 20px; letter-spacing: 5px"><i
+                                        class="fab fa-google-plus-g"></i></a>
+                            <a href="https://www.facebook.com/colorlib"
+                               style="color: black;font-size: 20px; letter-spacing: 5px"><i
+                                        class="fab fa-instagram"></i></a>
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        </div>
-        </div>
+    </div>
+</div>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

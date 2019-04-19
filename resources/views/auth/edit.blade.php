@@ -15,7 +15,7 @@
                             @csrf
                             <div class="form-group row " style="padding-top: 15px">
                                 <!-- Material input -->
-                                <label for="inputPassword3MD" class="col-sm-4 col-form-label">NAME</label>
+                                <label for="inputPassword3MD" class="col-sm-4 text-center">NAME</label>
                                 <div class="col-sm-8">
                                     <div class="md-form mt-0">
                                         <input id="name" type="text"
@@ -68,6 +68,8 @@
                                     </span>
                                                 @endif
                                             </div>
+                                            <img src="{{asset('storage/'.Auth::user()->image)}}"
+                                                 style="height: 150px; width: 150px; margin-top: 20px">
                                         </div>
                                     </div>
                                 </div>
