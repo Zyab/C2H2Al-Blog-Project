@@ -38,7 +38,14 @@ class LoginController extends Controller
     {
         $request->validate([
             $this->username() => 'required|string',
-            'password' => 'required|string',
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ],[
+            'email.required' => 'Email Không có rồi kìa ',
+            'email.email' => 'Email phải đúng định dạng email chứ',
+            'password.min' => 'Bát Word phải nhiều hơn 6 kí tự',
+            'password.confirmed' => 'Bát Word ko giống nhau ah?',
+            'password.required' => 'Bát Word chua dien',
         ]);
     }
     public function __construct()
