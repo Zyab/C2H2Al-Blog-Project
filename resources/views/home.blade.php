@@ -1,41 +1,57 @@
-{{--@extends('home-page.header2')--}}
-
-{{--@section('content')--}}
 @include('home-page.header2')
 <div class="row justify-content-center">
     <div class="col-md-10">
         <div class="row">
             <div class="col-md-10" style="margin-bottom: 20px">
                 @yield('main')
-
             </div>
             <div class="col-md-2" style="margin-bottom: 20px">
-                <div class="card testimonial-card">
-                    <div class="card-up indigo lighten-1"></div>
+                <!-- Card Light -->
+                <div class="card">
+                    <!-- Card image -->
+                    <div class="view overlay">
 
-
-                    <!-- Avatar -->
-                    <div class="avatar mx-auto white">
-                        <a class="nav-link active" href="{{ url('/home') }}">
-                            <img src="{{asset('storage/'.Auth::user()->image)}}"
-                                 class="rounded-circle" alt=" avatar"
-                                 style="height: 150px; width: 150px; margin-top: 20px"></a>
-
-
+                        <a href="{{ url('/home') }}">
+                            <img class="card-img-top"
+                                 src="{{asset('storage/'.Auth::user()->image)}}"
+                                 alt="Card image cap">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
                     </div>
-                    <!-- Content -->
-                    <div class="card-body">
-                        <!-- Name -->
-                        <h4 class="card-title">{{ Auth::user()->name }}</h4>
+
+                    <!-- Card content -->
+                    <div class="card-body" style="text-align: center">
+                        <!-- Social shares button -->
+                        <!-- Title -->
+                        <h4 class="card-title" style="text-align: center">{{ Auth::user()->name }}</h4>
                         <hr>
-                        <!-- Quotation -->
-                        <a class="btn peach-gradient btn-lg" href="{{route('post.create')}}"
-                           style="background: #009688; color: whitesmoke"> Thêm mới bài viết</a>
+                        <!-- Text -->
+                        <p class="card-text">My name is Activello and I am an awesome WordPress blog theme for
+                            photography, food, travel and other blogs. I was created by colorlib..</p>
+                        <!-- Link -->
                         <hr>
-                        <a class="btn peach-gradient btn-lg" href="{{route('post.list')}}"
-                           style="background: #009688; color: whitesmoke"> Danh sách bài viết</a>
+                        <h4 class="widget-title" style="text-align: center">Follow Me</h4>
+                        <!-- social icons -->
+                        <p style="text-align: center">
+                            <a href="https://www.facebook.com/colorlib"
+                               style="color: black; font-size: 20px; letter-spacing: 5px"><i
+                                        class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.facebook.com/colorlib"
+                               style="color: black; font-size: 20px; letter-spacing: 5px"><i
+                                        class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/colorlib"
+                               style="color: black;font-size: 20px; letter-spacing: 5px"><i
+                                        class="fab fa-google-plus-g"></i></a>
+                            <a href="https://www.facebook.com/colorlib"
+                               style="color: black;font-size: 20px; letter-spacing: 5px"><i
+                                        class="fab fa-instagram"></i></a>
+                        </p>
+                        <hr>
+                        <h5><a href="{{route('post.create')}}" style="color: black; text-align: center"> Thêm mới bài viết</a></h5>
+                        <h5><a href="{{route('post.list')}}" style="color: black; text-align: center"> Danh Sách Bài Viết</a></h5>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -51,6 +67,3 @@
         filebrowserFlashUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
     });
 </script>
-{{--@endsection--}}
-
-
