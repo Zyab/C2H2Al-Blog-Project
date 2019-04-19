@@ -19,7 +19,7 @@ class ChangePasswordController extends Controller
     {
         $this->validate($request, [
             'oldpassword' => 'required',
-            'password' => 'required|confirmed'
+            'password' => 'required|confirmed|min:6'
         ]);
 
         $hashedPassword = Auth::user()->password;
