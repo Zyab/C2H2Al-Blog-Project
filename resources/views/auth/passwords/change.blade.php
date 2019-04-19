@@ -11,19 +11,27 @@
                             {{session('errorMsg')}}
                         </div>
                     @endif
-                    <h5 class="card-header info-color white-text text-center py-4" style="background: #009688!important ; color: white">
+                    <h5 class="card-header info-color white-text text-center py-4" style="background: #2176bd!important ; color: white">
                         <strong>Change Password</strong>
                     </h5>
 
                     <div class="card-body px-lg-5 pt-0">
-                        <form method="POST" action="{{ route('password.update') }}" class="text-center" >
+                        <form method="POST" action="{{ route('password.update') }}" class="text-left" >
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             @csrf
 
                             <div class="md-form" style="padding-top: 15px">
-                                <h5 for="materialLoginFormEmail">@lang('Old Password')</h5>
-                                <label for="old-password"></label>
-                                <input id="old-password" type="password" class="form-control{{ $errors->has('oldpassword') ? ' is-invalid' : '' }}"
-                                       name="oldpassword" placeholder="Enter Your Old Password" required autofocus>
+                                <label for="materialLoginFormEmail">@lang('Old Password')</label>
+                                <input id="old-password" type="password" class="form-control"
+                                       name="oldpassword" placeholder="Enter Your Old Password">
                                 <div class="col-md-6">
                                     @if ($errors->has('oldpassword'))
                                         <span class="invalid-feedback" role="alert">
@@ -34,10 +42,9 @@
                             </div>
 
                             <div class="md-form" style="padding-top: 15px">
-                                <h5 for="materialLoginFormEmail">{{ __('Password') }}</h5>
-                                <label for="password"></label>
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                       name="password" value="{{ old('password') }}"placeholder="Enter Your Password" required autofocus>
+                                <label for="materialLoginFormEmail">{{ __('Password') }}</label>
+                                <input id="password" type="password" class="form-control"
+                                       name="password" value="{{ old('password') }}"placeholder="Enter Your Password">
                                 <div class="col-md-6">
                                     @if ($errors->has('password'))
                                         <span class="invalid-feedback" role="alert">
@@ -48,9 +55,9 @@
                             </div>
 
                             <div class="md-form" style="padding-top: 15px">
-                                <h5 for="materialLoginFormEmail">{{ __('Confirm Password') }}</h5>
+                                <label for="materialLoginFormEmail">{{ __('Confirm Password') }}</label>
                                 <input id="password-confirm" type="password" class="form-control"
-                                       name="password_confirmation"  placeholder="Enter Your Password"required>
+                                       name="password_confirmation"  placeholder="Enter Your Password">
                             </div>
 
 
