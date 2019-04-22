@@ -6,6 +6,7 @@ use App\Post;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
@@ -60,7 +61,7 @@ class PostController extends Controller
         $post->description = $request->input('description');
         $post->user_id = Auth::user()->id;
         $post->save();
+        Session::flash('success'.'Tạo mới bài viết thành công');
         return redirect()->route('home');
-
     }
 }
