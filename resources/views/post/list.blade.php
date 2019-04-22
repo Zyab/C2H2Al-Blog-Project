@@ -25,12 +25,7 @@
                                 <div class="mask rgba-white-slight"></div>
                             </a>
                         </div>
-
-                        <!-- Card content -->
                         <div class="card-body">
-
-                            <!-- Social shares button -->
-                            <!-- Title -->
                             <a href="{{ route('post.show', $post->id) }}">
                                 <h4 class="card-title">{{ $post->title }}</h4></b>
                             </a>

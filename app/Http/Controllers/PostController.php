@@ -65,4 +65,24 @@ class PostController extends Controller
         Session::flash('success'.'Tạo mới bài viết thành công');
         return redirect()->route('home');
     }
+    public function edit($id){
+        $post = Post::findOrFail($id);
+        return view('post.edit',compact('post'));
+    }
+    public function update(Request $request, $id){
+
+        $post = Post::findOrFail($id);
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->content = $request->editor1;
+        if ($request->hasFile('image')) {
+            unlink(public_path() . '/storage/' . $post->image);
+            $avatar = $request->image;
+            $path = $avatar->store('avatar', 'public');
+            $post->image = $path;
+        }
+        $post->save();
+        Session::flash('success','Cap nhat bai viet thanh cong');
+        return redirect()->route('post.list');
+    }
 }
