@@ -35,7 +35,8 @@ class PostController extends Controller
         }
 
         $posts = Post::where('title', 'LIKE', '%' . $keyword . '%')
-
+              ->orWhere('description','LIKE','%'. $keyword . '%')
+              ->orWhere('content','LIKE','%'. $keyword . '%')
             ->paginate(5);
 
         return view('post.list', compact('posts'));
