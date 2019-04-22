@@ -36,7 +36,7 @@
                         {{--                        <td>{!! $post->content  !!}</td>--}}
                         <td><img src="{{asset("storage/$post->image")}}" alt="" width="300px" height="300px"></td>
                         <td>
-                            <a class="btn btn-success" href="#">Edit</a>
+                            <a class="btn btn-success" href="{{route('post.edit', $post->id)}}">Edit</a>
                         </td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('post.show', $post->id) }}">View</a>
