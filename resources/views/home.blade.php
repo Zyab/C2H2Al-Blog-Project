@@ -2,10 +2,12 @@
 <div class="row justify-content-center">
     <div class="col-md-10">
         <div class="row">
-            <div class="col-md-10" style="margin-bottom: 20px">
+            <div class="col-md-9" style="margin-bottom: 20px">
+
                 @yield('main')
+
             </div>
-            <div class="col-md-2" style="margin-bottom: 20px">
+            <div class="col-md-3" style="margin-bottom: 20px">
                 <!-- Card Light -->
                 <div class="card">
                     <!-- Card image -->
@@ -20,14 +22,17 @@
                     </div>
 
                     <!-- Card content -->
-                    <div class="card-body" style="text-align: center">
+                    <div class="card-body" style="text-align: left">
                         <!-- Social shares button -->
                         <!-- Title -->
                         <h4 class="card-title" style="text-align: center">{{ Auth::user()->name }}</h4>
                         <hr>
                         <!-- Text -->
-                        <p class="card-text">My name is Activello and I am an awesome WordPress blog theme for
-                            photography, food, travel and other blogs. I was created by colorlib..</p>
+                      <ul>
+                          <li><h5>Your Email: {{Auth::user()->email }}</h5></li>
+                          <li><h5>Your Address: {{Auth::user()->address }}</h5></li>
+
+                      </ul>
                         <!-- Link -->
                         <hr>
                         <h4 class="widget-title" style="text-align: center">Follow Me</h4>

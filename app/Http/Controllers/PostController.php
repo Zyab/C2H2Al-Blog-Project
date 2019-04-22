@@ -6,6 +6,7 @@ use App\Post;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
@@ -34,10 +35,11 @@ class PostController extends Controller
         }
 
         $posts = Post::where('title', 'LIKE', '%' . $keyword . '%')
-
+              ->orWhere('description','LIKE','%'. $keyword . '%')
+              ->orWhere('content','LIKE','%'. $keyword . '%')
             ->paginate(5);
-
-        return view('post.list', compact('posts'));
+        $totalPost = count($posts);
+        return view('post.list', compact('posts','totalPost'));
     }
 
     public function delete($id)
@@ -60,7 +62,7 @@ class PostController extends Controller
         $post->description = $request->input('description');
         $post->user_id = Auth::user()->id;
         $post->save();
+        Session::flash('success'.'Tạo mới bài viết thành công');
         return redirect()->route('home');
-
     }
 }

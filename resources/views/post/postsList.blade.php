@@ -8,6 +8,7 @@
                     <i class="fa fa-check" aria-hidden="true"></i>{{ Session::get('success') }}
                 </p>
             @endif
+
         </div>
         <table class="table table-striped">
             <thead>
@@ -15,6 +16,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
+                {{--                <th scope="col">Content</th>--}}
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
                 <th scope="col"></th>
@@ -31,6 +33,7 @@
                         <th scope="row">{{ ++$key }}</th>
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->description }}</td>
+                        {{--                        <td>{!! $post->content  !!}</td>--}}
                         <td><img src="{{asset("storage/$post->image")}}" alt="" width="300px" height="300px"></td>
                         <td>
                             <a class="btn btn-success" href="#">Edit</a>

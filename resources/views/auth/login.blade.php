@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <div class="card">
                     @if(session('successMsg'))
                         <div class="alert alert-success" role="alert">
@@ -21,30 +21,17 @@
                             <div class="md-form" style="padding-top: 15px">
                                 <label for="email">{{ __('EMAIL') }}</label>
                                 <input id="email" type="email"
-                                       class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
-                                       value="{{ old('email') }}" placeholder="Enter Your Email" required autofocus>
-                                <div class="col-md-6">
-                                    @if ($errors->has('name'))
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
+                                       class="form-control" name="email"
+                                       value="{{ old('email') }}" placeholder="Enter Your Email" >
+                                <p class="help text-danger">{{ $errors->first('email') }}</p>
                             </div>
 
                             <div class="md-form" style="padding-top: 15px">
                                 <label for="password">{{ __('PASSWORD') }}</label>
                                 <input id="password" type="password"
-                                       class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                       name="password" placeholder="Enter Your Password"
-                                       required>
-                                <div class="col-md-6">
-                                    @if ($errors->has('password'))
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
+                                       class="form-control"
+                                       name="password" placeholder="Enter Your Password">
+                                <p class="help text-danger">{{ $errors->first('password') }}</p>
                             </div>
                             <div class="d-flex justify-content-around" style="padding-top: 15px">
                                 <div>
