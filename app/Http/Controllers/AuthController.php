@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegisterRequest;
 use App\Post;
 use App\User;
 use Illuminate\Http\Request;
@@ -29,7 +30,7 @@ class AuthController extends Controller
 			return $this->respondWithToken($token);
 		}
 
-		return response()->json(['error' => 'Invalid Login Details'], 401);
+		return response()->json(['error' => 'Sai tên tài khoản hoặc mật khẩu'], 401);
 	}
 
 	/**
@@ -90,7 +91,7 @@ class AuthController extends Controller
 		return Auth::guard('api');
 	}
 
-	public function register(Request $request)
+	public function register(RegisterRequest $request)
 	{
 		$user = User::create($request->all());
 		return $this->login($request);
@@ -135,7 +136,7 @@ class AuthController extends Controller
 		$user = $this->guard()->user();
 		$post = Post::findOrFail($id);
 		$post->delete();
-		return response()->json('Delete Successfully', $post);
+		return response()->json('Delete successfully');
 	}
 
 }
