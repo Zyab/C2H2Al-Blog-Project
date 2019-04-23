@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+
+
+
+
     public function getAll()
     {
         $users = User::all();
@@ -43,7 +47,6 @@ class UserController extends Controller
         return response()->json($user);
     }
     public function update(Request $request, $id) {
-//        dd($request);
         $user = User::findOrFail($id);
         $user->name = $request->input('name');
         $user->email = $request->input('email');
@@ -58,4 +61,5 @@ class UserController extends Controller
         $user->save();
         return redirect()->route('home');
     }
+
 }
