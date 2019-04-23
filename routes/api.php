@@ -30,11 +30,11 @@ use Illuminate\Support\Facades\Route;
 //    Route::delete('/destroy/{postsId}', 'PostApiController@destroy')->name('posts.destroy');
 //});
 
-	Route::post('login', 'AuthController@login');
-	Route::post('logout', 'AuthController@logout');
-	Route::post('refresh', 'AuthController@refresh');
-	Route::middleware('jwt.auth')->get('me', 'AuthController@me');
-	Route::post('register','AuthController@register');
+Route::post('login', 'AuthController@login');
+Route::post('logout', 'AuthController@logout');
+Route::post('refresh', 'AuthController@refresh');
+Route::middleware('jwt.auth')->get('me', 'AuthController@me');
+Route::post('register', 'AuthController@register');
 
 //Route::post('update/{id}', 'AuthController@update');
 
@@ -43,3 +43,6 @@ Route::middleware('jwt.auth')->post('create-blog', 'AuthController@createBlog');
 Route::middleware('jwt.auth')->post('upload-image', 'AuthController@uploadImage');
 Route::middleware('jwt.auth')->get('show-blogs', 'AuthController@showBlogs');
 Route::middleware('jwt.auth')->delete('delete-blog/{id}', 'AuthController@deleteBlog');
+Route::middleware('jwt.auth')->get('blog-detail/{id}', 'AuthController@showBlogDetail');
+Route::middleware('jwt.auth')->post('blog-update/{id}', 'AuthController@updateBlog');
+

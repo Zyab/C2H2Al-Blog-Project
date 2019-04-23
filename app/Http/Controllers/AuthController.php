@@ -138,5 +138,25 @@ class AuthController extends Controller
 		$post->delete();
 		return response()->json('Delete successfully');
 	}
+	public function showBlogDetail($id) {
+		$user = $this->guard()->user();
+		$post = Post::findOrFail($id);
+		return $post;
+	}
+	public function updateBlog(Request $request, $id) {
+		$user = $this->guard()->user();
+		$post = Post::findOrFail($id);
+		$post->title = $request->title;
+		$post->description = $request->description;
+		$post->content = $request->content;
+		$post->user_id = $user->id;
+		if ($request->image) {
+			$image = $request->image;
+			$path = Storage::disk('public')->put('image', $image);
+			$post->image = $path;
+		}
+		$post->save();
+		return response()->json($post);
+	}
 
 }
