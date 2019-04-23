@@ -27,7 +27,6 @@ class PostController extends Controller
     }
     public function search(Request $request){
         $keyword = $request->input('keyword');
-
         if (!$keyword) {
 
             return redirect()->route('post.list');

@@ -6,7 +6,7 @@
                 <div class="card">
                     <h5 class="card-header info-color white-text text-center py-4"
                         style="background: #2176bd!important ; color: white">
-                        <strong>EDIT PROFILE</strong>
+                        <strong>EDIT POSTS</strong>
                     </h5>
 
                     <div class="card-body px-lg-5 pt-0">
