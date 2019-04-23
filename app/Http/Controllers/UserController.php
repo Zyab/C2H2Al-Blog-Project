@@ -37,7 +37,7 @@ class UserController extends Controller
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->email_verified_at = $request->input('email_verified_at');
-        $user->age = $request->input('age');
+        $user->dob = $request->input('dob');
         $user->address = $request->input('address');
         $user->phone = $request->input('phone');
         $user->password = $request->input('password');
@@ -54,7 +54,7 @@ class UserController extends Controller
             $path = $image->store('images', 'public');
             $user->image = $path;
         }
-        $user->age = $request->input('age');
+        $user->dob = $request->input('dob');
         $user->address = $request->input('address');
         $user->phone = $request->input('phone');
         $user->save();
