@@ -11,6 +11,6 @@
         <br>
         <p>{!! $post->content !!}</p>
     </div>
-
+    <a class="btn btn-primary" href="{{route('export-pdf',$post->id)}}">EXPORT PDF</a>
 </div>
 @endsection

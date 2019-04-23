@@ -118,6 +118,24 @@
                                     </div>
                                     </div>
                                 </div>
+                                <div class="form-group row justify-content-lg-start" style="padding-top: 15px">
+                                    <label for="inputPassword3MD" class="col-sm-4 col-form-label">Birthday</label>
+                                    <div class="col-sm-8">
+                                        <div class="md-form mt-0">
+                                            <input  type="date"
+                                                   class="form-control"
+                                                   name="dob" value="{{ Auth::user()->dob }}"
+                                                   placeholder="Enter Your birthday">
+                                            <div class="col-md-6">
+                                                @if ($errors->has('dob'))
+                                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('dob') }}</strong>
+                                    </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                     <button type="submit"
                                             class="btn btn-outline-info tn-rounded btn-block my-4 waves-effect z-debpth-0">
                                         {{ 'EDIT' }}
