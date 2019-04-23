@@ -5,13 +5,22 @@
             <div class="col-md-7">
                 <div class="card">
                     <h5 class="card-header info-color white-text text-center py-4"
-                        style="background: #009688!important ; color: white">
+                        style="background: #2176bd!important ; color: white">
                         <strong>EDIT PROFILE</strong>
                     </h5>
 
                     <div class="card-body px-lg-5 pt-0">
                         <form method="POST" action="{{ route('user.update', Auth::user()->id) }}" class="text-center"
                               enctype="multipart/form-data">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             @csrf
                             <div class="form-group row " style="padding-top: 15px">
                                 <!-- Material input -->
@@ -19,10 +28,9 @@
                                 <div class="col-sm-8">
                                     <div class="md-form mt-0">
                                         <input id="name" type="text"
-                                               class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                               class="form-control"
                                                name="name" value="{{ Auth::user()->name }}"
-                                               placeholder="Enter Your Name"
-                                               required autofocus>
+                                               placeholder="Enter Your Name">
                                         <div class="col-md-6">
                                             @if ($errors->has('name'))
                                                 <span class="invalid-feedback" role="alert">
@@ -39,10 +47,9 @@
                                 <div class="col-sm-8">
                                     <div class="md-form mt-0">
                                         <input id="email" type="text"
-                                               class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                               class="form-control"
                                                name="email" value="{{ Auth::user()->email }}"
-                                               placeholder="Enter Your New Email"
-                                               required autofocus>
+                                               placeholder="Enter Your New Email">
                                         <div class="col-md-6">
                                             @if ($errors->has('email'))
                                                 <span class="invalid-feedback" role="alert">
@@ -58,7 +65,7 @@
                                     <div class="col-sm-8">
                                         <div class="md-form mt-0">
                                             <input id="image" type="file"
-                                                   class="form-control{{ $errors->has('image') ? ' is-invalid' : '' }}"
+                                                   class="form-control"
                                                    name="image" value="{{ Auth::user()->image }}"
                                                    placeholder="Enter Your Avatar">
                                             <div class="col-md-6">
@@ -79,7 +86,7 @@
                                     <div class="col-sm-8">
                                         <div class="md-form mt-0">
                                             <input id="address" type="text"
-                                                   class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}"
+                                                   class="form-control"
                                                    name="address" value="{{ Auth::user()->address }}"
                                                    placeholder="Enter Your Address">
                                             <div class="col-md-6">
@@ -98,7 +105,7 @@
                                     <div class="col-sm-8">
                                         <div class="md-form mt-0">
                                         <input id="phone" type="text"
-                                               class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}"
+                                               class="form-control"
                                                name="phone" value="{{ Auth::user()->phone }}"
                                                placeholder="Enter Your Number Phone">
                                         <div class="col-md-6">
