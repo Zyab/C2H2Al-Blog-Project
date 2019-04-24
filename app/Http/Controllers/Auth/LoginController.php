@@ -39,6 +39,9 @@ class LoginController extends Controller
         $request->validate([
             $this->username() => 'required|string',
             'password' => ['required', 'string', 'min:6'],
+        ],[
+            'password.required' => 'Password phai co nhe',
+            'password.min' => 'Password nhieu hon 6 ki tu'
         ]);
     }
     public function __construct()

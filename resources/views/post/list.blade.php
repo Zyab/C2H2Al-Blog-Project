@@ -34,6 +34,7 @@
                             <p class="card-text">{{ $post->description }}</p>
                             <!-- Link -->
                         </div>
+
                     </div>
                 </div>
             @endforeach
