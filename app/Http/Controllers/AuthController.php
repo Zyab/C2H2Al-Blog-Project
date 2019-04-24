@@ -116,7 +116,11 @@ class AuthController extends Controller
 		$post = new Post();
 		$post->title = $request->title;
 		$post->description = $request->description;
+<<<<<<< HEAD
 		$post->content = $request->contents;
+=======
+//		$post->content = $request->content;
+>>>>>>> 8bd9c4b97a4af4093b830400dc0c2ffc2524d85e
 		$post->user_id = $user->id;
 		if ($request->image) {
 			$image = $request->image;
@@ -148,7 +152,11 @@ class AuthController extends Controller
 		$post = Post::findOrFail($id);
 		$post->title = $request->title;
 		$post->description = $request->description;
+<<<<<<< HEAD
 		$post->content = $request->contents;
+=======
+//		$post->content = $request->content;
+>>>>>>> 8bd9c4b97a4af4093b830400dc0c2ffc2524d85e
 		$post->user_id = $user->id;
 		if ($request->image) {
 			$image = $request->image;

@@ -33,6 +33,7 @@ class UserController extends Controller
         }
     }
     public function store(Request $request) {
+        dd($request->all());
         $user = new User();
         $user->name = $request->input('name');
         $user->email = $request->input('email');

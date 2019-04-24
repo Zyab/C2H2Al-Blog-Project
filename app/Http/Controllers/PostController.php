@@ -10,14 +10,16 @@ use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
-    public function create(){
+    public function create()
+    {
         return view('post.create');
     }
 
-    public function getAllPost(){
-        $user = User::all();
+    public function getAllPost()
+    {
+
         $posts = Auth::user()->posts;
-            return view('post.postsList', compact('posts','user'));
+        return view('post.postsList', compact('posts'));
     }
 
     public function show($id)
@@ -25,17 +27,32 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         return view('post.show', compact('post'));
     }
-    public function search(Request $request){
+
+    public function search(Request $request, $id)
+    {
         $keyword = $request->input('keyword');
         if (!$keyword) {
 
             return redirect()->route('post.list');
 
         }
+//        $user = User::findOrFail($id);
 
-        $posts = Post::where('title', 'LIKE', '%' . $keyword . '%')
-              ->orWhere('description','LIKE','%'. $keyword . '%')
-              ->orWhere('content','LIKE','%'. $keyword . '%')
+//        $posts = $user->posts;
+
+//        $posts = Post::where('user_id', Auth::user()->id)
+//            ->where('title', 'LIKE', '%' . $keyword . '%')
+//            ->orWhere('description', 'LIKE', '%' . $keyword . '%')->get()
+//            ->where('user_id', Auth::user()->id);
+////            ->orWhere('content', 'LIKE', '%' . $keyword . '%')
+////            ->paginate(5);
+
+        $posts = Post::where('user_id', Auth::user()->id)
+            ->where(function ($query) use ($keyword) {
+                $query->where('title', 'LIKE', '%' . $keyword . '%')
+                    ->orWhere('description', 'LIKE', '%' . $keyword . '%')
+                    ->orWhere('content', 'LIKE', '%' . $keyword . '%');
+            })
             ->paginate(5);
         $totalPost = count($posts);
         return view('post.list', compact('posts','totalPost'));
@@ -48,8 +65,9 @@ class PostController extends Controller
         return redirect()->route('post.list', compact('post'));
     }
 
-    public function store(Request $request){
-//        dd($request);
+    public function store(Request $request)
+    {
+
         $post = new Post();
         $post->title = $request->input('title');
         $post->content = $request->input('editor1');
@@ -61,14 +79,18 @@ class PostController extends Controller
         $post->description = $request->input('description');
         $post->user_id = Auth::user()->id;
         $post->save();
-        Session::flash('success'.'Tạo mới bài viết thành công');
+        Session::flash('success' . 'Tạo mới bài viết thành công');
         return redirect()->route('home');
     }
-    public function edit($id){
+
+    public function edit($id)
+    {
         $post = Post::findOrFail($id);
-        return view('post.edit',compact('post'));
+        return view('post.edit', compact('post'));
     }
-    public function update(Request $request, $id){
+
+    public function update(Request $request, $id)
+    {
 
         $post = Post::findOrFail($id);
         $post->title = $request->title;
@@ -81,7 +103,7 @@ class PostController extends Controller
             $post->image = $path;
         }
         $post->save();
-        Session::flash('success','Cap nhat bai viet thanh cong');
+        Session::flash('success', 'Cap nhat bai viet thanh cong');
         return redirect()->route('post.list');
     }
 }

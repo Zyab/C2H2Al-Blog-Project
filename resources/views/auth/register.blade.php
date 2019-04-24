@@ -30,7 +30,7 @@
                         <div class="md-form" style="padding-top: 15px">
                             <label for="materialLoginFormEmail">{{ __('Birthday') }}</label>
                             <input type="date" class="form-control"
-                                   name="dob" value="{{ old('dob') }}" placeholder="Enter Your Birthday">
+                                   name="dob"  placeholder="Enter Your Birthday">
                             <p class="help text-danger">{{ $errors->first('dob') }}</p>
                         </div>
 
