@@ -13,8 +13,8 @@ Title: <p>{!! $posts->title !!}</p>
 Content: <p>{!! $posts->content !!}</p>
 <br>
 Image: {{$posts->image}}
+
 </body>
 </html>
 
 {{--Image: <img src="{{asset("storage/$posts->image")}}" alt="" width="300px" height="300px">--}}
-
