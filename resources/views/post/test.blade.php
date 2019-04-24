@@ -24,9 +24,13 @@ Title: <p>{!! $posts->title !!}</p>
 <br>
 Content: <p>{!! $posts->content !!}</p>
 <br>
+<<<<<<< HEAD
 {{--Image: <img src="{{asset("storage/$posts->image")}}" alt="" width="300px" height="300px">--}}
+=======
+Image: {{$posts->image}}
+
+>>>>>>> 8d51061691160271f334bcd90e4215263fb03e18
 </body>
 </html>
 
 {{--Image: <img src="{{asset("storage/$posts->image")}}" alt="" width="300px" height="300px">--}}
-
