@@ -20,14 +20,16 @@ class ExampleTest extends TestCase
     }
     public function testAPITest()
     {
-        $response = $this->get('http://127.0.0.1:8000/api/users/list');
+        $response = $this->get('http://127.0.0.1:8000/users/list');
 
         $response->assertStatus(200);
     }
     public function testAPITest2()
     {
-        $response = $this->get('http://127.0.0.1:8000/api/users/show/{id}');
+        $response = $this->get('http://127.0.0.1:8000/users/show/{id}');
 
         $response->assertStatus(200);
     }
+
+
 }
