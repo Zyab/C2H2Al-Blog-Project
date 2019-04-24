@@ -41,4 +41,3 @@ Route::group(['prefix'=> 'user'], function (){
 
 Route::get('/change-password', 'Auth\ChangePasswordController@index')->name('password.change');
 Route::post('/change-password', 'Auth\ChangePasswordController@changePassword')->name('password.update');
-
