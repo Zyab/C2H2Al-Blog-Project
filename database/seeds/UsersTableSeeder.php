@@ -16,13 +16,13 @@ class UsersTableSeeder extends Seeder
         $user = new User();
         $user->name = 'admin1234';
         $user->email = 'admin@gmail.com';
-        $user->password = Hash::make('123456');
+        $user->password = '123456';
         $user->save();
 
         $user = new User();
         $user->name = 'admin222';
         $user->email = 'admin123@gmail.com';
-        $user->password = Hash::make('123456');
+        $user->password = '123456';
         $user->save();
     }
 }
