@@ -7,16 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        @font-face {
-            font-family: cedarville-font-family;
-            src: url("{{ asset('fonts/Cedarville-Cursive.ttf') }}");
-            font-weight: normal;
-        }
-        @font-face {
-            font-family: cedarville-font-family;
-            src: url("{{ asset('fonts/Cadarville-Cursive.ttf') }}");
-            font-weight: bold;
-        }
+     body {
+         font-family: DejaVu Sans, "Times New Roman";
+     }
     </style>
 </head>
 <body>
