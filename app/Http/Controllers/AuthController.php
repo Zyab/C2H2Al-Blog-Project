@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RegisterRequest;
 use App\Post;
 use App\User;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -116,7 +117,7 @@ class AuthController extends Controller
 		$post = new Post();
 		$post->title = $request->title;
 		$post->description = $request->description;
-//		$post->content = $request->content;
+		$post->content = $request->contents;
 		$post->user_id = $user->id;
 		if ($request->image) {
 			$image = $request->image;
@@ -132,23 +133,29 @@ class AuthController extends Controller
 		$user = $this->guard()->user();
 		return $user->posts;
 	}
-	public function deleteBlog($id) {
+
+	public function deleteBlog($id)
+	{
 		$user = $this->guard()->user();
 		$post = Post::findOrFail($id);
 		$post->delete();
 		return response()->json('Delete successfully');
 	}
-	public function showBlogDetail($id) {
+
+	public function showBlogDetail($id)
+	{
 		$user = $this->guard()->user();
 		$post = Post::findOrFail($id);
 		return $post;
 	}
-	public function updateBlog(Request $request, $id) {
+
+	public function updateBlog(Request $request, $id)
+	{
 		$user = $this->guard()->user();
 		$post = Post::findOrFail($id);
 		$post->title = $request->title;
 		$post->description = $request->description;
-//		$post->content = $request->content;
+		$post->content = $request->contents;
 		$post->user_id = $user->id;
 		if ($request->image) {
 			$image = $request->image;
@@ -157,6 +164,26 @@ class AuthController extends Controller
 		}
 		$post->save();
 		return response()->json($post);
+	}
+
+	public function search(Request $request)
+	{
+		$user = $this->guard()->user();
+		$keyword = $request->keyWords;
+
+		if (!$keyword) {
+
+			return response()->json('Khong co ket qua');
+
+		}
+
+		$posts = Post::where('user_id', $user->id)
+			->where(function ($query) use ($keyword) {
+				$query->where('title', 'LIKE', '%' . $keyword . '%')
+					->orWhere('description', 'LIKE', '%' . $keyword . '%')
+					->orWhere('content', 'LIKE', '%' . $keyword . '%');
+			})->get();
+		return $posts;
 	}
 
 }
