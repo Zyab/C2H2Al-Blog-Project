@@ -3,7 +3,7 @@
 
     @if(isset($totalPost))
         <h3 class="text-muted">
-            {{'Tìm thấy' . ' ' . $totalPost . ' '. 'bài viết'}}
+            {{'Tìm thấy' . ' ' . $totalPost . ' '. 'bài viết ' . 'với từ khóa: '. $keyword. ' trên tổng số ' . $postTotal . ' bài viết của bạn'}}
         </h3>
     @endif
     <div class="row">
