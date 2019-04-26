@@ -16,8 +16,8 @@
                 <th scope="col">ID</th>
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
-                {{--                <th scope="col">Content</th>--}}
                 <th scope="col">Image</th>
+                <th scope="col">Video</th>
                 <th scope="col">Action</th>
                 <th scope="col"></th>
             </tr>
@@ -35,6 +35,7 @@
                         <td>{{ $post->description }}</td>
                         {{--                        <td>{!! $post->content  !!}</td>--}}
                         <td><img src="{{asset("storage/$post->image")}}" alt="" width="300px" height="300px"></td>
+                        <td>{!! $post->video_html !!}</td>
                         <td>
                             <a class="btn btn-success" href="{{route('post.edit', $post->id)}}">Edit</a>
                         </td>

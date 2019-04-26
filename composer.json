@@ -10,9 +10,11 @@
     "require": {
         "php": "^7.1.3",
         "barryvdh/laravel-dompdf": "^0.8.4",
+        "cohensive/embed": "5.5.*",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
+        "merujan99/laravel-video-embed": "dev-master",
         "tymon/jwt-auth": "^1.0.0-rc.2"
     },
     "require-dev": {

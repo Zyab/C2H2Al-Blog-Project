@@ -54,7 +54,16 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="form-group row " style="padding-top: 15px">
+                                <label for="inputPassword3MD" class="col-sm-4 col-form-label"> VIdeo</label>
+                                <div class="col-sm-8">
+                                    <div class="md-form mt-0">
+                                        <input type="text"
+                                               class="form-control"
+                                               name="video" >
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-sm-8 offset-4">
                                 <button type="submit"
                                         class="btn btn-outline-info tn-rounded btn-block my-6 waves-effect z-debpth-0">

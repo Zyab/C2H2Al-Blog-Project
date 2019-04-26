@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
+
 class PostController extends Controller
 {
     public function create()
@@ -76,6 +77,7 @@ class PostController extends Controller
             $path = $image->store('images', 'public');
             $post->image = $path;
         }
+        $post->video = $request->input('video');
         $post->description = $request->input('description');
         $post->user_id = Auth::user()->id;
         $post->save();
@@ -97,11 +99,12 @@ class PostController extends Controller
         $post->description = $request->description;
         $post->content = $request->editor1;
         if ($request->hasFile('image')) {
-            unlink(public_path() . '/storage/' . $post->image);
+//            unlink(public_path() . '/storage/' . $post->image);
             $avatar = $request->image;
             $path = $avatar->store('avatar', 'public');
             $post->image = $path;
         }
+        $post->video = $request->input('video');
         $post->save();
         Session::flash('success', 'Cap nhat bai viet thanh cong');
         return redirect()->route('post.list');
