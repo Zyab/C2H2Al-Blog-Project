@@ -2,7 +2,9 @@
 
 namespace App;
 
+use Cohensive\Embed\Facades\Embed;
 use Illuminate\Database\Eloquent\Model;
+
 
 class Post extends Model
 {
@@ -15,4 +17,14 @@ class Post extends Model
 	protected $fillable = [
 		'title', 'content', 'image', 'description', 'user_id'
 	];
+    public function getVideoHtmlAttribute()
+    {
+        $embed = Embed::make($this->video)->parseUrl();
+
+        if (!$embed)
+            return '';
+
+        $embed->setAttribute(['width' => 600]);
+        return $embed->getHtml();
+    }
 }

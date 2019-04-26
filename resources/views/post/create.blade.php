@@ -27,6 +27,10 @@
                 <label for="exampleFormControlFile1">Image</label>
                 <input type="file" name="image" class="form-control-file">
             </div>
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Video_URL</label>
+                <input type="text" name="video" class="form-control-file">
+            </div>
 
             <button type="submit" class="btn btn-primary">Create</button>
             <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Cancel</button>

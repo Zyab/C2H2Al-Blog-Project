@@ -3,8 +3,8 @@
 
     @if(isset($totalPost))
         <h3 class="text-muted">
-                      {{'Tìm thấy' . ' ' . $totalPost . ' '. 'bài viết'}}
-                  </h3>
+            {{'Tìm thấy' . ' ' . $totalPost . ' '. 'bài viết'}}
+        </h3>
     @endif
     <div class="row">
         @if(count($posts)=== 0)
@@ -32,7 +32,8 @@
                             <hr>
                             <!-- Text -->
                             <p class="card-text">{{ $post->description }}</p>
-                            <!-- Link -->
+                            {!! $post->video_html !!}
+
                         </div>
 
                     </div>

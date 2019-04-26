@@ -25,7 +25,7 @@ class ChangePasswordController extends Controller
         $hashedPassword = Auth::user()->password;
         if (Hash::check($request->oldpassword, $hashedPassword)) {
             $user = User::findOrFail(Auth::id());
-            $user->password = Hash::make($request->password);
+            $user->password = $request->password;
             $user->save();
             Auth::logout();
             return redirect()->route('login')->with('successMsg', 'Password is changed successfully!');
