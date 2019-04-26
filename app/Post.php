@@ -24,7 +24,7 @@ class Post extends Model
         if (!$embed)
             return '';
 
-        $embed->setAttribute(['width' => 600]);
+        $embed->setAttribute(['width' => 500]);
         return $embed->getHtml();
     }
 }
