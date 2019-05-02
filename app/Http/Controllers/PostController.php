@@ -31,6 +31,7 @@ class PostController extends Controller
 
     public function search(Request $request, $id)
     {
+        $user = User::findOrFail($id);
         $keyword = $request->input('keyword');
         if (!$keyword) {
 
@@ -47,7 +48,7 @@ class PostController extends Controller
 //            ->where('user_id', Auth::user()->id);
 ////            ->orWhere('content', 'LIKE', '%' . $keyword . '%')
 ////            ->paginate(5);
-
+        $post = $user->posts;
         $posts = Post::where('user_id', Auth::user()->id)
             ->where(function ($query) use ($keyword) {
                 $query->where('title', 'LIKE', '%' . $keyword . '%')
@@ -56,7 +57,8 @@ class PostController extends Controller
             })
             ->paginate(5);
         $totalPost = count($posts);
-        return view('post.list', compact('posts','totalPost'));
+        $postTotal = count($post);
+        return view('post.list', compact('posts','totalPost', 'keyword','postTotal'));
     }
 
     public function delete($id)
