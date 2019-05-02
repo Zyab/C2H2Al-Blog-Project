@@ -2,10 +2,10 @@
 <div class="row justify-content-center">
     <div class="col-md-10">
         <div class="row">
-            <div class="col-md-10" style="margin-bottom: 20px">
+            <div class="col-md-9" style="margin-bottom: 20px">
                 @yield('main')
             </div>
-            <div class="col-md-2" style="margin-bottom: 20px">
+            <div class="col-md-3" style="margin-bottom: 20px">
                 <!-- Card Light -->
                 <div class="card">
                     <!-- Card image -->
