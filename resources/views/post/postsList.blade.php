@@ -20,6 +20,7 @@
                 <th scope="col">Video</th>
                 <th scope="col">Action</th>
                 <th scope="col"></th>
+                <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
@@ -31,11 +32,14 @@
                 @foreach($posts as $key => $post)
                     <tr>
                         <th scope="row">{{ ++$key }}</th>
-                        <td>{{ $post->title }}</td>
-                        <td>{{ $post->description }}</td>
+                        <td><p>{{ $post->title }}</p></td>
+                        <td><p>{{ $post->description }}</p></td>
                         {{--                        <td>{!! $post->content  !!}</td>--}}
-                        <td><img src="{{asset("storage/$post->image")}}" alt="" width="300px" height="300px"></td>
-                        <td>{!! $post->video_html !!}</td>
+                        <td><img src="{{asset("storage/$post->image")}}" alt="" width="100px" height="100px"></td>
+                        <td> <div class="embed-responsive embed-responsive-16by9" style="width:150px;height: 100px; margin:0px 50px 30px 0px;">
+                                {!! Embed::make($post->video)->parseUrl()->getIframe() !!}
+                            </div>
+                        </td>
                         <td>
                             <a class="btn btn-success" href="{{route('post.edit', $post->id)}}">Edit</a>
                         </td>

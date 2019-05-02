@@ -2,21 +2,23 @@
 <div class="row justify-content-center">
     <div class="col-md-10">
         <div class="row">
-            <div class="col-md-9" style="margin-bottom: 20px">
+            <div class="col-md-10" style="margin-bottom: 20px">
                 @yield('main')
             </div>
-            <div class="col-md-3" style="margin-bottom: 20px">
+            <div class="col-md-2" style="margin-bottom: 20px">
                 <!-- Card Light -->
                 <div class="card">
                     <!-- Card image -->
                     <div class="view overlay">
-
+                    <center>
                         <a href="{{ url('/home') }}">
                             <img class="card-img-top"
                                  src="{{asset('storage/'.Auth::user()->image)}}"
-                                 alt="Card image cap">
+                                 alt="Card image cap" style="width: 200px ; height: 200px; border-radius: 50%">
                             <div class="mask rgba-white-slight"></div>
                         </a>
+                    </center>
+
                     </div>
 
                     <!-- Card content -->
@@ -50,8 +52,11 @@
                                         class="fab fa-instagram"></i></a>
                         </p>
                         <hr>
-                        <h5><a href="{{route('post.create')}}" style="color: black; text-align: center"> Thêm mới bài viết</a></h5>
-                        <h5><a href="{{route('post.list')}}" style="color: black; text-align: center"> Danh Sách Bài Viết</a></h5>
+                        <center>
+                            <h5><a href="{{route('post.create')}}" style="color: black; text-align: center"> Thêm mới bài viết</a></h5>
+                            <h5><a href="{{route('post.list')}}" style="color: black; text-align: center"> Danh Sách Bài Viết</a></h5>
+                        </center>
+
                     </div>
                 </div>
 
