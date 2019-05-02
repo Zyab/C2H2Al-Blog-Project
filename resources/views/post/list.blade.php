@@ -6,7 +6,7 @@
             {{'Tìm thấy' . ' ' . $totalPost . ' '. 'bài viết ' . 'với từ khóa: '. $keyword. ' trên tổng số ' . $postTotal . ' bài viết của bạn'}}
         </h3>
     @endif
-    <div class="row">
+    <div class="row" >
         @if(count($posts)=== 0)
             <p class="text-danger">Chưa có bài viết nào</p>
         @else
@@ -18,7 +18,7 @@
                             <a href="{{ route('post.show', $post->id) }}">
                                 <img class="card-img-top"
                                      src="{{asset('storage/'.$post->image)}}"
-                                     alt="Card image cap" style="width: 300px; height: 300px">
+                                     alt="Card image cap" style="width: 100%; height: 300px">
                             </a>
 
                             <a>
