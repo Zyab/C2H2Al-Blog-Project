@@ -26,14 +26,14 @@
                             </a>
                         </div>
                         <div class="card-body">
-                            <a href="{{ route('post.show', $post->id) }}">
+                            <a href="{{ route('post.show', $post->id) }} " style="color: black">
                                 <h4 class="card-title">{{ $post->title }}</h4></b>
                             </a>
                             <hr>
                             <!-- Text -->
                             <p class="card-text">{{ $post->description }}</p>
                             {!! $post->video_html !!}
-                            <h5 class="card-text">Created {{ $post->created_at }} by {{Auth::user()->name}}</h5>
+                            <p class="card-text">Created {{ $post->created_at }} by {{Auth::user()->name}}</p>
 
                         </div>
 

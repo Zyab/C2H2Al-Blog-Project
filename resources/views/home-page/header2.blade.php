@@ -12,10 +12,10 @@
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="background: whitesmoke">
 <div class="row justify-content-center">
     <div class="col-md-12">
-        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color" style="background:#2176bd">
+        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color" style="background:#23272b">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent-333"
