@@ -33,6 +33,7 @@
                             <!-- Text -->
                             <p class="card-text">{{ $post->description }}</p>
                             {!! $post->video_html !!}
+                            <h5 class="card-text">Created {{ $post->created_at }} by {{Auth::user()->name}}</h5>
 
                         </div>
 

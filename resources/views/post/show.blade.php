@@ -10,6 +10,10 @@
              alt="Card image cap" >
         <br>
         <p>{!! $post->content !!}</p>
+
+        <div class="embed-responsive embed-responsive-16by9" style="width:100%;height: 500px; margin:0px 50px 30px 0px;">
+            {!! Embed::make($post->video)->parseUrl()->getIframe() !!}
+        </div>
     </div>
     <a class="btn btn-primary" href="{{route('export-pdf',$post->id)}}">EXPORT PDF</a>
 

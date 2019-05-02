@@ -24,12 +24,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item active" style="margin-top: 5px">
                         <a class="nav-link" href="{{ url('/') }}"> <i class="fas fa-home"></i> Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="margin-top: 5px">
                         <a class="nav-link" href="#">Features</a>
                     </li>
                 </ul>
@@ -45,17 +45,18 @@
                             </li>
                         @endif
                     @else
-                        <li>
+                        <li style="margin-top: 5px">
                             <form class="form-inline my-2 my-lg-0" action="{{route('post.search', Auth::user()->id)}}" method="get">
                                 @csrf
                                 <input class="form-control mr-sm-2" name="keyword" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
                             </form>
                         </li>
                         <li class="nav-item dropdown">
+
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                <img src="{{asset('storage/'.Auth::user()->image)}}" style="width: 35px; height: 35px; border-radius: 50%" alt="mig0"> <span class="caret"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('password.change') }}">Change password</a>
