@@ -18,7 +18,7 @@
 
                             <div class="card-body">
                                 <a href="{{ route('post.show', $post->id) }} " style="color: black">
-                                    <h4 class="card-title">{{ $post->title }}</h4></b>
+                                    <h4 class="card-title">{{ $post->title }}</h4>
                                 </a>
                                 <hr>
                                 <!-- Text -->
@@ -41,7 +41,7 @@
                                     </a>
                                 </div>
                                 <a href="{{ route('post.show', $post->id) }} " style="color: black">
-                                    <h4 class="card-title">{{ $post->title }}</h4></b>
+                                    <h4 class="card-title">{{ $post->title }}</h4>
                                 </a>
                                 <hr>
                                 <!-- Text -->
@@ -58,5 +58,7 @@
                 </div>
             @endforeach
         @endif
+
     </div>
+    {{ $posts->appends(request()->query()) }}
 @endsection
