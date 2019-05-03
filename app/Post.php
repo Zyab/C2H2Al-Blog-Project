@@ -18,6 +18,10 @@ class Post extends Model
     {
         return $this->hasMany('App\Comment');
     }
+    public function reply()
+    {
+        return $this->hasMany('App\Reply');
+    }
 	protected $fillable = [
 		'title', 'content', 'image', 'description', 'user_id'
 	];
