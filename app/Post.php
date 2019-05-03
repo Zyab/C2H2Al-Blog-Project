@@ -14,6 +14,10 @@ class Post extends Model
     public function tag(){
         return $this->belongsToMany('App\Tag');
     }
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 	protected $fillable = [
 		'title', 'content', 'image', 'description', 'user_id'
 	];
