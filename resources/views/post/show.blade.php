@@ -35,7 +35,7 @@
                 <div class="media-content">
                     <div class="form-group">
                         <textarea class="form-control" name="body"></textarea>
-                        <input type="hidden" name="post_id" value="{{ $post->id }}"/>
+                         <input type="hidden" name="post_id" value="{{ $post->id }}"/>
                     </div>
                     <button type="submit" class="btn btn-primary">Gui</button>
                 </div>
@@ -44,48 +44,46 @@
         <hr>
         @foreach($post->comments as $comment)
             <article class="media">
-                <figure class="media-left">
+                <figure class="media-left" style="margin-right: 20px" >
                     <p class="image">
                         <img src="{{asset('storage/'.$comment->user->image)}}"
-                             style="width: 50px; height: 50px; border-radius: 50%" alt="mig0">
+                             style="width: 50px; height: 50px; border-radius: 4px" alt="mig0">
                     </p>
                 </figure>
-                <div class="media-content">
-                    <div class="content">
-                        <p>
-                            <strong>{{$comment->user->name}}</strong>
-                            <br>
-                            {{$comment->body}}
-                            <br>
-                        </p>
+                <div class="card" style="width: 100%;margin-bottom: 20px">
+                    <div class="card-header">
+                        <strong>{{$comment->user->name}}</strong>
                     </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"> {{$comment->body}}</li>
 
+                    </ul>
                 </div>
+
             </article>
 
 
             <div class="col-md-11 offset-1">
                 @foreach($comment->reply as $reply)
                     <article class="media">
-                        <figure class="media-left">
+                        <figure class="media-left" style="margin-right: 20px">
                             <p class="image">
                                 <img src="{{asset('storage/'.$reply->user->image)}}"
-                                     style="width: 50px; height: 50px; border-radius: 50%" alt="mig0">
+                                     style="width: 50px; height: 50px; border-radius: 4px" alt="mig0">
                             </p>
                         </figure>
-                        <div class="media-content">
-                            <div class="content">
-                                <p>
-                                    <strong>{{$reply->user->name}}</strong>
-                                    <br>
-                                    {{$reply->body}}
-                                    <br>
-                                </p>
+                        <div class="card" style="width: 100%;margin-bottom: 20px">
+                            <div class="card-header">
+                                <strong>{{$reply->user->name}}</strong>
                             </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"> {{$reply->body}}</li>
 
+                            </ul>
                         </div>
                     </article>
                 @endforeach
+                    <div class="col-md-11 offset-1">
                 <h4>Viết phan hoi...<span class="glyphicon glyphicon-pencil"></span></h4>
                 <form role="form" method="post" action="{{route('reply.replyComment',$comment->id)}}">
                     @csrf
@@ -99,6 +97,7 @@
                         </div>
                     </div>
                 </form>
+                    </div>
             </div>
         @endforeach
 
