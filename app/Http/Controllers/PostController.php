@@ -38,16 +38,6 @@ class PostController extends Controller
             return redirect()->route('post.list');
 
         }
-//        $user = User::findOrFail($id);
-
-//        $posts = $user->posts;
-
-//        $posts = Post::where('user_id', Auth::user()->id)
-//            ->where('title', 'LIKE', '%' . $keyword . '%')
-//            ->orWhere('description', 'LIKE', '%' . $keyword . '%')->get()
-//            ->where('user_id', Auth::user()->id);
-////            ->orWhere('content', 'LIKE', '%' . $keyword . '%')
-////            ->paginate(5);
         $post = $user->posts;
         $posts = Post::where('user_id', Auth::user()->id)
             ->where(function ($query) use ($keyword) {
