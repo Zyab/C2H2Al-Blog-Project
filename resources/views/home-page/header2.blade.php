@@ -46,18 +46,28 @@
                         @endif
                     @else
                         <li style="margin-top: 5px">
-                            <form class="form-inline my-2 my-lg-0" action="{{route('post.search', Auth::user()->id)}}" method="get">
+                            <form class="form-inline my-2 my-lg-0" action="{{route('post.search', Auth::user()->id)}}"
+                                  method="get">
                                 @csrf
-                                <input class="form-control mr-sm-2" name="keyword" type="search" placeholder="Search" aria-label="Search">
+                                <input class="form-control mr-sm-2" name="keyword" type="search" placeholder="Search"
+                                       aria-label="Search">
                                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
                             </form>
                         </li>
                         <li class="nav-item dropdown">
-
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <img src="{{asset('storage/'.Auth::user()->image)}}" style="width: 35px; height: 35px; border-radius: 50%" alt="mig0"> <span class="caret"></span>
-                            </a>
+                            @if(isset(Auth::user()->image))
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <img src="{{asset('storage/'.Auth::user()->image)}}"
+                                         style="width: 35px; height: 35px; border-radius: 50%" alt="mig0"> <span
+                                            class="caret"></span>
+                                </a>
+                            @else
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{Auth::user()->name}}<span class="caret"></span>
+                                </a>
+                            @endif
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('password.change') }}">Change password</a>
                                 <a class="dropdown-item" href="{{ route('user.edit', Auth::user()->id) }}">Edit
