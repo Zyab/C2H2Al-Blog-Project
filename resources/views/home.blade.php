@@ -1,5 +1,5 @@
 @include('home-page.header2')
-<div class="row justify-content-center" >
+<div class="row justify-content-center">
     <div class="col-md-10">
         <div class="row">
             <div class="col-md-9" style="margin-bottom: 20px">
@@ -9,30 +9,36 @@
                 <!-- Card Light -->
                 <div class="card">
                     <!-- Card image -->
-                    <div class="view overlay">
-                    <center>
-                        <a href="{{ url('/home') }}">
-                            <img class="card-img-top"
-                                 src="{{asset('storage/'.Auth::user()->image)}}"
-                                 alt="Card image cap" style="width: 200px ; height: 200px; border-radius: 50%">
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </center>
+                    @if (isset(Auth::user()->image))
+                        <div class="view overlay">
 
-                    </div>
+                            <center>
+                                <a href="{{ url('/home') }}">
+                                    <img class="card-img-top"
+                                         src="{{asset('storage/'.Auth::user()->image)}}"
+                                         alt="Card image cap" style="width: 200px ; height: 200px; border-radius: 50%">
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </center>
 
-                    <!-- Card content -->
+                        </div>
+                @else
+                @endif
+
+                <!-- Card content -->
                     <div class="card-body" style="text-align: left">
                         <!-- Social shares button -->
                         <!-- Title -->
+                        <a href="{{ url('/home') }}" style="color: black">
                         <h4 class="card-title" style="text-align: center">{{ Auth::user()->name }}</h4>
+                        </a>
                         <hr>
                         <!-- Text -->
-                      <ul>
-                          <li><h5>Your Email: {{Auth::user()->email }}</h5></li>
-                          <li><h5>Your Address: {{Auth::user()->address }}</h5></li>
+                        <ul>
+                            <li><h5>Your Email: {{Auth::user()->email }}</h5></li>
+                            <li><h5>Your Address: {{Auth::user()->address }}</h5></li>
 
-                      </ul>
+                        </ul>
                         <!-- Link -->
                         <hr>
                         <h4 class="widget-title" style="text-align: center">Follow Me</h4>
@@ -53,8 +59,10 @@
                         </p>
                         <hr>
                         <center>
-                            <h5><a href="{{route('post.create')}}" style="color: black; text-align: center"> Thêm mới bài viết</a></h5>
-                            <h5><a href="{{route('post.list')}}" style="color: black; text-align: center"> Danh Sách Bài Viết</a></h5>
+                            <h5><a href="{{route('post.create')}}" style="color: black; text-align: center"> Thêm mới
+                                    bài viết</a></h5>
+                            <h5><a href="{{route('post.list')}}" style="color: black; text-align: center"> Danh Sách Bài
+                                    Viết</a></h5>
                         </center>
 
                     </div>
