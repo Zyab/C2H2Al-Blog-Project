@@ -33,6 +33,9 @@ Route::group(['prefix'=> 'post'], function (){
    Route::get('delete/{id}', 'PostController@delete')->name('post.delete');
 
 });
+
+Route::post('comment/{id}/store', 'CommentController@store')->name('comment.store');
+
 Route::group(['prefix'=> 'user'], function (){
     Route::get('edit/{id}', 'UserController@edit')->name('user.edit');
     Route::post('edit/{id}', 'UserController@update')->name('user.update');

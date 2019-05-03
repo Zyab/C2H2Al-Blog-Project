@@ -14,6 +14,10 @@ class Post extends Model
     public function tag(){
         return $this->belongsToMany('App\Tag');
     }
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 	protected $fillable = [
 		'title', 'content', 'image', 'description', 'user_id'
 	];
@@ -24,7 +28,7 @@ class Post extends Model
         if (!$embed)
             return '';
 
-        $embed->setAttribute(['width' => 350]);
+        $embed->setAttribute(['width' => 330]);
 
         return $embed->getHtml();
     }

@@ -36,10 +36,14 @@
                         <td><p>{{ $post->description }}</p></td>
                         {{--                        <td>{!! $post->content  !!}</td>--}}
                         <td><img src="{{asset("storage/$post->image")}}" alt="" width="100px" height="100px"></td>
+                        @if(isset($post->video))
                         <td> <div class="embed-responsive embed-responsive-16by9" style="width:150px;height: 100px; margin:0px 50px 30px 0px;">
                                 {!! Embed::make($post->video)->parseUrl()->getIframe() !!}
                             </div>
                         </td>
+                        @else
+                            <td></td>
+                        @endif
                         <td>
                             <a class="btn btn-success" href="{{route('post.edit', $post->id)}}">Edit</a>
                         </td>
