@@ -59,6 +59,9 @@
 
             </div>
         </article>
+        <div class="reply">
+
+        </div>
     @endforeach
 </div>
 
