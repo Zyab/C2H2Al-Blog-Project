@@ -16,7 +16,7 @@ class ReplyController extends Controller
         $replies->post_id = $request->post_id;
         $replies->comment_id =  $id;
         $replies->save();
-        return redirect()->route('post.show', $id );
+        return redirect()->route('post.show', $request->post_id );
     }
 
 }

@@ -20,10 +20,12 @@
             @endif
         </div>
 
+
         <div class="addthis_inline_share_toolbox"></div>
         <a class="btn btn-primary" href="{{route('export-pdf',$post->id)}}">EXPORT PDF</a>
     </div>
     <hr>
+
 
     <div class="comment">
         <h4>Viết bình luận...<span class="glyphicon glyphicon-pencil"></span></h4>
@@ -87,11 +89,11 @@
                 <h4>Viết phan hoi...<span class="glyphicon glyphicon-pencil"></span></h4>
                 <form role="form" method="post" action="{{route('reply.replyComment',$comment->id)}}">
                     @csrf
+                    <input type="hidden" name="post_id" value="{{$post->id}}"/>
                     <div>
                         <div class="media-content">
                             <div class="form-group">
                                 <textarea class="form-control" name="body"></textarea>
-                                <input type="hidden" name="post_id" value="{{$post->id }}"/>
                             </div>
                             <button type="submit" class="btn btn-primary">Gui</button>
                         </div>
