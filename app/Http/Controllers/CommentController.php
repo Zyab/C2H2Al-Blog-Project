@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
-use App\Post;
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,9 +17,6 @@ class CommentController extends Controller
         $comments->save();
         return redirect()->route('post.show',$id );
     }
-    public function reply(Request $request, $id)
-    {
 
-    }
 
 }
