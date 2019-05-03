@@ -45,7 +45,7 @@
                             </li>
                         @endif
                     @else
-                        <li style="margin-top: 5px">
+                        <li style="margin-top: 2px ; margin-right: 30px">
                             <form class="form-inline my-2 my-lg-0" action="{{route('post.search', Auth::user()->id)}}"
                                   method="get">
                                 @csrf
@@ -54,6 +54,7 @@
                                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
                             </form>
                         </li>
+
                         <li class="nav-item dropdown">
                             @if(isset(Auth::user()->image))
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"

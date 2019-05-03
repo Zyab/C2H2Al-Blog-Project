@@ -20,7 +20,8 @@
     </div>
 
     <div class="addthis_inline_share_toolbox"></div>
-    <a class="btn btn-primary" href="{{route('export-pdf',$post->id)}}">EXPORT PDF</a>
+{{--    <a class="btn btn-primary" href="{{route('export-pdf',$post->id)}}">EXPORT PDF</a>--}}
+    <hr>
 </div>
 <hr>
 

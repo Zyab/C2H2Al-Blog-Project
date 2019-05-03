@@ -29,7 +29,9 @@
                     <div class="card-body" style="text-align: left">
                         <!-- Social shares button -->
                         <!-- Title -->
+                        <a href="{{ url('/home') }}" style="color: black">
                         <h4 class="card-title" style="text-align: center">{{ Auth::user()->name }}</h4>
+                        </a>
                         <hr>
                         <!-- Text -->
                         <ul>
