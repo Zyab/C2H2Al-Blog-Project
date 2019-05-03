@@ -91,7 +91,7 @@
                         <div class="media-content">
                             <div class="form-group">
                                 <textarea class="form-control" name="body"></textarea>
-                                <input type="hidden" name="post_id" value="{{$comment->id }}"/>
+                                <input type="hidden" name="post_id" value="{{$post->id }}"/>
                             </div>
                             <button type="submit" class="btn btn-primary">Gui</button>
                         </div>
