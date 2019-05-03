@@ -21,88 +21,48 @@
 
     <div class="addthis_inline_share_toolbox"></div>
     <a class="btn btn-primary" href="{{route('export-pdf',$post->id)}}">EXPORT PDF</a>
-
-    <div class="comment">
-        <h4>Viết bình luận...<span class="glyphicon glyphicon-pencil"></span></h4>
-        <form role="form" method="post" action="{{route('comment.store', $post->id)}}" >
-            @csrf
-            <div>
-                <div class="media-content">
-                    <div class="form-group">
-                        <textarea class="form-control" name="body"></textarea>
-                        <input type="hidden" name="post_id" value="{{ $post->id }}" />
-                    </div>
-                    <button type="submit" class="btn btn-primary">Gui</button>
-                </div>
-            </div>
-        </form>
-        <hr>
-        @foreach($post->comments as $comment)
-            <article class="media">
-                <figure class="media-left">
-                    <p class="image">
-                        <img src="{{asset('storage/'.$comment->user->image)}}" style="width: 50px; height: 50px; border-radius: 50%" alt="mig0">
-                    </p>
-                </figure>
-                <div class="media-content">
-                    <div class="content">
-                        <p>
-                            <strong>{{$comment->user->name}}</strong>
-                            <br>
-                            {{$comment->body}}
-                            <br>
-                        </p>
-                    </div>
-
-                </div>
-            </article>
-            <div class="reply">
-
-            </div>
-        @endforeach
-    </div>
 </div>
 <hr>
 
-{{--<div class="comment">--}}
-    {{--<h4>Viết bình luận...<span class="glyphicon glyphicon-pencil"></span></h4>--}}
-    {{--<form role="form" method="post" action="{{route('comment.store', $post->id)}}" >--}}
-        {{--@csrf--}}
-        {{--<div>--}}
-            {{--<div class="media-content">--}}
-                {{--<div class="form-group">--}}
-                    {{--<textarea class="form-control" name="body"></textarea>--}}
-                    {{--<input type="hidden" name="post_id" value="{{ $post->id }}" />--}}
-                {{--</div>--}}
-                {{--<button type="submit" class="btn btn-primary">Gui</button>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</form>--}}
-    {{--<hr>--}}
-    {{--@foreach($post->comments as $comment)--}}
-        {{--<article class="media">--}}
-            {{--<figure class="media-left">--}}
-                {{--<p class="image">--}}
-                    {{--<img src="{{asset('storage/'.$comment->user->image)}}" style="width: 50px; height: 50px; border-radius: 50%" alt="mig0">--}}
-                {{--</p>--}}
-            {{--</figure>--}}
-            {{--<div class="media-content">--}}
-                {{--<div class="content">--}}
-                    {{--<p>--}}
-                        {{--<strong>{{$comment->user->name}}</strong>--}}
-                        {{--<br>--}}
-                        {{--{{$comment->body}}--}}
-                        {{--<br>--}}
-                    {{--</p>--}}
-                {{--</div>--}}
+<div class="comment">
+    <h4>Viết bình luận...<span class="glyphicon glyphicon-pencil"></span></h4>
+    <form role="form" method="post" action="{{route('comment.store', $post->id)}}" >
+        @csrf
+        <div>
+            <div class="media-content">
+                <div class="form-group">
+                    <textarea class="form-control" name="body"></textarea>
+                    <input type="hidden" name="post_id" value="{{ $post->id }}" />
+                </div>
+                <button type="submit" class="btn btn-primary">Gui</button>
+            </div>
+        </div>
+    </form>
+    <hr>
+    @foreach($post->comments as $comment)
+        <article class="media">
+            <figure class="media-left">
+                <p class="image">
+                    <img src="{{asset('storage/'.$comment->user->image)}}" style="width: 50px; height: 50px; border-radius: 50%" alt="mig0">
+                </p>
+            </figure>
+            <div class="media-content">
+                <div class="content">
+                    <p>
+                        <strong>{{$comment->user->name}}</strong>
+                        <br>
+                        {{$comment->body}}
+                        <br>
+                    </p>
+                </div>
 
-            {{--</div>--}}
-        {{--</article>--}}
-        {{--<div class="reply">--}}
+            </div>
+        </article>
+        <div class="reply">
 
-        {{--</div>--}}
-    {{--@endforeach--}}
-{{--</div>--}}
+        </div>
+    @endforeach
+</div>
 
 
 @endsection
