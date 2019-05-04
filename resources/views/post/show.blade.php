@@ -2,31 +2,31 @@
 @section('main')
 
     <div class="container" style="background: whitesmoke">
-        <div class="col-md-12">
-            <h3>{{$post->title}}</h3>
-            <hr>
-            <br>
-            @if(isset($post->image))
-                <img class="card-img-top"
-                     src="{{asset('storage/'.$post->image)}}"
-                     alt="Card image cap">
-            @else
-            @endif
-            <br>
-            <p>{!! $post->content !!}</p>
-            @if(isset($post->video))
-                <div class="embed-responsive embed-responsive-16by9"
-                     style="width:100%;height: 500px; margin:0px 50px 30px 0px;">
-                    {!! Embed::make($post->video)->parseUrl()->getIframe() !!}
-                </div>
-            @else
-            @endif
+        <div class="card bg-light mb-4 col-md-12" style="padding: 0px">
+            <div class="card-header">
+                <h3>{{$post->title}}</h3>
+            </div>
+            <div class="card-body">
+                @if(isset($post->image))
+                    <img class="card-img-top"
+                         src="{{asset('storage/'.$post->image)}}"
+                         alt="Card image cap">
+                @else
+                @endif
+                <br>
+                <p>{!! $post->content !!}</p>
+                <p>{!! $post->description !!}</p>
+                @if(isset($post->video))
+                    <div class="embed-responsive embed-responsive-16by9"
+                         style="width:100%;height: 500px; margin:0px 50px 30px 0px;">
+                        {!! Embed::make($post->video)->parseUrl()->getIframe() !!}
+                    </div>
+                @else
+                @endif
+                <div class="addthis_inline_share_toolbox"></div>
+                <a class="btn btn-primary" href="{{route('export-pdf',$post->id)}}">EXPORT PDF</a>
+            </div>
         </div>
-
-
-        <div class="addthis_inline_share_toolbox"></div>
-        <a class="btn btn-primary" href="{{route('export-pdf',$post->id)}}">EXPORT PDF</a>
-        <hr>
     </div>
 
 
@@ -52,10 +52,10 @@
                     <article class="media">
                         <figure class="media-left" style="margin-right: 20px">
                             @if(isset($comment->user->image))
-                            <p class="image">
-                                <img src="{{asset('storage/'.$comment->user->image)}}"
-                                     style="width: 50px; height: 50px; border-radius: 4px" alt="mig0">
-                            </p>
+                                <p class="image">
+                                    <img src="{{asset('storage/'.$comment->user->image)}}"
+                                         style="width: 50px; height: 50px; border-radius: 4px" alt="mig0">
+                                </p>
                             @else
                             @endif
                         </figure>

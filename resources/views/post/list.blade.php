@@ -44,16 +44,15 @@
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-6 "style=" width:100%;height: 100px ;padding-bottom: 50px">
-
+                                <div class="col-md-6">
                                         <a href="{{ route('post.show', $post->id) }}">
-                                            <img class="card-img-top"
+                                            <img class="card-img-top" style="height: 358px; padding: 0px"
                                                  src="{{asset('storage/'.$post->image)}}"
                                                  alt="Card image cap">
                                         </a>
 
                                 </div>
-                                <div class="col-md-6 " >
+                                <div class="col-md-6">
                                     @if(isset($post->video))
                                         <div class="embed-responsive embed-responsive-16by9"
                                              style="width:100%; height: 358px; margin-right: 20px">

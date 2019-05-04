@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page-footer font-small teal pt-4" style="background: #009688; color: white">
+<footer class="page-footer font-small teal pt-4" style="background: black; color: white ; opacity: 0.9">
 
     <!-- Footer Text -->
     <div class="container-fluid text-center text-md-left">
@@ -36,7 +36,7 @@
     <!-- Footer Text -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3" style="background: rgb(45, 120, 108)">© 2018 Copyright:
+    <div class="footer-copyright text-center py-3" style="background: black">© 2018 Copyright:
         <a href="https://mdbootstrap.com/education/bootstrap/" style="color: white"> MDBootstrap.com</a>
     </div>
     <!-- Copyright -->

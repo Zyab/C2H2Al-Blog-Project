@@ -71,3 +71,4 @@
         filebrowserFlashUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
     });
 </script>
+@include('home-page.footer')
