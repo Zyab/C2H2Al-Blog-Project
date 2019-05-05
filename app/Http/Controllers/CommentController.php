@@ -10,6 +10,9 @@ class CommentController extends Controller
 {
     public function store(Request $request, $id)
     {
+        $this->validate($request, [
+            'body' => 'required',
+        ]);
         $comments = new Comment();
         $comments->body = $request->input('body');
         $comments->user_id = Auth::user()->id;

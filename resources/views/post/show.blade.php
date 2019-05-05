@@ -42,8 +42,9 @@
                     <div>
                         <div class="media-content">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="body">
+                                <input type="text" class="form-control" name="body" required>
                                 <input type="hidden" name="post_id" value="{{ $post->id }}"/>
+
                             </div>
                             <button type="submit" class="btn btn-primary">Comment</button>
                         </div>
@@ -96,7 +97,7 @@
                                 </div>
                             </article>
                         @endforeach
-                        <div class="col-md-11 offset-1">
+                        <div class="col-md-11 offset-1 reply">
                             <h5>Reply</h5>
                             <form role="form" method="post" action="{{route('reply.replyComment',$comment->id)}}">
                                 @csrf
@@ -104,7 +105,8 @@
                                 <div>
                                     <div class="media-content">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="body">
+                                            <input type="text" class="form-control" name="body" required>
+{{--                                            <p class="help text-danger">{{ $errors->first('body') }}</p>--}}
                                         </div>
                                         <button type="submit" class="btn btn-primary">Reply</button>
                                     </div>
