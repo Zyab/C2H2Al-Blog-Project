@@ -25,6 +25,8 @@
                 @endif
                 <div class="addthis_inline_share_toolbox"></div>
                 <a class="btn btn-primary" href="{{route('export-pdf',$post->id)}}">EXPORT PDF</a>
+                <button class="btn btn-primary" id="hide" >HIDE COMMENT</button>
+                    <button class="btn btn-primary" id="show" >COMMENT</button>
             </div>
         </div>
     </div>
@@ -33,7 +35,7 @@
     <div class="container">
 
         <div class="col-md-10">
-            <div class="comment">
+            <div class="comment" style="display: none">
                 <h5>Comment</h5>
                 <form role="form" method="post" action="{{route('comment.store', $post->id)}}">
                     @csrf
