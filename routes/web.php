@@ -18,7 +18,6 @@ Route::get('/', function () {
 
 //    $posts = \App\Post::where('status', 1)->get();
     $posts = \App\Post::paginate(6);
-    $users = \App\User::all();
     return view('home-page.index', compact('posts','users'));
 });
 
