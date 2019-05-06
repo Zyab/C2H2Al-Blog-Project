@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home-page.index');
+
+//    $posts = \App\Post::where('status', 1)->get();
+    $posts = \App\Post::paginate(6);
+    return view('home-page.index', compact('posts','users'));
 });
 
 

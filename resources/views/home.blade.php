@@ -55,6 +55,23 @@
                     </div>
 
                 </div>
+                <div class="card bg-light mb-4 col-md-12" style="padding: 0px">
+                    <div class="card-header">
+                        <h3> Bài Viết Gần Đây</h3>
+                    </div>
+                    <div class="card-body">
+
+                            <?php $posts = Auth::user()->posts->take(3);?>
+                            <ul>
+                                @foreach($posts as $key => $post)
+                                    <a href="{{ route('post.show', $post->id) }} " style="color: black">
+                                        <li><h5>{{$post->title}}</h5></li>
+                                    </a>
+                                @endforeach
+                            </ul>
+
+                    </div>
+                </div>
             </div>
             <div class="col-md-9" style="margin-bottom: 20px">
                 @yield('main')
@@ -73,4 +90,4 @@
         filebrowserFlashUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
     });
 </script>
-@include('home-page.footer')
+{{--@include('home-page.footer')--}}
