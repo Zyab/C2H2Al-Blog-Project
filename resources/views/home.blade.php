@@ -2,9 +2,6 @@
 <div class="row justify-content-center">
     <div class="col-md-10">
         <div class="row">
-            <div class="col-md-9" style="margin-bottom: 20px">
-                @yield('main')
-            </div>
             <div class="col-md-3" style="margin-bottom: 20px">
                 <!-- Card Light -->
 
@@ -31,9 +28,11 @@
                         <ul>
                             <li><h5>Your Email: {{Auth::user()->email }}</h5></li>
                             <li><h5>Your Address: {{Auth::user()->address }}</h5></li>
-                            <li><h5><a href="{{route('post.create')}}" style="color: black; text-align: center"> Thêm mới
+                            <li><h5><a href="{{route('post.create')}}" style="color: black; text-align: center"> Thêm
+                                        mới
                                         bài viết</a></h5></li>
-                            <li><h5><a href="{{route('post.list')}}" style="color: black; text-align: center"> Danh Sách Bài
+                            <li><h5><a href="{{route('post.list')}}" style="color: black; text-align: center"> Danh Sách
+                                        Bài
                                         Viết</a></h5></li>
                         </ul>
                         <hr>
@@ -56,6 +55,9 @@
                     </div>
 
                 </div>
+            </div>
+            <div class="col-md-9" style="margin-bottom: 20px">
+                @yield('main')
             </div>
         </div>
     </div>
