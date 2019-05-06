@@ -10,6 +10,7 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 </head>
 
 <body style="background: whitesmoke">
@@ -62,7 +63,7 @@
                                     <img src="{{asset('storage/'.Auth::user()->image)}}"
                                          style="width: 35px; height: 35px; border-radius: 50%" alt="mig0"> <span
                                             class="caret"></span>
-                                </a>
+                                 </a>
                             @else
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -109,6 +110,7 @@
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cbfbf32c5d57a8d"></script>
 <script src="{{asset('js/blog.js')}}"></script>
+
 </html>
 <!--/.Navbar -->
 

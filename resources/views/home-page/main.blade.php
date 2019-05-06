@@ -3,30 +3,27 @@
 
         <div class="row">
             @foreach($posts as $key => $post)
-            <div class="col-lg-4 col-md-6">
-                <div class="card h-100">
-                    <div class="single-post post-style-1">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <div class="single-post post-style-1">
 
-                        <div class="blog-image"><img src="{{asset('storage/'.$post->image)}}"
-                                                     alt="Blog Image"></div>
+                            <div class="blog-image"><img src="{{asset('storage/'.$post->image)}}"
+                                                         alt="Blog Image"></div>
+                            <div class="blog-info">
 
-                        <a class="avatar" href="#"><img src="{{asset('images/icons8-team-355979.jpg')}}"
-                                                        alt="Profile Image"></a>
+                                <h4 class="title"><a href="#"><b>{{$post->title}}</b></a></h4>
+                                <h4 class="title"><a href="#"><b>{{$post->id}}</b></a></h4>
 
-                        <div class="blog-info">
+                                <ul class="post-footer">
+                                    <li><a href="#"><i class="fas fa-heart"></i>57</a></li>
+                                    <li><a href="#"><i class="fas fa-comments"></i>6</a></li>
+                                    <li><a href="#"><i class="fas fa-eye"></i>138</a></li>
+                                </ul>
 
-                            <h4 class="title"><a href="#"><b>{{$post->title}}</b></a></h4>
-
-                            <ul class="post-footer">
-                                <li><a href="#"><i class="fas fa-heart"></i>57</a></li>
-                                <li><a href="#"><i class="fas fa-comments"></i>6</a></li>
-                                <li><a href="#"><i class="fas fa-eye"></i>138</a></li>
-                            </ul>
-
-                        </div><!-- blog-info -->
-                    </div><!-- single-post -->
-                </div><!-- card -->
-            </div><!-- col-lg-4 col-md-6 -->
+                            </div><!-- blog-info -->
+                        </div><!-- single-post -->
+                    </div><!-- card -->
+                </div><!-- col-lg-4 col-md-6 -->
             @endforeach
 
 
