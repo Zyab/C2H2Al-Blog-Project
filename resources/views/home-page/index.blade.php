@@ -10,7 +10,20 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <link rel="stylesheet" href="{{asset('css/hieu.css')}}">
+    <link rel="stylesheet" href="{{asset('css/hieu.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+    <!-- Stylesheets -->
+
+    <link href="{{asset('common-css/bootstrap.css')}}" rel="stylesheet">
+
+    <link href="{{asset('common-css/ionicons.css')}}" rel="stylesheet">
+
+
+    <link href="{{asset('layout-1/css/styles.css')}}" rel="stylesheet">
+
+    <link href="{{asset('layout-1/css/responsive.css')}}" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -49,7 +62,7 @@
     </nav>
     <!-- Navbar -->
     <!-- Full Page Intro -->
-    <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/img%20%2848%29.jpg'); height: 600px;
+    <div class="view" style="background-image: url('http://cdn.jevelin.shufflehound.com/blog1/wp-content/uploads/sites/11/2016/11/Title_2.jpg'); height: 600px;
      background-repeat: no-repeat; background-size: cover; background-position: center center; color: white; padding-top: 200px; margin-bottom: 20px">
         <!-- Mask & flexbox options-->
         <div class="mask rgba-black-light align-items-center">
@@ -62,7 +75,8 @@
                         <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown"
                             data-wow-delay="0.3s"><strong>BLOG XỊN</strong></h1>
                         <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
-                        <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>NƠI CẢM XÚC CHỈ CÓ THỂ TỐT HƠN</strong></h5>
+                        <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>NƠI CẢM
+                                XÚC CHỈ CÓ THỂ TỐT HƠN</strong></h5>
                     </div>
                     <!--Grid column-->
                 </div>
@@ -74,94 +88,266 @@
     </div>
     <!-- Full Page Intro -->
 </header>
-<div class="row justify-content-center">
-    <div class="col-md-10 justify-content-center">
-        <div class="row justify-content-center">
-            <div class="col-md-10 justify-content-center">
-                <div class="row justify-content-center">
-                    <!-- Card -->
-                    <div class="card card-cascade wider reverse">
-                        <!-- Card image -->
-                        <div class="view view-cascade overlay">
-                            <img class="card-img-top" src="https://colorlib.com/activello/wp-content/uploads/sites/10/2015/11/photo-1429734160945-4f85244d6a5a-1170x550.jpg"
-                                 alt="Card image cap">
-                            <a href="#!">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
+
+<section class="blog-area section">
+    <div class="col-sm-10 offset-1">
+
+        <div class="row">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <div class="single-post post-style-1">
+
+                        <div class="blog-image"><img src="{{asset('images/marion-michele-330691.jpg')}}"
+                                                     alt="Blog Image"></div>
+
+                        <a class="avatar" href="#"><img src="{{asset('images/icons8-team-355979.jpg')}}"
+                                                        alt="Profile Image"></a>
+
+                        <div class="blog-info">
+
+                            <h4 class="title"><a href="#"><b>Cafe Sang?</b></a></h4>
+
+                            <ul class="post-footer">
+                                <li><a href="#"><i class="fas fa-heart"></i>57</a></li>
+                                <li><a href="#"><i class="fas fa-comments"></i>6</a></li>
+                                <li><a href="#"><i class="fas fa-eye"></i>138</a></li>
+                            </ul>
+
+                        </div><!-- blog-info -->
+                    </div><!-- single-post -->
+                </div><!-- card -->
+            </div><!-- col-lg-4 col-md-6 -->
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <div class="single-post post-style-1">
+
+                        <div class="blog-image"><img src="{{asset('images/audrey-jackson-260657.jpg')}}"
+                                                     alt="Blog Image"></div>
+
+                        <a class="avatar" href="#"><img src="{{asset('images/icons8-team-355979.jpg')}}"
+                                                        alt="Profile Image"></a>
+
+                        <div class="blog-info">
+                            <h4 class="title"><a href="#"><b>Africa</b></a></h4>
+
+                            <ul class="post-footer">
+                                <li><a href="#"><i class="fas fa-heart"></i>57</a></li>
+                                <li><a href="#"><i class="fas fa-comments"></i>6</a></li>
+                                <li><a href="#"><i class="fas fa-eye"></i>138</a></li>
+                            </ul>
+                        </div><!-- blog-info -->
+
+                    </div><!-- single-post -->
+
+                </div><!-- card -->
+            </div><!-- col-lg-4 col-md-6 -->
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <div class="single-post post-style-1">
+
+                        <div class="blog-image"><img src="{{asset('images/pexels-photo-370474.jpeg')}}"
+                                                     alt="Blog Image"></div>
+
+                        <a class="avatar" href="#"><img src="{{asset('')}}images/averie-woodard-319832.jpg"
+                                                        alt="Profile Image"></a>
+
+                        <h4 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most
+                                    Complex
+                                    Concepts in Physics?</b></a></h4>
+
+                        <ul class="post-footer">
+                            <li><a href="#"><i class="fas fa-heart"></i>57</a></li>
+                            <li><a href="#"><i class="fas fa-comments"></i>6</a></li>
+                            <li><a href="#"><i class="fas fa-eye"></i>138</a></li>
+                        </ul>
+
+                    </div><!-- single-post -->
+                </div><!-- card -->
+            </div><!-- col-lg-4 col-md-6 -->
+
+            <div class="col-lg-8 col-md-12">
+                <div class="card h-100">
+                    <div class="single-post post-style-2">
+
+                        <div class="blog-image"><img src="{{asset('images/brooke-lark-194251.jpg')}}" alt="Blog Image">
                         </div>
 
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade text-center">
+                        <div class="blog-info">
 
-                            <!-- Title -->
-                            <h4 class="card-title"><strong>My adventure</strong></h4>
-                            <!-- Subtitle -->
-                            <h6 class="font-weight-bold indigo-text py-2">Photography</h6>
-                            <!-- Text -->
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Exercitationem perspiciatis voluptatum a, quo nobis, non commodi quia repellendus sequi
-                                nulla voluptatem dicta reprehenderit, placeat laborum ut beatae ullam suscipit veniam.
-                            </p>
-                            <!-- Linkedin -->
-                            <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
-                            <!-- Twitter -->
-                            <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>
-                            <!-- Dribbble -->
-                            <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>
+                            <h6 class="pre-title"><a href="#"><b>HEALTH</b></a></h6>
+
+                            <h4 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most
+                                        Complex
+                                        Concepts in Physics?</b></a></h4>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+
+                            <div class="avatar-area">
+                                <a class="avatar" href="#"><img src="{{asset('images/icons8-team-355979.jpg')}}"
+                                                                alt="Profile Image"></a>
+                                <div class="right-area">
+                                    <a class="name" href="#"><b>Lora Plamer</b></a>
+                                    <h6 class="date" href="#">on Sep 29, 2017 at 9:48am</h6>
+                                </div>
+                            </div>
+
+                            <ul class="post-footer">
+                                <li><a href="#"><i class="fas fa-heart"></i>57</a></li>
+                                <li><a href="#"><i class="fas fa-comments"></i>6</a></li>
+                                <li><a href="#"><i class="fas fa-eye"></i>138</a></li>
+                            </ul>
+
+                        </div><!-- blog-right -->
+
+                    </div><!-- single-post extra-blog -->
+
+                </div><!-- card -->
+            </div><!-- col-lg-8 col-md-12 -->
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <div class="single-post post-style-1">
+
+                        <div class="blog-image"><img src="{{asset('images/dmitri-popov-326976.jpg')}}" alt="Blog Image">
                         </div>
-                    </div>
 
-                </div>
-            </div>
-            <div class="col-md-2" style="margin-bottom: 20px">
-                <!-- Card Light -->
-                <div class="card">
-                    <!-- Card image -->
-                    <div class="view overlay">
-                        <img class="card-img-top"
-                             src="https://colorlib.com/activello/wp-content/uploads/sites/10/2015/11/photo-1438109491414-7198515b166b1.jpg"
-                             alt="Card image cap">
-                        <a>
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
+                        <a class="avatar" href="#"><img src="{{asset('images/averie-woodard-319832.jpg')}}"
+                                                        alt="Profile Image"></a>
 
-                    <!-- Card content -->
-                    <div class="card-body">
-                        <!-- Social shares button -->
-                        <!-- Title -->
-                        <h4 class="card-title" style="text-align: center">About me</h4>
-                        <hr>
-                        <!-- Text -->
-                        <p class="card-text">My name is Activello and I am an awesome WordPress blog theme for
-                            photography, food, travel and other blogs. I was created by colorlib..</p>
-                        <!-- Link -->
-                        <hr>
-                        <h4 class="widget-title" style="text-align: center">Follow Me</h4>
-                        <!-- social icons -->
-                        <p style="text-align: center">
-                            <a href="https://www.facebook.com/colorlib"
-                               style="color: black; font-size: 20px; letter-spacing: 5px"><i
-                                        class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.facebook.com/colorlib"
-                               style="color: black; font-size: 20px; letter-spacing: 5px"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.facebook.com/colorlib"
-                               style="color: black;font-size: 20px; letter-spacing: 5px"><i
-                                        class="fab fa-google-plus-g"></i></a>
-                            <a href="https://www.facebook.com/colorlib"
-                               style="color: black;font-size: 20px; letter-spacing: 5px"><i
-                                        class="fab fa-instagram"></i></a>
+                        <h4 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most
+                                    Complex
+                                    Concepts in Physics?</b></a></h4>
 
-                        </p>
-                    </div>
-                </div>
+                        <ul class="post-footer">
+                            <li><a href="#"><i class="fas fa-heart"></i>57</a></li>
+                            <li><a href="#"><i class="fas fa-comments"></i>6</a></li>
+                            <li><a href="#"><i class="fas fa-eye"></i>138</a></li>
+                        </ul>
 
-            </div>
-        </div>
-    </div>
-</div>
+                    </div><!-- single-post -->
+                </div><!-- card -->
+            </div><!-- col-lg-4 col-md-6 -->
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+
+                    <div class="single-post post-style-2 post-style-3">
+
+                        <div class="blog-info">
+
+                            <h6 class="pre-title"><a href="#"><b>HEALTH</b></a></h6>
+
+                            <h4 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most
+                                        Complex
+                                        Concepts in Physics?</b></a></h4>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+
+                            <div class="avatar-area">
+                                <a class="avatar" href="#"><img src="images/icons8-team-355979.jpg" alt="Profile Image"></a>
+                                <div class="right-area">
+                                    <a class="name" href="#"><b>Lora Plamer</b></a>
+                                    <h6 class="date" href="#">on Sep 29, 2017 at 9:48am</h6>
+                                </div>
+                            </div>
+
+                            <ul class="post-footer">
+                                <li><a href="#"><i class="fas fa-heart"></i>57</a></li>
+                                <li><a href="#"><i class="fas fa-comments"></i>6</a></li>
+                                <li><a href="#"><i class="fas fa-eye"></i>138</a></li>
+                            </ul>
+
+                        </div><!-- blog-right -->
+
+                    </div><!-- single-post extra-blog -->
+
+                </div><!-- card -->
+            </div><!-- col-lg-4 col-md-6 -->
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <div class="single-post post-style-1">
+
+                        <div class="blog-image"><img src="images/ben-o-sullivan-382817.jpg" alt="Blog Image"></div>
+
+                        <a class="avatar" href="#"><img src="images/icons8-team-355979.jpg" alt="Profile Image"></a>
+
+                        <div class="blog-info">
+                            <h4 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most
+                                        Complex
+                                        Concepts in Physics?</b></a></h4>
+
+                            <ul class="post-footer">
+                                <li><a href="#"><i class="fas fa-heart"></i>57</a></li>
+                                <li><a href="#"><i class="fas fa-comments"></i>6</a></li>
+                                <li><a href="#"><i class="fas fa-eye"></i>138</a></li>
+                            </ul>
+                        </div><!-- blog-info -->
+
+                    </div><!-- single-post -->
+
+                </div><!-- card -->
+            </div><!-- col-lg-4 col-md-6 -->
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+
+                    <div class="single-post post-style-4">
+
+                        <div class="display-table">
+                            <h4 class="title display-table-cell"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict
+                                        One of the Most Complex
+                                        Concepts in Physics?</b></a></h4>
+                        </div>
+
+                        <ul class="post-footer">
+                            <li><a href="#"><i class="fas fa-heart"></i>57</a></li>
+                            <li><a href="#"><i class="fas fa-comments"></i>6</a></li>
+                            <li><a href="#"><i class="fas fa-eye"></i>138</a></li>
+                        </ul>
+
+                    </div><!-- single-post -->
+
+                    <div class="single-post">
+
+                        <div class="display-table">
+                            <h4 class="title display-table-cell"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict
+                                        One of the Most Complex
+                                        Concepts in Physics?</b></a></h4>
+                        </div>
+
+                        <ul class="post-footer">
+                            <li><a href="#"><i class="fas fa-heart"></i>57</a></li>
+                            <li><a href="#"><i class="fas fa-comments"></i>6</a></li>
+                            <li><a href="#"><i class="fas fa-eye"></i>138</a></li>
+                        </ul>
+
+                    </div><!-- single-post -->
+
+                </div><!-- card -->
+            </div><!-- col-lg-4 col-md-6 -->
+
+
+        </div><!-- row -->
+
+
+    </div><!-- container -->
+</section><!-- section -->
+
 
 </body>
+<script src="{{asset('common-js/jquery-3.1.1.min.js')}}"></script>
+
+<script src="{{asset('common-js/tether.min.js')}}"></script>
+
+<script src="{{asset('common-js/bootstrap.js')}}"></script>
+
+<script src="{{asset('common-js/scripts.js')}}"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

@@ -11,7 +11,7 @@
             <div class="col-md-12 mt-md-0 mt-3">
 
                 <!-- Content -->
-                <h5 class="text-uppercase font-weight-bold">Make By C2HAL TEAM</h5>
+                <h5 class="text-uppercase font-weight-bold">Make By C2H2AL TEAM</h5>
 
             </div>
             <!-- Grid column -->
