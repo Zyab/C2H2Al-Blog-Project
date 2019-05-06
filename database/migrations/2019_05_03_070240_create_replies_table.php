@@ -21,7 +21,7 @@ class CreateRepliesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('comment_id')->references('id')->on('comments');
             $table->foreign('post_id')->references('id')->on('posts');
-            $table->string('body');
+            $table->string('body')->nullable();
             $table->timestamps();
         });
     }

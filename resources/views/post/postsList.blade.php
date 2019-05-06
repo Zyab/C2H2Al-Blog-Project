@@ -42,7 +42,7 @@
                             <th scope="row">{{ ++$key }}</th>
                             <td><p>{{ $post->title }}</p></td>
                             <td><p>{{ $post->description }}</p></td>
-                            <td>{!! $post->content  !!}</td>
+                            <td>{!! $post->content !!}  </td>
                             <td><img src="{{asset("storage/$post->image")}}" alt="" width="100px" height="100px"></td>
                             @if(isset($post->video))
                                 <td>
