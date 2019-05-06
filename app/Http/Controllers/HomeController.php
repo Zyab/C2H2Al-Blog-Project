@@ -22,6 +22,8 @@ class HomeController extends Controller
         $posts = Post::where('user_id', '=', $idUserLogin )
             ->orderBy('id', 'DESC')
             ->paginate(3);
+
+
         return view('post.list', compact('posts'));
     }
 
