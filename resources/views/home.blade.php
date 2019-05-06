@@ -16,7 +16,7 @@
                                     <a href="{{ route('home')  }}">
                                         <img class="card-img-top"
                                              src="{{asset('storage/'.Auth::user()->image)}}"
-                                             alt="Card image cap" style="width: 200px ; height: 200px; border-radius: 5px">
+                                             alt="Card image cap" style="border-radius: 5px">
                                         <div class="mask rgba-white-slight"></div>
                                     </a>
                                 </center>

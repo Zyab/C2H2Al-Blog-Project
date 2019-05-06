@@ -25,6 +25,8 @@
                 @endif
                 <div class="addthis_inline_share_toolbox"></div>
                 <a class="btn btn-primary" href="{{route('export-pdf',$post->id)}}">EXPORT PDF</a>
+                <button class="btn btn-primary" id="hide" >HIDE COMMENT</button>
+                    <button class="btn btn-primary" id="show" >COMMENT</button>
             </div>
         </div>
     </div>
@@ -33,15 +35,16 @@
     <div class="container">
 
         <div class="col-md-10">
-            <div class="comment">
+            <div class="comment" style="display: none">
                 <h5>Comment</h5>
                 <form role="form" method="post" action="{{route('comment.store', $post->id)}}">
                     @csrf
                     <div>
                         <div class="media-content">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="body">
+                                <input type="text" class="form-control" name="body" required>
                                 <input type="hidden" name="post_id" value="{{ $post->id }}"/>
+
                             </div>
                             <button type="submit" class="btn btn-primary">Comment</button>
                         </div>
@@ -94,7 +97,7 @@
                                 </div>
                             </article>
                         @endforeach
-                        <div class="col-md-11 offset-1">
+                        <div class="col-md-11 offset-1 reply">
                             <h5>Reply</h5>
                             <form role="form" method="post" action="{{route('reply.replyComment',$comment->id)}}">
                                 @csrf
@@ -102,7 +105,8 @@
                                 <div>
                                     <div class="media-content">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="body">
+                                            <input type="text" class="form-control" name="body" required>
+{{--                                            <p class="help text-danger">{{ $errors->first('body') }}</p>--}}
                                         </div>
                                         <button type="submit" class="btn btn-primary">Reply</button>
                                     </div>
