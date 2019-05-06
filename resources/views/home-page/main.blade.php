@@ -12,8 +12,6 @@
                             <div class="blog-info">
 
                                 <h4 class="title"><a href="#"><b>{{$post->title}}</b></a></h4>
-                                <h4 class="title"><a href="#"><b>{{$post->id}}</b></a></h4>
-
                                 <ul class="post-footer">
                                     <li><a href="#"><i class="fas fa-heart"></i>57</a></li>
                                     <li><a href="#"><i class="fas fa-comments"></i>6</a></li>
