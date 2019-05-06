@@ -23,7 +23,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Content</th>
+{{--                    <th scope="col">Content</th>--}}
                     <th scope="col">Image</th>
                     <th scope="col">Video</th>
                     <th scope="col">Action</th>
@@ -42,7 +42,7 @@
                             <th scope="row">{{ ++$key }}</th>
                             <td><p>{{ $post->title }}</p></td>
                             <td><p>{{ $post->description }}</p></td>
-                            <td>{!! $post->content  !!}</td>
+{{--                            <td>{!! $post->content !!}  </td>--}}
                             <td><img src="{{asset("storage/$post->image")}}" alt="" width="100px" height="100px"></td>
                             @if(isset($post->video))
                                 <td>

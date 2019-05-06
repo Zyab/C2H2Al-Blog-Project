@@ -19,7 +19,7 @@ class CreateCommentsTable extends Migration
             $table->integer('post_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('post_id')->references('id')->on('posts');
-            $table->string('body');
+            $table->string('body')->nullable();
             $table->timestamps();
         });
     }
