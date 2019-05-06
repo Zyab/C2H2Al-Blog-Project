@@ -38,12 +38,23 @@ Route::post('register', 'AuthController@register');
 
 //Route::post('update/{id}', 'AuthController@update');
 
-Route::middleware('jwt.auth')->post('update', 'AuthController@update');
-Route::middleware('jwt.auth')->post('create-blog', 'AuthController@createBlog');
-Route::middleware('jwt.auth')->post('upload-image', 'AuthController@uploadImage');
-Route::middleware('jwt.auth')->get('show-blogs', 'AuthController@showBlogs');
-Route::middleware('jwt.auth')->delete('delete-blog/{id}', 'AuthController@deleteBlog');
-Route::middleware('jwt.auth')->get('blog-detail/{id}', 'AuthController@showBlogDetail');
-Route::middleware('jwt.auth')->post('blog-update/{id}', 'AuthController@updateBlog');
-Route::middleware('jwt.auth')->post('search', 'AuthController@search');
+//Route::middleware('jwt.auth')->post('update', 'AuthController@update');
+//Route::middleware('jwt.auth')->post('create-blog', 'AuthController@createBlog');
+//Route::middleware('jwt.auth')->post('upload-image', 'AuthController@uploadImage');
+//Route::middleware('jwt.auth')->get('show-blogs', 'AuthController@showBlogs');
+//Route::middleware('jwt.auth')->delete('delete-blog/{id}', 'AuthController@deleteBlog');
+//Route::middleware('jwt.auth')->get('blog-detail/{id}', 'AuthController@showBlogDetail');
+//Route::middleware('jwt.auth')->post('blog-update/{id}', 'AuthController@updateBlog');
+//Route::middleware('jwt.auth')->post('search', 'AuthController@search');
+Route::group(['middleware' => 'jwt.auth'], function () {
+	Route::post('update', 'AuthController@update');
+	Route::post('create-blog', 'AuthController@createBlog');
+	Route::post('upload-image', 'AuthController@uploadImage');
+	Route::get('show-blogs', 'AuthController@showBlogs');
+	Route::delete('delete-blog/{id}', 'AuthController@deleteBlog');
+	Route::get('blog-detail/{id}', 'AuthController@showBlogDetail');
+	Route::post('blog-update/{id}', 'AuthController@updateBlog');
+	Route::post('search', 'AuthController@search');
+	Route::get('get-all-tags', 'AuthController@getAllTags');
+});
 

@@ -12,5 +12,17 @@ class TagsTableSeeder extends Seeder
      */
     public function run()
     {
+    	$tag = new Tag();
+    	$tag->name = 'Home';
+    	$tag-> save();
+    	$tag = new Tag();
+    	$tag->name = 'Car';
+    	$tag-> save();
+    	$tag = new Tag();
+    	$tag->name = 'Sport';
+    	$tag-> save();
+    	$tag = new Tag();
+    	$tag->name = 'Movie';
+    	$tag-> save();
     }
 }

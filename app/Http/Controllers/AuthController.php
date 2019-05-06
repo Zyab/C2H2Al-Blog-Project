@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
 use App\Post;
+use App\Tag;
 use App\User;
 use http\Env\Response;
 use Illuminate\Http\Request;
@@ -125,13 +126,33 @@ class AuthController extends Controller
 			$post->image = $path;
 		}
 		$post->save();
+		$i = 0;
+		$tagReq = 'tag' . $i;
+		$tags = Tag::all();
+		while ($request->$tagReq !== null) {
+			if (!$tags->contains('name', $request->$tagReq)) {
+				$tag = new Tag();
+				$tag->name = $request->$tagReq;
+				$tag->save();
+				$post->tag()->attach( $tag->id);
+			} else {
+				$tag = Tag::where('name', $request->$tagReq)->get();
+				$post->tag()->attach( $tag[0]->id);
+			}
+			$i++;
+			$tagReq = 'tag' . $i;
+
+		}
 		return response()->json($post);
 	}
 
 	public function showBlogs()
 	{
 		$user = $this->guard()->user();
-		return $user->posts;
+		$posts = Post::where('user_id', '=', $user->id)
+			->orderBy('id', 'DESC')
+			->get();
+		return $posts;
 	}
 
 	public function deleteBlog($id)
@@ -146,6 +167,7 @@ class AuthController extends Controller
 	{
 		$user = $this->guard()->user();
 		$post = Post::findOrFail($id);
+		$post->tag;
 		return $post;
 	}
 
@@ -162,6 +184,24 @@ class AuthController extends Controller
 			$path = Storage::disk('public')->put('image', $image);
 			$post->image = $path;
 		}
+		$i = 0;
+		$tagReq = 'tag' . $i;
+		$tags = Tag::all();
+		while ($request->$tagReq !== null) {
+			if (!$tags->contains('name', $request->$tagReq)) {
+				$tag = new Tag();
+				$tag->name = $request->$tagReq;
+				$tag->save();
+				$tagId[$i] = $tag->id;
+			} else {
+				$tag = Tag::where('name', $request->$tagReq)->get();
+				$tagId[$i] = $tag[0]->id;
+			}
+			$i++;
+			$tagReq = 'tag' . $i;
+
+		}
+		$post->tag()->sync($tagId);
 		$post->save();
 		return response()->json($post);
 	}
@@ -184,6 +224,13 @@ class AuthController extends Controller
 					->orWhere('content', 'LIKE', '%' . $keyword . '%');
 			})->get();
 		return $posts;
+	}
+
+	public function getAllTags()
+	{
+		$user = $this->guard()->user();
+		$allTags = Tag::all();
+		return $allTags;
 	}
 
 }
