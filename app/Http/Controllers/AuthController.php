@@ -149,7 +149,7 @@ class AuthController extends Controller
 	public function showBlogs()
 	{
 		$user = $this->guard()->user();
-		$posts = Post::where('user_id', '=', $user->id)
+		$posts = Post::where('user_id', $user->id)
 			->orderBy('id', 'DESC')
 			->get();
 		return $posts;
@@ -231,6 +231,16 @@ class AuthController extends Controller
 		$user = $this->guard()->user();
 		$allTags = Tag::all();
 		return $allTags;
+	}
+	public function searchByTag(Request $request){
+		$user = $this->guard()->user();
+		$keyword = $request->tag;
+		$post = Post::whereHas('tag' , function ($query) use ($keyword) {
+			$query->where('name','LIKE','%'.$keyword.'%');
+		})
+			->where('user_id',$user->id)
+			->get();
+		return $post;
 	}
 
 }
