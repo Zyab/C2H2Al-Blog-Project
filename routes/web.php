@@ -11,14 +11,14 @@
 |
 */
 
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-//    $posts = \App\Post::where('status', 1)->get();
     $posts = \App\Post::paginate(6);
-    return view('home-page.index', compact('posts','users'));
+    return view('home-page.index', compact('posts'));
 });
 
 
@@ -50,3 +50,8 @@ Route::get('/change-password', 'Auth\ChangePasswordController@index')->name('pas
 Route::post('/change-password', 'Auth\ChangePasswordController@changePassword')->name('password.update');
 
 Route::get('pdf/{id}-pdf','pdfController@index')->name('export-pdf');
+
+
+Route::get('album','AlbumController@create')->name('album.create');
+Route::post('album','AlbumController@store')->name('album.store');
+Route::get('list','AlbumController@list')->name('album.list');

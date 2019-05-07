@@ -43,7 +43,7 @@
                             <td><p>{{ $post->title }}</p></td>
                             <td><p>{{ $post->description }}</p></td>
 {{--                            <td>{!! $post->content !!}  </td>--}}
-                            <td><img src="{{asset("storage/$post->image")}}" alt="" width="100px" height="100px"></td>
+                            <td><img src="{{asset("storage/$post->images")}}" alt="" width="100px" height="100px"></td>
                             @if(isset($post->video))
                                 <td>
                                     <div class="embed-responsive embed-responsive-16by9"
