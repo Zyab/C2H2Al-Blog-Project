@@ -16,7 +16,7 @@
 <body style="background: whitesmoke">
 <div class="row justify-content-center">
     <div class="col-md-12">
-        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color" style="background:#192433">
+        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color" style="background:#0d6bec85">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent-333"
