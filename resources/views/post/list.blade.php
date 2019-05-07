@@ -6,6 +6,7 @@
             {{'Tìm thấy' . ' ' . $totalPost . ' '. 'bài viết ' . 'với từ khóa: '. $keyword. ' trên tổng số ' . $postTotal . ' bài viết của bạn'}}
         </h3>
     @endif
+
     <div class="row">
         @if(count($posts)=== 0)
                         <p class="text-danger">Chưa có bài viết nào</p>

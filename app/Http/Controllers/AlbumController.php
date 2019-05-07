@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Album;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AlbumController extends Controller
 {
@@ -34,7 +35,7 @@ class AlbumController extends Controller
         $album->user_id = Auth::user()->id;
         $album->images=json_encode($data);
         $album->save();
-//        dd($album->images);
+        Session::flash('success','Tạo album thành công');
         return redirect()->route('album.list', compact('album'));
     }
     public function list()

@@ -6,6 +6,7 @@ use App\Post;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 
 class HomeController extends Controller
@@ -22,7 +23,6 @@ class HomeController extends Controller
         $posts = Post::where('user_id', '=', $idUserLogin )
             ->orderBy('id', 'DESC')
             ->paginate(3);
-
 
         return view('post.list', compact('posts'));
     }

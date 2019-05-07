@@ -2,7 +2,12 @@
 @extends('home')
 @section('main')
 
-
+    @if(\Illuminate\Support\Facades\Session::has('success'))
+        <div class="alert alert-success">{{ \Illuminate\Support\Facades\Session::get('success') }}</div>
+    @endif
+    @if(\Illuminate\Support\Facades\Session::has('error'))
+        <div class="alert alert-danger">{{ \Illuminate\Support\Facades\Session::get('error') }}</div>
+    @endif
     <div class="row">
         @if(count($album)=== 0)
                         <p class="text-danger">Chưa có Album nào</p>
