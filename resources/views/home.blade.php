@@ -34,6 +34,8 @@
                             <li><h5><a href="{{route('post.list')}}" style="color: black; text-align: center"> Danh Sách
                                         Bài
                                         Viết</a></h5></li>
+                            <li><h5><a href="{{route('album.create')}}" style="color: black; text-align: center"> Thêm Album
+                                    </a></h5></li>
                         </ul>
                         <hr>
                         <h4 class="widget-title" style="text-align: center">Follow Me</h4>
