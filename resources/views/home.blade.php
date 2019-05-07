@@ -28,12 +28,9 @@
                         <ul>
                             <li><h5>Your Email: {{Auth::user()->email }}</h5></li>
                             <li><h5>Your Address: {{Auth::user()->address }}</h5></li>
-                            <li><h5><a href="{{route('post.create')}}" style="color: black; text-align: center"> Thêm
-                                        mới
-                                        bài viết</a></h5></li>
-                            <li><h5><a href="{{route('post.list')}}" style="color: black; text-align: center"> Danh Sách
-                                        Bài
-                                        Viết</a></h5></li>
+                            <li><h5><a href="{{route('post.create')}}" style="color: black; text-align: center"> Thêm mới Bài viết</a></h5></li>
+                            <li><h5><a href="{{route('post.list')}}" style="color: black; text-align: center"> Danh Sách Bài Viết</a></h5></li>
+
                         </ul>
                         <hr>
                         <h4 class="widget-title" style="text-align: center">Follow Me</h4>
@@ -61,14 +58,14 @@
                     </div>
                     <div class="card-body">
 
-                            <?php $posts = Auth::user()->posts->take(3);?>
-                            <ul>
-                                @foreach($posts as $key => $post)
-                                    <a href="{{ route('post.show', $post->id) }} " style="color: black">
-                                        <li><h5>{{$post->title}}</h5></li>
-                                    </a>
-                                @endforeach
-                            </ul>
+                        <?php $posts = Auth::user()->posts->take(5);?>
+                        <ul>
+                            @foreach($posts as $key => $post)
+                                <a href="{{ route('post.show', $post->id) }} " style="color: black">
+                                    <li><h5>{{$post->title}}</h5></li>
+                                </a>
+                            @endforeach
+                        </ul>
 
                     </div>
                 </div>
