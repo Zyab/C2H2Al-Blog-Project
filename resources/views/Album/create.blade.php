@@ -1,29 +1,13 @@
-<html lang="en">
-<head>
-    <title>Laravel Multiple File Upload Example</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-</head>
-<body>
+@extends('home')
+@section('main')
 <div class="container">
-    @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
 
-    <h3 class="jumbotron">Laravel Multiple File Upload</h3>
+    <h2>Add new Album</h2>
 
     <form method="post" action="{{route('album.store')}}" enctype="multipart/form-data">
         {{csrf_field()}}
@@ -45,24 +29,4 @@
 
     </form>
 </div>
-
-
-<script type="text/javascript">
-
-
-    $(document).ready(function() {
-
-        $(".btn-success").click(function(){
-            var html = $(".clone").html();
-            $(".increment").after(html);
-        });
-
-        $("body").on("click",".btn-danger",function(){
-            $(this).parents(".control-group").remove();
-        });
-
-    });
-
-</script>
-</body>
-</html>
+@endsection
