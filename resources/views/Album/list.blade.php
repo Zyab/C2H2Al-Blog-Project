@@ -35,13 +35,3 @@
     </div>
 
 @endsection
-{{--<div>--}}
-{{--    @foreach($album as $key => $item)--}}
-
-{{--        @foreach(json_decode($item->images) as $image)--}}
-{{--            <img src="{{asset('images/'.$image)}}">--}}
-
-{{--        @endforeach--}}
-
-{{--    @endforeach--}}
-{{--</div>--}}

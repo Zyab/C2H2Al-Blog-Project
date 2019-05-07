@@ -33,7 +33,6 @@ class AlbumController extends Controller
         $album->title = $request->title;
         $album->user_id = Auth::user()->id;
         $album->images=json_encode($data);
-//
         $album->save();
 //        dd($album->images);
         return redirect()->route('album.list', compact('album'));

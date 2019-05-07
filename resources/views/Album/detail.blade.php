@@ -1,6 +1,5 @@
 @extends('home')
 @section('main')
-    {{--    @foreach($album as $key => $item)--}}
     <div class="card">
         <div class="card-header">
             <h4 class="card-title">Album number: {!! $album->id !!}</h4>
@@ -22,16 +21,4 @@
             <p class="card-text">Created {{ $album->created_at }} by {{Auth::user()->name}}</p>
         </div>
     </div>
-
-    {{--        @foreach(json_decode($item->images) as $image)--}}
-    {{--            <img src="{{asset('images/'.$image)}}">--}}
-
-    {{--        @endforeach--}}
-
-    {{--    @endforeach--}}
-    {{--    <div class="card-header">--}}
-    {{--            <h4 class="card-title">Album number: {!! $item->id !!}</h4>--}}
-    {{--    </div>--}}
-
-
 @endsection
