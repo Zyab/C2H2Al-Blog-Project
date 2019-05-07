@@ -34,6 +34,8 @@
                             <li><h5><a href="{{route('post.list')}}" style="color: black; text-align: center"> Danh Sách
                                         Bài
                                         Viết</a></h5></li>
+                            <li><h5><a href="{{route('album.create')}}" style="color: black; text-align: center"> Thêm Album
+                                    </a></h5></li>
                         </ul>
                         <hr>
                         <h4 class="widget-title" style="text-align: center">Follow Me</h4>
@@ -90,4 +92,7 @@
         filebrowserFlashUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
     });
 </script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cd00b7886739928"></script>
+
 {{--@include('home-page.footer')--}}
