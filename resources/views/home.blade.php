@@ -28,8 +28,11 @@
                         <ul>
                             <li><h5>Your Email: {{Auth::user()->email }}</h5></li>
                             <li><h5>Your Address: {{Auth::user()->address }}</h5></li>
+
                             <li><h5><a href="{{route('post.create')}}" style="color: black; text-align: center"> Thêm mới Bài viết</a></h5></li>
                             <li><h5><a href="{{route('post.list')}}" style="color: black; text-align: center"> Danh Sách Bài Viết</a></h5></li>
+                            <li><h5><a href="{{route('album.create')}}" style="color: black; text-align: center"> Thêm Album
+                                    </a></h5></li>
 
                         </ul>
                         <hr>
