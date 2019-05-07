@@ -23,8 +23,11 @@
                     </div>
                 @else
                 @endif
-                    <div class="addthis_inline_share_toolbox_enq6"></div>
-                <a class="btn btn-primary" href="{{route('export-pdf',$post->id)}}">EXPORT PDF</a>
+
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                        <div class="addthis_inline_share_toolbox"></div>
+
+                    <a class="btn btn-primary" href="{{route('export-pdf',$post->id)}}">EXPORT PDF</a>
                 <button class="btn btn-primary" id="hide" >HIDE COMMENT</button>
                     <button class="btn btn-primary" id="show" >COMMENT</button>
             </div>

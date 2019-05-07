@@ -33,7 +33,6 @@ class AlbumController extends Controller
         $album->title = $request->title;
         $album->user_id = Auth::user()->id;
         $album->images=json_encode($data);
-//
         $album->save();
 //        dd($album->images);
         return redirect()->route('album.list', compact('album'));
@@ -42,8 +41,10 @@ class AlbumController extends Controller
     {
         $album = Auth::user()->album;
 
-        return view('album.list', compact('album'));
-
+        return view('Album.list', compact('album'));
     }
-
+    public function showDetail($id){
+        $album = Album::findOrFail($id);
+        return view('Album.detail',compact('album'));
+    }
 }
