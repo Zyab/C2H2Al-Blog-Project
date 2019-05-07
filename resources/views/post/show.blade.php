@@ -25,7 +25,7 @@
                 @endif
 
                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                    <div class="addthis_inline_share_toolbox"></div>
+                        <div class="addthis_inline_share_toolbox"></div>
 
                     <a class="btn btn-primary" href="{{route('export-pdf',$post->id)}}">EXPORT PDF</a>
                 <button class="btn btn-primary" id="hide" >HIDE COMMENT</button>

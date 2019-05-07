@@ -42,8 +42,10 @@ class AlbumController extends Controller
     {
         $album = Auth::user()->album;
 
-        return view('album.list', compact('album'));
-
+        return view('Album.list', compact('album'));
     }
-
+    public function showDetail($id){
+        $album = Album::findOrFail($id);
+        return view('Album.detail',compact('album'));
+    }
 }
