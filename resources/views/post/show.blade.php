@@ -23,7 +23,7 @@
                     </div>
                 @else
                 @endif
-                <div class="addthis_inline_share_toolbox"></div>
+                    <div class="addthis_inline_share_toolbox_enq6"></div>
                 <a class="btn btn-primary" href="{{route('export-pdf',$post->id)}}">EXPORT PDF</a>
                 <button class="btn btn-primary" id="hide" >HIDE COMMENT</button>
                     <button class="btn btn-primary" id="show" >COMMENT</button>
