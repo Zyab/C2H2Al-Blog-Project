@@ -56,5 +56,6 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 	Route::post('blog-update/{id}', 'AuthController@updateBlog');
 	Route::post('search', 'AuthController@search');
 	Route::get('get-all-tags', 'AuthController@getAllTags');
+	Route::post('get-user-by-tag', 'AuthController@searchByTag');
 });
 
