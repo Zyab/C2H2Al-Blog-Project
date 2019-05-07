@@ -1,45 +1,54 @@
-<!-- Footer -->
-<footer class="page-footer font-small teal pt-4" style="background: #009688; color: white">
+<footer>
 
-    <!-- Footer Text -->
-    <div class="container-fluid text-center text-md-left">
-
-        <!-- Grid row -->
+    <div class="container">
         <div class="row">
 
-            <!-- Grid column -->
-            <div class="col-md-6 mt-md-0 mt-3">
+            <div class="col-lg-4 col-md-6">
+                <div class="footer-section">
 
-                <!-- Content -->
-                <h5 class="text-uppercase font-weight-bold">Footer text 1</h5>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae harum esse fugiat. Itaque, culpa?</p>
+                    <a class="logo" href="#"><img src="{{asset('images/logo.png')}}" alt="Logo Image"></a>
+                    <p class="copyright">© 2019 Copyright:</p>
+                    <p class="copyright">Designed by C2H2AL Team</p>
+                    <ul class="icons">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
 
-            </div>
-            <!-- Grid column -->
+                </div><!-- footer-section -->
+            </div><!-- col-lg-4 col-md-6 -->
 
-            <hr class="clearfix w-100 d-md-none pb-3">
+            <div class="col-lg-4 col-md-6">
+                <div class="footer-section">
+                    <h4 class="title"><b>CATAGORIES</b></h4>
+                    <ul>
+                        <li><a href="#">BEAUTY</a></li>
+                        <li><a href="#">HEALTH</a></li>
+                        <li><a href="#">MUSIC</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">SPORT</a></li>
+                        <li><a href="#">DESIGN</a></li>
+                        <li><a href="#">TRAVEL</a></li>
+                    </ul>
+                </div><!-- footer-section -->
+            </div><!-- col-lg-4 col-md-6 -->
 
-            <!-- Grid column -->
-            <div class="col-md-6 mb-md-0 mb-3">
+            <div class="col-lg-4 col-md-6">
+                <div class="footer-section">
 
-                <!-- Content -->
-                <h5 class="text-uppercase font-weight-bold">Footer text 2</h5>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio deserunt fuga perferendis modi earum commodi aperiam temporibus quod nulla nesciunt aliquid debitis ullam omnis quos ipsam, aspernatur id excepturi hic.</p>
+                    <h4 class="title"><b>SUBSCRIBE</b></h4>
+                    <div class="input-area">
+                        <form>
+                            <input class="email-input" type="text" placeholder="Enter your email">
+                            <button class="submit-btn" type="submit"><i class="far fa-envelope"></i></button>
+                        </form>
+                    </div>
 
-            </div>
-            <!-- Grid column -->
+                </div><!-- footer-section -->
+            </div><!-- col-lg-4 col-md-6 -->
 
-        </div>
-        <!-- Grid row -->
-
-    </div>
-    <!-- Footer Text -->
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3" style="background: rgb(45, 120, 108)">© 2018 Copyright:
-        <a href="https://mdbootstrap.com/education/bootstrap/" style="color: white"> MDBootstrap.com</a>
-    </div>
-    <!-- Copyright -->
-
+        </div><!-- row -->
+    </div><!-- container -->
 </footer>
-<!-- Footer -->

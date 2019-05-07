@@ -15,7 +15,7 @@
 <body style="background: whitesmoke">
 <div class="row justify-content-center">
     <div class="col-md-12">
-        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color" style="background:#23272b">
+        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color" style="background:#192433">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent-333"
@@ -37,7 +37,7 @@
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">LOGIN</a>
                         </li>
                         @if (Route::has('register'))
                             <li class="nav-item active">
@@ -108,8 +108,7 @@
         crossorigin="anonymous"></script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cbfbf32c5d57a8d"></script>
-
+<script src="{{asset('js/blog.js')}}"></script>
 </html>
-
 <!--/.Navbar -->
 

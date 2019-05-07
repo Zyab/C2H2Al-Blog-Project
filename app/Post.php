@@ -12,7 +12,7 @@ class Post extends Model
         return $this->belongsTo('App\User');
     }
     public function tag(){
-        return $this->belongsToMany('App\Tag');
+        return $this->belongsToMany('App\Tag','post_tag','post_id','tag_id');
     }
     public function comments()
     {
@@ -31,9 +31,7 @@ class Post extends Model
 
         if (!$embed)
             return '';
-
-        $embed->setAttribute(['width' => 330]);
-
+//        $embed->setAttribute();
         return $embed->getHtml();
     }
 }

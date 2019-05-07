@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class HomeController extends Controller
 {
     /**
@@ -18,7 +19,11 @@ class HomeController extends Controller
     public function index()
     {
         $idUserLogin = Auth::user()->id;
-        $posts = Post::where('user_id', '=', $idUserLogin )->get();
+        $posts = Post::where('user_id', '=', $idUserLogin )
+            ->orderBy('id', 'DESC')
+            ->paginate(3);
+
+
         return view('post.list', compact('posts'));
     }
 
