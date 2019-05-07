@@ -20,5 +20,6 @@
         <div class="card-body">
             <p class="card-text">Created {{ $album->created_at }} by {{Auth::user()->name}}</p>
         </div>
+        <div class="addthis_inline_share_toolbox"></div>
     </div>
 @endsection
