@@ -17,6 +17,14 @@ class AlbumController extends Controller
     public function store(Request $request)
 
     {
+        $this->validate($request, [
+
+            'images' => 'required',
+            'name' => 'required',
+            'title' => 'required',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+
+        ]);
 
         if($request->hasfile('images'))
         {
@@ -47,5 +55,13 @@ class AlbumController extends Controller
     public function showDetail($id){
         $album = Album::findOrFail($id);
         return view('Album.detail',compact('album'));
+    }
+    public function delete($id)
+    {
+        $album = Album::findOrFail($id);
+
+        $album->delete();
+        Session::flash('success','xóa album thành công');
+        return redirect()->route('album.list');
     }
 }

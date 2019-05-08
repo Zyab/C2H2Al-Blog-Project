@@ -35,23 +35,6 @@
                             <li><h5><a href="{{route('album.list')}}" style="color: black; text-align: center"> Danh Sách Album</a></h5></li>
 
                         </ul>
-                        <hr>
-                        <h4 class="widget-title" style="text-align: center">Follow Me</h4>
-                        <!-- social icons -->
-                        <p style="text-align: center">
-                            <a href="https://www.facebook.com/colorlib"
-                               style="color: black; font-size: 20px; letter-spacing: 5px"><i
-                                        class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.facebook.com/colorlib"
-                               style="color: black; font-size: 20px; letter-spacing: 5px"><i
-                                        class="fab fa-twitter"></i></a>
-                            <a href="https://www.facebook.com/colorlib"
-                               style="color: black;font-size: 20px; letter-spacing: 5px"><i
-                                        class="fab fa-google-plus-g"></i></a>
-                            <a href="https://www.facebook.com/colorlib"
-                               style="color: black;font-size: 20px; letter-spacing: 5px"><i
-                                        class="fab fa-instagram"></i></a>
-                        </p>
                     </div>
 
                 </div>

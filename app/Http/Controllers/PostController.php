@@ -55,13 +55,22 @@ class PostController extends Controller
     public function delete($id)
     {
         $post = Post::findOrFail($id);
+        $post->comments()->delete();
+        $post->reply()->delete();
         $post->delete();
-        return redirect()->route('post.list', compact('post'));
+        Session::flash('success', 'Xóa bài viết thành công');
+        return redirect()->route('post.list');
     }
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+            'editor1' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
 
+        ]);
         $post = new Post();
         $post->title = $request->input('title');
         $post->content = $request->input('editor1');
