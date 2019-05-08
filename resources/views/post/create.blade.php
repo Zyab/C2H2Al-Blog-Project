@@ -9,22 +9,26 @@
                 @csrf
                 <div class="form-group">
                     <label>Title</label>
-                    <input type="text" class="form-control" name="title" required>
+                    <input type="text" class="form-control" name="title" >
+                    <p class="help text-danger">{{ $errors->first('title') }}</p>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Description</label>
-                    <input type="text" name="description" class="form-control" required>
+                    <input type="text" name="description" class="form-control" >
+                    <p class="help text-danger">{{ $errors->first('description') }}</p>
                 </div>
 
                 <div class="form-group">
                     <label>Content</label>
 
                     <textarea name="editor1"></textarea>
+                    <p class="help text-danger">{{ $errors->first('editor1') }}</p>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Image</label>
                     <input type="file" name="image" class="form-control-file">
+                    <p class="help text-danger">{{ $errors->first('image') }}</p>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Video_URL</label>
