@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Http\Requests\RegisterRequest;
 use App\Post;
+use App\Reply;
 use App\Tag;
 use App\User;
 use http\Env\Response;
@@ -134,10 +136,10 @@ class AuthController extends Controller
 				$tag = new Tag();
 				$tag->name = $request->$tagReq;
 				$tag->save();
-				$post->tag()->attach( $tag->id);
+				$post->tag()->attach($tag->id);
 			} else {
 				$tag = Tag::where('name', $request->$tagReq)->get();
-				$post->tag()->attach( $tag[0]->id);
+				$post->tag()->attach($tag[0]->id);
 			}
 			$i++;
 			$tagReq = 'tag' . $i;
@@ -232,15 +234,62 @@ class AuthController extends Controller
 		$allTags = Tag::all();
 		return $allTags;
 	}
-	public function searchByTag(Request $request){
+
+	public function searchByTag(Request $request)
+	{
 		$user = $this->guard()->user();
 		$keyword = $request->tag;
-		$post = Post::whereHas('tag' , function ($query) use ($keyword) {
-			$query->where('name','LIKE','%'.$keyword.'%');
+		$post = Post::whereHas('tag', function ($query) use ($keyword) {
+			$query->where('name', 'LIKE', '%' . $keyword . '%');
 		})
-			->where('user_id',$user->id)
+			->where('user_id', $user->id)
 			->get();
 		return $post;
+	}
+
+	public function createComment(Request $request, $postId)
+	{
+		$user = $this->guard()->user();
+		$comments = new Comment();
+		$comments->body = $request->data;
+		$comments->user_id = $user->id;
+		$comments->post_id = $postId;
+		$comments->save();
+		$post = Post::findOrFail($postId)->comments;
+		return $post;
+	}
+
+	public function getComment($postId)
+	{
+		$user = $this->guard()->user();
+		$post = Post::findOrFail($postId)->comments;
+		return $post;
+
+	}
+
+	public function createReply(Request $request, $cmtId)
+	{
+		$user = $this->guard()->user();
+		$replies = new Reply();
+		$replies->body = $request->body;
+		$replies->user_id = $user->id;
+		$replies->post_id = $request->postId;
+		$replies->comment_id = $cmtId;
+		$replies->save();
+		return $replies = Reply::where('post_id', $request->postId)
+			->where('comment_id', $cmtId)
+			->where('user_id', $user->id)
+			->get();
+	}
+
+	public function getAllReplies(Request $request, $cmtId)
+	{
+		$user = $this->guard()->user();
+		$replies = Reply::where('post_id', $request->postId)
+			->where('comment_id', $cmtId)
+			->where('user_id', $user->id)
+			->get();
+		return $replies;
 	}
 
 }
