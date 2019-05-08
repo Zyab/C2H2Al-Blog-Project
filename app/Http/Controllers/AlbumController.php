@@ -56,4 +56,11 @@ class AlbumController extends Controller
         $album = Album::findOrFail($id);
         return view('Album.detail',compact('album'));
     }
+    public function delete($id)
+    {
+        $album = Album::findOrFail($id);
+
+        $album->delete();
+        return redirect()->route('album.list');
+    }
 }

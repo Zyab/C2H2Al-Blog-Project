@@ -15,9 +15,6 @@
             @foreach($album as $key => $item)
 
                     <div class="card bg-light mb-4 col-md-12" style="padding: 0px">
-                        <div class="row">
-
-                        </div>
                         <div class="card-header">
                             <a href="{{ route('album.detail',$item->id)}} " style="color: black">
                             <h4 class="card-title">Album number: {!! $item->id !!}</h4>
