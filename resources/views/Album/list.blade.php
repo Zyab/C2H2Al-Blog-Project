@@ -1,56 +1,58 @@
-{{--<table class="table table-striped">--}}
-    {{--<thead>--}}
-    {{--<tr>--}}
-        {{--<th scope="col">ID</th>--}}
-        {{--<th scope="col">Name</th>--}}
-        {{--<th scope="col">Title</th>--}}
-        {{--<th scope="col">Image</th>--}}
+@extends('home')
+@section('main')
 
-        {{--<th scope="col"></th>--}}
-        {{--<th scope="col"></th>--}}
-    {{--</tr>--}}
-    {{--</thead>--}}
-    {{--<tbody>--}}
-    {{--@if(count($album) == 0)--}}
-        {{--<tr>--}}
-            {{--<td colspan="4">Không có dữ liệu</td>--}}
-        {{--</tr>--}}
-    {{--@else--}}
-        {{--@foreach($album->images as $key => $item)--}}
-            {{--<tr>--}}
-                {{--<th scope="row">{{ ++$key }}</th>--}}
-                {{--<td><p>{{ $item->name }}</p></td>--}}
-                {{--<td><p>{{ $item->title}}</p></td>--}}
-                {{--<td>--}}
-                    {{--@foreach($item->images as $key => $image )--}}
-                    {{--<img src="{{asset("storage/images/$image->images")}}" alt="" width="100px" height="100px">--}}
-                        {{--@endforeach--}}
-                {{--</td>--}}
-                {{--<td>--}}
-                    {{--<a class="btn btn-success" href="{{route('post.edit', $post->id)}}">Edit</a>--}}
-                {{--</td>--}}
-                {{--<td>--}}
-                    {{--<a class="btn btn-primary" href="{{ route('post.show', $post->id) }}">View</a>--}}
-                {{--</td>--}}
-                {{--<td>--}}
-                    {{--<a class="btn btn-danger" href="{{route('post.delete',$post->id)}}" class="text-danger"--}}
-                       {{--onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a>--}}
-                {{--</td>--}}
-                {{--<img src="{{asset("storage/images/$item")}}" alt="" width="100px" height="100px">--}}
+    @if (Session::has('success'))
+        <h4 class="text-success">
+            <i class="fa fa-check" aria-hidden="true"></i>{{ Session::get('success') }}
+        </h4>
+    @endif
+    <div class="row">
+        @if(count($album)=== 0)
+            <p class="text-danger">Chưa có Album nào</p>
+        @else
+            @foreach($album as $key => $item)
 
-            {{--</tr>--}}
-        {{--@endforeach--}}
-    {{--@endif--}}
-    {{--</tbody>--}}
-{{--</table>--}}
+                <div class="card bg-light mb-4 col-md-12" style="padding: 0px">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="{{ route('album.detail',$item->id)}} " style="color: black">
+                                    <h4 class="card-title" style="padding-top: 20px">Album number: {!! $item->id !!}</h4>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="dropdown" style="text-align: right">
+                                    <a class="btn" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false">
+                                        <h1 style="color:black">...</h1>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"
+                                         style="text-align: left">
+                                        <a class="dropdown-item btn-outline-light" href="#">Edit Album</a>
+                                        <a class="dropdown-item btn-outline-light"
+                                           href="{{route('album.delete',$item->id)}}"
+                                           class="text-danger"
+                                           onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete Album</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{ $item->name }}</h4>
+                        <p class="card-text">{{ $item->description }}</p>
+                    </div>
 
-<div>
-    @foreach($album as $key => $item)
-
-            @foreach(json_decode($item->images) as $image)
-                <img src="{{asset('images/'.$image)}}">
+                    <div class="card-body">
+                        <hr>
+                        <p class="card-text">Created {{ $item->created_at }} by {{Auth::user()->name}}</p>
+                    </div>
+                </div>
 
             @endforeach
+        @endif
 
-        @endforeach
-</div>
+    </div>
+
+@endsection
+

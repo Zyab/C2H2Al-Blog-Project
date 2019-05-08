@@ -28,32 +28,13 @@
                         <ul>
                             <li><h5>Your Email: {{Auth::user()->email }}</h5></li>
                             <li><h5>Your Address: {{Auth::user()->address }}</h5></li>
-                            <li><h5><a href="{{route('post.create')}}" style="color: black; text-align: center"> Thêm
-                                        mới
-                                        bài viết</a></h5></li>
-                            <li><h5><a href="{{route('post.list')}}" style="color: black; text-align: center"> Danh Sách
-                                        Bài
-                                        Viết</a></h5></li>
-                            <li><h5><a href="{{route('album.create')}}" style="color: black; text-align: center"> Thêm Album
-                                    </a></h5></li>
+
+                            <li><h5><a href="{{route('post.create')}}" style="color: black; text-align: center"> Thêm mới Bài viết</a></h5></li>
+                            <li><h5><a href="{{route('post.list')}}" style="color: black; text-align: center"> Danh Sách Bài Viết</a></h5></li>
+                            <li><h5><a href="{{route('album.create')}}" style="color: black; text-align: center"> Thêm Album</a></h5></li>
+                            <li><h5><a href="{{route('album.list')}}" style="color: black; text-align: center"> Danh Sách Album</a></h5></li>
+
                         </ul>
-                        <hr>
-                        <h4 class="widget-title" style="text-align: center">Follow Me</h4>
-                        <!-- social icons -->
-                        <p style="text-align: center">
-                            <a href="https://www.facebook.com/colorlib"
-                               style="color: black; font-size: 20px; letter-spacing: 5px"><i
-                                        class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.facebook.com/colorlib"
-                               style="color: black; font-size: 20px; letter-spacing: 5px"><i
-                                        class="fab fa-twitter"></i></a>
-                            <a href="https://www.facebook.com/colorlib"
-                               style="color: black;font-size: 20px; letter-spacing: 5px"><i
-                                        class="fab fa-google-plus-g"></i></a>
-                            <a href="https://www.facebook.com/colorlib"
-                               style="color: black;font-size: 20px; letter-spacing: 5px"><i
-                                        class="fab fa-instagram"></i></a>
-                        </p>
                     </div>
 
                 </div>
@@ -63,14 +44,14 @@
                     </div>
                     <div class="card-body">
 
-                            <?php $posts = Auth::user()->posts->take(3);?>
-                            <ul>
-                                @foreach($posts as $key => $post)
-                                    <a href="{{ route('post.show', $post->id) }} " style="color: black">
-                                        <li><h5>{{$post->title}}</h5></li>
-                                    </a>
-                                @endforeach
-                            </ul>
+                        <?php $posts = Auth::user()->posts->take(5);?>
+                        <ul>
+                            @foreach($posts as $key => $post)
+                                <a href="{{ route('post.show', $post->id) }} " style="color: black">
+                                    <li><h5>{{$post->title}}</h5></li>
+                                </a>
+                            @endforeach
+                        </ul>
 
                     </div>
                 </div>
@@ -91,6 +72,23 @@
         filebrowserImageUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
         filebrowserFlashUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
     });
+</script>
+<script type="text/javascript">
+
+
+    $(document).ready(function() {
+
+        $(".btn-success").click(function(){
+            var html = $(".clone").html();
+            $(".increment").after(html);
+        });
+
+        $("body").on("click",".btn-danger",function(){
+            $(this).parents(".control-group").remove();
+        });
+
+    });
+
 </script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cd00b7886739928"></script>

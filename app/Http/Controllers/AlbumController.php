@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Album;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AlbumController extends Controller
 {
@@ -16,6 +17,14 @@ class AlbumController extends Controller
     public function store(Request $request)
 
     {
+        $this->validate($request, [
+
+            'images' => 'required',
+            'name' => 'required',
+            'title' => 'required',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+
+        ]);
 
         if($request->hasfile('images'))
         {
@@ -33,17 +42,26 @@ class AlbumController extends Controller
         $album->title = $request->title;
         $album->user_id = Auth::user()->id;
         $album->images=json_encode($data);
-//
         $album->save();
-//        dd($album->images);
+        Session::flash('success','Tạo album thành công');
         return redirect()->route('album.list', compact('album'));
     }
     public function list()
     {
         $album = Auth::user()->album;
 
-        return view('album.list', compact('album'));
-
+        return view('Album.list', compact('album'));
     }
+    public function showDetail($id){
+        $album = Album::findOrFail($id);
+        return view('Album.detail',compact('album'));
+    }
+    public function delete($id)
+    {
+        $album = Album::findOrFail($id);
 
+        $album->delete();
+        Session::flash('success','xóa album thành công');
+        return redirect()->route('album.list');
+    }
 }

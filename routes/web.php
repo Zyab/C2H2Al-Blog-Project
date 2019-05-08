@@ -51,7 +51,10 @@ Route::post('/change-password', 'Auth\ChangePasswordController@changePassword')-
 
 Route::get('pdf/{id}-pdf','pdfController@index')->name('export-pdf');
 
-
-Route::get('album','AlbumController@create')->name('album.create');
-Route::post('album','AlbumController@store')->name('album.store');
+Route::group(['prefix'=> 'album'], function (){
+Route::get('create','AlbumController@create')->name('album.create');
+Route::post('create','AlbumController@store')->name('album.store');
 Route::get('list','AlbumController@list')->name('album.list');
+Route::get('showDetail/{id}','AlbumController@showDetail')->name('album.detail');
+Route::get('delete/{id}','AlbumController@delete')->name('album.delete');
+});

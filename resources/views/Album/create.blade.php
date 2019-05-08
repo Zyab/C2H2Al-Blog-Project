@@ -1,68 +1,43 @@
-<html lang="en">
-<head>
-    <title>Laravel Multiple File Upload Example</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
-    @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+@extends('home')
+@section('main')
+    <div class="container">
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+                <div class="card bg-light mb-4 col-md-12" style="padding: 0px">
+                    <div class="card-body">
+                        <h2>Create New Album</h2>
 
-    @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
+                        <form method="post" action="{{route('album.store')}}" enctype="multipart/form-data">
+                            {{csrf_field()}}
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" name="name">
+                                <p class="help text-danger">{{ $errors->first('name') }}</p>
+                            </div>
 
-    <h3 class="jumbotron">Laravel Multiple File Upload</h3>
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Title</label>
+                                <input type="text" name="title" class="form-control">
+                                <p class="help text-danger">{{ $errors->first('title') }}</p>
+                            </div>
+                            <div class="form-group">
 
-    <form method="post" action="{{route('album.store')}}" enctype="multipart/form-data">
-        {{csrf_field()}}
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" class="form-control" name="name" required>
-        </div>
+                                <label for="exampleFormControlFile1">Upload Images</label>
+                                <input type="file" name="images[]" multiple class="form-control">
+                                <p class="help text-danger">{{ $errors->first('images') }}</p>
 
-        <div class="form-group">
-            <label for="exampleFormControlFile1">Title</label>
-            <input type="text" name="title" class="form-control" required>
-        </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="margin-top:10px">Submit</button>
+                            <button class="btn btn-secondary" style="margin-top:10px"
+                                    onclick="window.history.go(-1); return false;">Cancel
+                            </button>
 
-        <div class="input-group control-group increment" >
-            <input type="file" name="images[]" multiple class="form-control">
-        </div>
-
-        <button type="submit" class="btn btn-primary" style="margin-top:10px">Submit</button>
-
-    </form>
-</div>
+                        </form>
+                    </div>
+                </div>
 
 
-<script type="text/javascript">
-
-
-    $(document).ready(function() {
-
-        $(".btn-success").click(function(){
-            var html = $(".clone").html();
-            $(".increment").after(html);
-        });
-
-        $("body").on("click",".btn-danger",function(){
-            $(this).parents(".control-group").remove();
-        });
-
-    });
-
-</script>
-</body>
-</html>
+@endsection
