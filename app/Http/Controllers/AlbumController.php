@@ -17,6 +17,14 @@ class AlbumController extends Controller
     public function store(Request $request)
 
     {
+        $this->validate($request, [
+
+            'images' => 'required',
+            'name' => 'required',
+            'title' => 'required',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+
+        ]);
 
         if($request->hasfile('images'))
         {

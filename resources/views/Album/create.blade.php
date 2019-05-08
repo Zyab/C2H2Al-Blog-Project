@@ -13,18 +13,22 @@
         {{csrf_field()}}
         <div class="form-group">
             <label>Name</label>
-            <input type="text" class="form-control" name="name" required>
+            <input type="text" class="form-control" name="name" >
+            <p class="help text-danger">{{ $errors->first('name') }}</p>
         </div>
 
         <div class="form-group">
             <label for="exampleFormControlFile1">Title</label>
-            <input type="text" name="title" class="form-control" required>
+            <input type="text" name="title" class="form-control" >
+            <p class="help text-danger">{{ $errors->first('title') }}</p>
         </div>
+        <div class="form-group">
 
-        <div class="input-group control-group increment" >
+            <label for="exampleFormControlFile1">Album</label>
             <input type="file" name="images[]" multiple class="form-control">
-        </div>
+            <p class="help text-danger">{{ $errors->first('images') }}</p>
 
+        </div>
         <button type="submit" class="btn btn-primary" style="margin-top:10px">Submit</button>
         <button class="btn btn-secondary"style="margin-top:10px" onclick="window.history.go(-1); return false;">Cancel</button>
 
