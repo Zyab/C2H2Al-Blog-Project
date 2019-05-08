@@ -26,6 +26,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary" style="margin-top:10px">Submit</button>
+        <button class="btn btn-secondary"style="margin-top:10px" onclick="window.history.go(-1); return false;">Cancel</button>
 
     </form>
 </div>
