@@ -39,7 +39,7 @@
 
                     <div class="form-group">
                         <label>Tag</label><br>
-                        <input type="text" class="form-control" value="" data-role="tagsinput" name="tags">
+                        <input type="text" id="tags" class="form-control" value="" data-role="tagsinput" name="tags">
                     </div>
                     <button type="submit" class="btn btn-primary">Create</button>
                     <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Cancel</button>
@@ -49,6 +49,9 @@
         </div>
         </div>
     </div>
+    <script type="text/javascript">
+        $('#tags').tagsInput();
+    </script>
 @endsection
 
 
