@@ -57,5 +57,9 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 	Route::post('search', 'AuthController@search');
 	Route::get('get-all-tags', 'AuthController@getAllTags');
 	Route::post('get-user-by-tag', 'AuthController@searchByTag');
+	Route::post('create-comments/{id}', 'AuthController@createComment');
+	Route::get('get-all-comments/{id}', 'AuthController@getComment');
+	Route::post('reply/{cmtId}', 'AuthController@createReply');
+	Route::post('get-all-replies/{cmtId}', 'AuthController@getAllReplies');
 });
 
