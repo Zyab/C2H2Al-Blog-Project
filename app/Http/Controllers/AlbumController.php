@@ -61,6 +61,7 @@ class AlbumController extends Controller
         $album = Album::findOrFail($id);
 
         $album->delete();
+        Session::flash('success','xóa album thành công');
         return redirect()->route('album.list');
     }
 }

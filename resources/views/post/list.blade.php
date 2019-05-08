@@ -6,6 +6,14 @@
             {{'Tìm thấy' . ' ' . $totalPost . ' '. 'bài viết ' . 'với từ khóa: '. $keyword. ' trên tổng số ' . $postTotal . ' bài viết của bạn'}}
         </h3>
     @endif
+    <div class="col-12">
+        @if (Session::has('success'))
+            <h4 class="text-success">
+                <i class="fa fa-check" aria-hidden="true"></i>{{ Session::get('success') }}
+            </h4>
+        @endif
+
+    </div>
 
     <div class="row">
         @if(count($posts)=== 0)
