@@ -1,10 +1,10 @@
 
 $(document).ready(function(){
-    $("#hide").click(function(){
-        $(".comment").hide("slow");
-    });
     $("#show").click(function(){
-        $(".comment").show("slow");
+        $("#post-form").show("slow");
+    });
+    $("#hide").click(function(){
+        $("#post-form").hide("slow");
     });
 
 });

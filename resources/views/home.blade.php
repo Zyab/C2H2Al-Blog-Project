@@ -22,38 +22,61 @@
                         @endif
                     </div>
                     <div class="card-body">
-                        <a href="{{ url('/home') }}" style="color: black">
-                            <h4 class="card-title" style="text-align: center">{{ Auth::user()->name }}</h4>
-                        </a>
-                        <ul>
-                            <li><h5>Your Email: {{Auth::user()->email }}</h5></li>
-                            <li><h5>Your Address: {{Auth::user()->address }}</h5></li>
+                        <center>
+                            <a href="{{ url('/home') }}" style="color: black">
+                                <h3 class="card-title" style="text-align: center">{{ Auth::user()->name }}</h3>
+                            </a>
+                        </center>
 
-                            <li><h5><a href="{{route('post.create')}}" style="color: black; text-align: center"> Thêm mới Bài viết</a></h5></li>
-                            <li><h5><a href="{{route('post.list')}}" style="color: black; text-align: center"> Danh Sách Bài Viết</a></h5></li>
-                            <li><h5><a href="{{route('album.create')}}" style="color: black; text-align: center"> Thêm Album</a></h5></li>
-                            <li><h5><a href="{{route('album.list')}}" style="color: black; text-align: center"> Danh Sách Album</a></h5></li>
+                        <hr>
+                        <div class="col-md-12 offset-1">
+                            <li><h4>Your Email: {{Auth::user()->email }}</h4></li>
+                            <li><h4>Your Address: {{Auth::user()->address }}</h4></li>
+                        </div>
 
-                        </ul>
+                        <hr>
+                        <div class="col-md-12 offset-1">
+                            <ul>
+
+
+                                <li><h4><a href="{{route('post.create')}}" style="color: black; text-align: center">
+                                            Thêm mới Bài viết</a></h4></li>
+                                <br>
+                                <li><h4><a href="{{route('post.list')}}" style="color: black; text-align: center"> Danh
+                                            Sách Bài Viết</a></h4></li>
+                                <br>
+                                <li><h4><a href="{{route('album.create')}}" style="color: black; text-align: center">
+                                            Thêm Album</a></h4></li>
+                                <br>
+                                <li><h4><a href="{{route('album.list')}}" style="color: black; text-align: center"> Danh
+                                            Sách Album</a></h4></li>
+
+                            </ul>
+                        </div>
                     </div>
-
                 </div>
                 <div class="card bg-light mb-4 col-md-12" style="padding: 0px">
                     <div class="card-header">
-                        <h3> Bài Viết Gần Đây</h3>
+                        <center>
+                            <h3> Bài Viết Gần Đây</h3>
+                        </center>
                     </div>
-                    <div class="card-body">
+                    <div class="col-md-12 offset-1">
+                        <div class="card-body">
 
-                        <?php $posts = Auth::user()->posts->take(5);?>
-                        <ul>
-                            @foreach($posts as $key => $post)
-                                <a href="{{ route('post.show', $post->id) }} " style="color: black">
-                                    <li><h5>{{$post->title}}</h5></li>
-                                </a>
-                            @endforeach
-                        </ul>
+                            <?php $posts = Auth::user()->posts->take(5);?>
+                            <ul>
+                                @foreach($posts as $key => $post)
+                                    <a href="{{ route('post.show', $post->id) }} " style="color: black">
+                                        <li><h4>{{$post->title}}</h4></li>
+                                    </a>
+                                    <br>
+                                @endforeach
+                            </ul>
 
+                        </div>
                     </div>
+
                 </div>
             </div>
             <div class="col-md-9" style="margin-bottom: 20px">
@@ -76,21 +99,17 @@
 <script type="text/javascript">
 
 
-    $(document).ready(function() {
+    $(document).ready(function () {
 
-        $(".btn-success").click(function(){
+        $(".btn-success").click(function () {
             var html = $(".clone").html();
             $(".increment").after(html);
         });
 
-        $("body").on("click",".btn-danger",function(){
+        $("body").on("click", ".btn-danger", function () {
             $(this).parents(".control-group").remove();
         });
 
     });
-
 </script>
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cd00b7886739928"></script>
 
-{{--@include('home-page.footer')--}}
