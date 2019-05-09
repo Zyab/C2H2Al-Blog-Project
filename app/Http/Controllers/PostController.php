@@ -49,7 +49,7 @@ class PostController extends Controller
             ->paginate(5);
         $totalPost = count($posts);
         $postTotal = count($post);
-        return view('post.list', compact('posts','totalPost', 'keyword','postTotal'));
+        return view('post.list', compact('posts', 'totalPost', 'keyword', 'postTotal'));
     }
 
     public function delete($id)
@@ -68,8 +68,8 @@ class PostController extends Controller
             'title' => 'required',
             'description' => 'required',
             'editor1' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'video' => 'required|url',
         ]);
         $post = new Post();
         $post->title = $request->input('title');
