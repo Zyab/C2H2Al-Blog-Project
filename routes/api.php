@@ -50,5 +50,8 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 	Route::get('get-all-comments/{id}', 'AuthController@getComment');
 	Route::post('reply/{cmtId}', 'AuthController@createReply');
 	Route::post('get-all-replies/{cmtId}', 'AuthController@getAllReplies');
+	Route::post('create-album', 'AuthController@createAlbum');
+	Route::get('get-all-album', 'AuthController@getAllAlbum');
+	Route::get('show-album/{id}', 'AuthController@showAlbumDetail');
 });
 

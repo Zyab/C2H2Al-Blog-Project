@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Album;
 use App\Comment;
 use App\Http\Requests\RegisterRequest;
 use App\Post;
@@ -11,6 +12,7 @@ use App\User;
 use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
 class AuthController extends Controller
@@ -122,6 +124,9 @@ class AuthController extends Controller
 		$post->description = $request->description;
 		$post->content = $request->contents;
 		$post->user_id = $user->id;
+		if ($request->video) {
+			$post->video = $request->video;
+		}
 		if ($request->image) {
 			$image = $request->image;
 			$path = Storage::disk('public')->put('image', $image);
@@ -184,6 +189,7 @@ class AuthController extends Controller
 		$post->description = $request->description;
 		$post->content = $request->contents;
 		$post->user_id = $user->id;
+		$post->video = $request->video;
 		if ($request->image) {
 			$image = $request->image;
 			$path = Storage::disk('public')->put('image', $image);
@@ -295,4 +301,37 @@ class AuthController extends Controller
 		return $replies;
 	}
 
+	public function createAlbum(Request $request)
+	{
+		$user = $this->guard()->user();
+		$i = 0;
+		$img = 'images' . $i;
+		while ($request->$img !== null) {
+			$name = $request->$img->getClientOriginalName();
+			$request->$img->move(public_path() . '/images/', $name);
+			$data[] = $name;
+			$i++;
+			$img = 'images' . $i;
+		}
+		$album = new Album();
+		$album->name = $request->name;
+		$album->title = $request->title;
+		$album->user_id = $user->id;
+		$album->images = json_encode($data);
+		$album->save();
+		return $album;
+	}
+
+	public function getAllAlbum()
+	{
+		$user = $this->guard()->user();
+		return $user->album;
+	}
+
+	public function showAlbumDetail($id) {
+		$user = $this->guard()->user();
+		$album = Album::findOrFail($id);
+		$album->images = \GuzzleHttp\json_decode($album->images);
+		dd($album);
+	}
 }
