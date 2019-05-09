@@ -163,7 +163,7 @@ class AuthController extends Controller
 		$post = Post::findOrFail($id);
 		$post->reply()->delete();
 		$post->comments()->delete();
-		$post->tag()->delete();
+		$post->tag()->detach($post->id);
 		$post->delete();
 		return response()->json('Delete successfully');
 	}
