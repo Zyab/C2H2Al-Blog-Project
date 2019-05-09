@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -100,10 +99,10 @@
                         <div class="post-info">
                             <div class="left-area">
                                 <img src="{{asset('storage/'.Auth::user()->image)}}"
-                                                                alt="Profile Image">
+                                     alt="Profile Image">
                             </div>
                             <div class="middle-area">
-                               <b>{{Auth::user()->name}}</b>
+                                <b>{{Auth::user()->name}}</b>
                             </div>
                         </div><!-- post-info -->
                         <h5 class="para">Description: {!! $post->description !!}</h5>
@@ -188,7 +187,7 @@
                             </form>
                         </div><!-- comment-form -->
 
-                        <h4><b>COMMENTS(12)</b></h4>
+                        <h4><b>COMMENTS({{$commentsTotal}})</b></h4>
                         @foreach($post->comments as $comment)
                             <div class="commnets-area text-left">
                                 <div iv class="comment">
@@ -205,42 +204,48 @@
                                             <a class="name" href="#"><b>{{Auth::user()->name}}</b></a>
                                             <p class="card-text">Created {{ $post->created_at }}</p>
                                         </div>
+                                        <div class="right-area">
+                                            <span class="submit-btn" id="show"><b>REPLY</b></span>
+                                            <span></span>
+                                            <span class="submit-btn" id="hide"><b>CANCEL</b></span>
+                                        </div>
+                                        <div class="right-area">
 
+
+                                        </div>
                                     </div><!-- post-info -->
                                     <p>{{$comment->body}}</p>
                                     <hr>
                                     @foreach($comment->reply as $reply)
-                                    <div class="comment">
-                                        <h5 class="reply-for">Reply for <a href="#"><b>{{$reply->user->name}}</b></a></h5>
+                                        <div class="comment">
+                                            <h6 class="reply-for">Reply for <a
+                                                        href="#"><b>{{$reply->user->name}}</b></a></h6>
 
-                                        <div class="post-info">
+                                            <div class="post-info">
 
-                                            <div class="left-area">
-                                                <a class="avatar" href="#"><img src="{{asset('storage/'.Auth::user()->image)}}" alt="Profile Image"></a>
-                                            </div>
+                                                <div class="left-area">
+                                                    <img src="{{asset('storage/'.Auth::user()->image)}}"
+                                                         alt="Profile Image">
+                                                </div>
 
-                                            <div class="middle-area">
-                                                <a class="name" href="#"><b>{{$reply->user->name}}</b></a>
-                                                <p class="card-text">Created: {{ $reply->user->created_at }}</p>
-                                            </div>
+                                                <div class="middle-area">
+                                                    <a class="name" href="#"><b>{{$reply->user->name}}</b></a>
+                                                    <p class="card-text">Created: {{ $reply->user->created_at }}</p>
+                                                </div>
 
-                                            <div class="right-area">
-                                                <h5 class="reply-btn" ><a href="#"><b>REPLY</b></a></h5>
-                                            </div>
 
-                                        </div><!-- post-info -->
+                                            </div><!-- post-info -->
 
-                                        <p>{{$reply->body}}</p>
+                                            <p>{{$reply->body}}</p>
 
-                                    </div>
+                                        </div>
                                     @endforeach
-                                    <h5 class="submit-btn" id="show"><b>REPLY</b></h5>
-                                    <div class="comment-form" id="post-form" >
-                                        <form role="form" method="post" action="{{route('reply.replyComment',$comment->id)}}">
+                                    <div class="comment-form" id="post-form" style="display: none">
+                                        <form role="form" method="post"
+                                              action="{{route('reply.replyComment',$comment->id)}}">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <h4><b>REPLY</b></h4>
                                                     <textarea name="body" rows="2"
                                                               class="text-area-messge form-control"
                                                               placeholder="Enter your reply"
@@ -257,7 +262,6 @@
 
                                             </div><!-- row -->
                                         </form>
-
                                     </div>
                                 </div><!-- commnets-area -->
                             </div>

@@ -27,7 +27,7 @@
         <header>
             <div class="container-fluid position-relative no-side-padding">
                 <ul class="main-menu visible-on-click" id="main-menu">
-                    <li><a href="{{ url('/') }} "><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="{{ url('/') }} "><i class="fas fa-home"></i> HOME</a></li>
                     @guest
                         <li class="nav-item active">
                             <a class="nav-link" href="{{ route('login') }}">LOGIN</a>
