@@ -85,6 +85,7 @@
         </div>
     </div>
 </div>
+@include('home-page.footer')
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script>
     CKEDITOR.replace('editor1', {
