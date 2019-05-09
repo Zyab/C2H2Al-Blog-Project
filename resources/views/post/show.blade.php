@@ -96,15 +96,19 @@
                 <div class="main-post">
                     <div class="post-top-area">
                         <h3 class="title"><b>Title: {{$post->title}}</b></h3>
+                        <hr>
                         <div class="post-info">
                             <div class="left-area">
                                 <img src="{{asset('storage/'.Auth::user()->image)}}"
                                      alt="Profile Image">
                             </div>
+
                             <div class="middle-area">
                                 <b>{{Auth::user()->name}}</b>
                             </div>
+
                         </div><!-- post-info -->
+                        <hr>
                         <h5 class="para">Description: {!! $post->description !!}</h5>
                     </div><!-- post-top-area -->
                     @if(isset($post->image))
@@ -284,6 +288,6 @@
         </section>
     </div>
 </section>
-
+@include('home-page.footer')
 </body>
 </html>
