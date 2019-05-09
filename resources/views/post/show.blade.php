@@ -1,63 +1,5 @@
 
-{{--                    <a class="btn btn-primary" href="{{route('export-pdf',$post->id)}}">EXPORT PDF</a>--}}
-{{--                <button class="btn btn-primary" id="hide" >HIDE COMMENT</button>--}}
-{{--                    <button class="btn btn-primary" id="show" >COMMENT</button>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-
-
-
-{{--                    <div class="col-md-11 offset-1" style="margin-bottom: 20px">--}}
-{{--                        @foreach($comment->reply as $reply)--}}
-{{--                            <article class="media">--}}
-{{--                                <figure class="media-left" style="margin-right: 20px">--}}
-{{--                                    @if(isset($reply->user->image))--}}
-{{--                                        <p class="image">--}}
-{{--                                            <img src="{{asset('storage/'.$reply->user->image)}}"--}}
-{{--                                                 style="width: 50px; height: 50px; border-radius: 4px" alt="mig0">--}}
-{{--                                        </p>--}}
-{{--                                    @else--}}
-{{--                                    @endif--}}
-{{--                                </figure>--}}
-{{--                                <div class="card" style="width: 100%;margin-bottom: 20px">--}}
-{{--                                    <div class="card-header">--}}
-{{--                                        <strong>{{$reply->user->name}}</strong>--}}
-{{--                                    </div>--}}
-{{--                                    <ul class="list-group list-group-flush">--}}
-{{--                                        <li class="list-group-item"> {{$reply->body}}</li>--}}
-{{--                                    </ul>--}}
-{{--                                </div>--}}
-{{--                            </article>--}}
-{{--                        @endforeach--}}
-{{--                        <div class="col-md-11 offset-1 reply">--}}
-{{--                            <h5>Reply</h5>--}}
-{{--                            <form role="form" method="post" action="{{route('reply.replyComment',$comment->id)}}">--}}
-{{--                                @csrf--}}
-{{--                                <input type="hidden" name="post_id" value="{{$post->id}}"/>--}}
-{{--                                <div>--}}
-{{--                                    <div class="media-content">--}}
-{{--                                        <div class="form-group">--}}
-{{--                                            <input type="text" class="form-control" name="body" required>--}}
-{{--                                            <p class="help text-danger">{{ $errors->first('body') }}</p>--}}
-{{--                                        </div>--}}
-{{--                                        <button type="submit" class="btn btn-primary">Reply</button>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </form>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                @endforeach--}}
-
-{{--            </div>--}}
-{{--        </div>--}}
-
-{{--    </div>--}}
-
-
-
-{{--@endsection--}}
-        <!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
     <title>TITLE</title>
@@ -89,47 +31,47 @@
     <div class="container-fluid position-relative no-side-padding">
         <ul class="main-menu visible-on-click" id="main-menu">
             <li><a href="{{ url('/') }} "><i class="fas fa-home"></i> Home</a></li>
-        @guest
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ route('login') }}">LOGIN</a>
-            </li>
-            @if (Route::has('register'))
+            @guest
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTER') }}</a>
+                    <a class="nav-link" href="{{ route('login') }}">LOGIN</a>
                 </li>
-            @endif
-        @else
-            <li class="dropdown">
-                @if(isset(Auth::user()->image))
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <img src="{{asset('storage/'.Auth::user()->image)}}"
-                             style="width: 35px; height: 35px; border-radius: 50%" alt="mig0"> <span
-                                class="caret"></span>
-                    </a>
-                @else
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{Auth::user()->name}}<span class="caret"></span>
-                    </a>
+                @if (Route::has('register'))
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTER') }}</a>
+                    </li>
                 @endif
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('password.change') }}">Change password</a>
-                    <a class="dropdown-item" href="{{ route('user.edit', Auth::user()->id) }}">Edit
-                        Profile</a>
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
+            @else
+                <li class="dropdown">
+                    @if(isset(Auth::user()->image))
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <img src="{{asset('storage/'.Auth::user()->image)}}"
+                                 style="width: 35px; height: 35px; border-radius: 50%" alt="mig0"> <span
+                                    class="caret"></span>
+                        </a>
+                    @else
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{Auth::user()->name}}<span class="caret"></span>
+                        </a>
+                    @endif
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('password.change') }}">Change password</a>
+                        <a class="dropdown-item" href="{{ route('user.edit', Auth::user()->id) }}">Edit
+                            Profile</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
                            document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
+                            {{ __('Logout') }}
+                        </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                          style="display: none;">
-                        @csrf
-                    </form>
-                </div>
-            </li>
-        @endguest
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                              style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            @endguest
         </ul>
         <div class="src-area">
             <form class="form-inline my-2 my-lg-0" action="{{route('post.search', Auth::user()->id)}}"
@@ -149,33 +91,22 @@
 
 <section class="post-area">
     <div class="container">
-
         <div class="row">
-
             <div class="col-lg-1 col-md-0"></div>
             <div class="col-lg-10 col-md-12">
-
                 <div class="main-post">
-
                     <div class="post-top-area">
-
                         <h3 class="title"><a href="#"><b>Title: {{$post->title}}</b></a></h3>
-
                         <div class="post-info">
-
                             <div class="left-area">
                                 <a class="avatar" href="#"><img src="{{asset('storage/'.Auth::user()->image)}}"
                                                                 alt="Profile Image"></a>
                             </div>
-
                             <div class="middle-area">
                                 <a class="name" href="#"><b>{{Auth::user()->name}}</b></a>
                             </div>
-
                         </div><!-- post-info -->
-
                         <h5 class="para">Description: {!! $post->description !!}</h5>
-
                     </div><!-- post-top-area -->
                     @if(isset($post->image))
                         <div class="post-image"><img src="{{asset('storage/'.$post->image)}}" alt="Blog Image"></div>
@@ -259,68 +190,96 @@
 
                         <h4><b>COMMENTS(12)</b></h4>
                         @foreach($post->comments as $comment)
-                        <div class="commnets-area text-left">
-                            <div class="comment">
-                                <div class="post-info">
-                                    @if(isset($comment->user->image))
-                                    <div class="left-area">
-                                        <a class="avatar" href="#"><img src="{{asset('storage/'.Auth::user()->image)}}"
-                                                                        alt="Profile Image"></a>
+                            <div class="commnets-area text-left">
+                                <div iv class="comment">
+                                    <div class="post-info">
+                                        @if(isset($comment->user->image))
+                                            <div class="left-area">
+                                                <a class="avatar" href="#"><img
+                                                            src="{{asset('storage/'.Auth::user()->image)}}"
+                                                            alt="Profile Image"></a>
+                                            </div>
+                                        @else
+                                        @endif
+                                        <div class="middle-area">
+                                            <a class="name" href="#"><b>{{Auth::user()->name}}</b></a>
+                                            <p class="card-text">Created {{ $post->created_at }}</p>
+                                        </div>
+
+                                    </div><!-- post-info -->
+                                    <p>{{$comment->body}}</p>
+                                    <hr>
+                                    @foreach($comment->reply as $reply)
+                                    <div class="comment">
+                                        <h5 class="reply-for">Reply for <a href="#"><b>{{$reply->user->name}}</b></a></h5>
+
+                                        <div class="post-info">
+
+                                            <div class="left-area">
+                                                <a class="avatar" href="#"><img src="{{asset('storage/'.Auth::user()->image)}}" alt="Profile Image"></a>
+                                            </div>
+
+                                            <div class="middle-area">
+                                                <a class="name" href="#"><b>{{$reply->user->name}}</b></a>
+                                                <p class="card-text">Created: {{ $reply->user->created_at }}</p>
+                                            </div>
+
+                                            <div class="right-area">
+                                                <h5 class="reply-btn" ><a href="#"><b>REPLY</b></a></h5>
+                                            </div>
+
+                                        </div><!-- post-info -->
+
+                                        <p>{{$reply->body}}</p>
+
                                     </div>
-                                    @else
-                                    @endif
-                                    <div class="middle-area">
-                                        <a class="name" href="#"><b>{{Auth::user()->name}}</b></a>
-                                        <p class="card-text">Created {{ $post->created_at }}</p>
+                                    @endforeach
+                                    <h5 class="submit-btn" id="show"><b>REPLY</b></h5>
+                                    <div class="comment-form" id="post-form" >
+                                        <form role="form" method="post" action="{{route('reply.replyComment',$comment->id)}}">
+                                            @csrf
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <h4><b>REPLY</b></h4>
+                                                    <textarea name="body" rows="2"
+                                                              class="text-area-messge form-control"
+                                                              placeholder="Enter your reply"
+                                                              aria-invalid="false"></textarea>
+                                                    <input type="hidden" name="post_id" value="{{$post->id}}"/>
+                                                    <p class="help text-danger">{{ $errors->first('body') }}</p>
+                                                </div><!-- col-sm-12 -->
+                                                <div class="col-sm-12">
+                                                    <button class="submit-btn" type="submit" id="form-submit">
+                                                        <b>REPLY</b>
+                                                    </button>
+
+                                                </div><!-- col-sm-12 -->
+
+                                            </div><!-- row -->
+                                        </form>
+
                                     </div>
-                                    <div class="right-area">
-                                        <h5 class="reply-btn"><a href="#"><b>REPLY</b></a></h5>
-                                    </div>
-                                </div><!-- post-info -->
-                                <p>{{$comment->body}}</p>
+                                </div><!-- commnets-area -->
                             </div>
-
-                            <div class="comment">
-                                <h5 class="reply-for">Reply for <a href="#"><b>{{Auth::user()->name}}</b></a></h5>
-
-                                <div class="post-info">
-
-                                    <div class="left-area">
-                                        <a class="avatar" href="#"><img src="{{asset('storage/'.Auth::user()->image)}}"
-                                                                        alt="Profile Image"></a>
-                                    </div>
-
-                                    <div class="middle-area">
-                                        <a class="name" href="#"><b>{{Auth::user()->name}}</b></a>
-                                        <p class="card-text">Created {{ $post->created_at }}</p>
-                                    </div>
-
-                                    <div class="right-area">
-                                        <h5 class="reply-btn"><a href="#"><b>REPLY</b></a></h5>
-                                    </div>
-
-                                </div><!-- post-info -->
-
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt
-                                    ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                                    Ut enim ad minim veniam</p>
-                            </div>
-                        </div><!-- commnets-area -->
                         @endforeach
-        <script type="text/javascript"
-                src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cbfbf32c5d57a8d"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                crossorigin="anonymous"></script>
+                        <script type="text/javascript"
+                                src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cbfbf32c5d57a8d"></script>
+                        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                                crossorigin="anonymous"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                                crossorigin="anonymous"></script>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                                crossorigin="anonymous"></script>
+                        <script src="{{asset('js/blog.js')}}"></script>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </section>
-    </div>
+
 </body>
 </html>
