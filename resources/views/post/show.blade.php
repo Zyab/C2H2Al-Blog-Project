@@ -96,14 +96,14 @@
             <div class="col-lg-10 col-md-12">
                 <div class="main-post">
                     <div class="post-top-area">
-                        <h3 class="title"><a href="#"><b>Title: {{$post->title}}</b></a></h3>
+                        <h3 class="title"><b>Title: {{$post->title}}</b></h3>
                         <div class="post-info">
                             <div class="left-area">
-                                <a class="avatar" href="#"><img src="{{asset('storage/'.Auth::user()->image)}}"
-                                                                alt="Profile Image"></a>
+                                <img src="{{asset('storage/'.Auth::user()->image)}}"
+                                                                alt="Profile Image">
                             </div>
                             <div class="middle-area">
-                                <a class="name" href="#"><b>{{Auth::user()->name}}</b></a>
+                               <b>{{Auth::user()->name}}</b>
                             </div>
                         </div><!-- post-info -->
                         <h5 class="para">Description: {!! $post->description !!}</h5>
