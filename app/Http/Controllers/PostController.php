@@ -26,8 +26,9 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::findOrFail($id);
+        $commentsTotal = count($post->comments);
 
-        return view('post.show', compact('post'));
+        return view('post.show', compact('post','commentsTotal'));
     }
 
     public function search(Request $request, $id)
