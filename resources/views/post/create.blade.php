@@ -4,6 +4,7 @@
         <div class="card bg-light mb-4 col-md-12" style="padding: 0px">
         <div class="car-body">
             <div class="col-md-12">
+                <br>
                 <h2>Add new post</h2>
             </div>
             <div class="col-md-12">

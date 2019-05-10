@@ -42,9 +42,9 @@
                         <div class="row">
 
                         </div>
-                        <div class="card-header">
+                        <div class="card-header text-center">
                             <a href="{{ route('post.show', $post->id) }} " style="color: black">
-                                <h4 class="card-title">{{ $post->title }}</h4>
+                                <h3 class="card-title ">{{ $post->title }}</h3>
                             </a>
                         </div>
                         <div class="card-body">

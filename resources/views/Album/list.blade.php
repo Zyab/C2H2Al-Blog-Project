@@ -24,7 +24,7 @@
                                 <div class="dropdown" style="text-align: right">
                                     <a class="btn" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                                        aria-haspopup="true" aria-expanded="false">
-                                        <h1 style="color:black">...</h1>
+                                        <h4 style="color:black">...</h4>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"
                                          style="text-align: left">

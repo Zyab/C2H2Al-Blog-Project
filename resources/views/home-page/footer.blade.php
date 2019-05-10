@@ -6,9 +6,8 @@
             <div class="col-lg-4 col-md-6">
                 <div class="footer-section">
 
-                    <a class="logo" href="#"><img src="{{asset('images/logo.png')}}" alt="Logo Image"></a>
                     <p class="copyright">© 2019 Copyright:</p>
-                    <p class="copyright">Designed by C2H2AL Team</p>
+                    <h3 class="copyright">Designed by C2H2AL Team</h3>
                     <ul class="icons">
                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>

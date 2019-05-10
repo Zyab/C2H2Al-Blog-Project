@@ -26,8 +26,9 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::findOrFail($id);
+        $commentsTotal = count($post->comments);
 
-        return view('post.show', compact('post'));
+        return view('post.show', compact('post','commentsTotal'));
     }
 
     public function search(Request $request, $id)
@@ -55,8 +56,9 @@ class PostController extends Controller
     public function delete($id)
     {
         $post = Post::findOrFail($id);
-        $post->comments()->delete();
+
         $post->reply()->delete();
+        $post->comments()->delete();
         $post->delete();
         Session::flash('success', 'Xóa bài viết thành công');
         return redirect()->route('post.list');
