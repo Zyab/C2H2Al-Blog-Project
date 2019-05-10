@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-7">
-                <div class="card">
+                <div class="card" style="border: 1px silver solid">
                     <h5 class="card-header info-color white-text text-center py-4"
                         style="background: #2176bd!important ; color: white">
                         <strong>EDIT PROFILE</strong>
