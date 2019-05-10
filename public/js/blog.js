@@ -1,10 +1,6 @@
 
 $(document).ready(function(){
-    $("#show").click(function(){
-        $("#post-form").show("slow");
+    $("#comment").click(function(){
+        $(".commnets-area ").toggle();
     });
-    $("#hide").click(function(){
-        $("#post-form").hide("slow");
-    });
-
 });

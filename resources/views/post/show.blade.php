@@ -197,7 +197,7 @@
                             </form>
                         </div><!-- comment-form -->
 
-                        <h4><b>COMMENTS({{$commentsTotal}})</b></h4>
+                        <h4><b id="comment">COMMENTS({{$commentsTotal}})</b></h4>
                         @foreach($post->comments as $comment)
                             <div class="commnets-area text-left">
                                 <div iv class="comment">
@@ -215,9 +215,6 @@
                                             <p class="card-text">Created {{ $post->created_at }}</p>
                                         </div>
                                         <div class="right-area">
-                                            <span class="submit-btn" id="show"><b>REPLY</b></span>
-                                            <span></span>
-                                            <span class="submit-btn" id="hide"><b>CANCEL</b></span>
                                         </div>
                                         <div class="right-area">
 
@@ -251,7 +248,7 @@
 
                                         </div>
                                     @endforeach
-                                    <div class="comment-form" id="post-form" style="display: none">
+                                    <div class="comment-form" id="post-form">
                                         <form role="form" method="post"
                                               action="{{route('reply.replyComment',$comment->id)}}">
                                             @csrf
