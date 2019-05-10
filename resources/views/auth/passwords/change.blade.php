@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
 
             <div class="col-md-7">
-                <div class="card">
+                <div class="card" style="border: 1px silver solid">
                     @if(session('errorMsg'))
                         <div class="alert alert-danger" role="alert">
                             {{session('errorMsg')}}
