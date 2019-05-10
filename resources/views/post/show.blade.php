@@ -98,13 +98,18 @@
                         <h3 class="title"><b>Title: {{$post->title}}</b></h3>
                         <hr>
                         <div class="post-info">
-                            <div class="left-area">
-                                <img src="{{asset('storage/'.Auth::user()->image)}}"
-                                     alt="Profile Image">
-                            </div>
+                            @if(isset(Auth::user()->image))
+                                <div class="left-area">
 
+                                    <img src="{{asset('storage/'.Auth::user()->image)}}"
+                                         alt="Profile Image">
+
+                                </div>
+                            @else
+                            @endif
                             <div class="middle-area">
                                 <b>{{Auth::user()->name}}</b>
+                                <p class="card-text">Created {{ $post->created_at }}</p>
                             </div>
 
                         </div><!-- post-info -->
@@ -146,12 +151,13 @@
                             </div>
 
                             <div class="post-footer post-info">
-
-                                <div class="left-area">
-                                    <a class="avatar" href="#"><img src="{{asset('storage/'.Auth::user()->image)}}"
-                                                                    alt="Profile Image"></a>
-                                </div>
-
+                                @if(isset(Auth::user()->image))
+                                    <div class="left-area">
+                                        <a class="avatar" href="#"><img src="{{asset('storage/'.Auth::user()->image)}}"
+                                                                        alt="Profile Image"></a>
+                                    </div>
+                                @else
+                                @endif
                                 <div class="middle-area">
                                     <a class="name" href="#"><b>{{Auth::user()->name}}</b></a>
                                     <p class="card-text">Created {{ $post->created_at }}</p>
@@ -226,12 +232,13 @@
                                                         href="#"><b>{{$reply->user->name}}</b></a></h6>
 
                                             <div class="post-info">
-
-                                                <div class="left-area">
-                                                    <img src="{{asset('storage/'.Auth::user()->image)}}"
-                                                         alt="Profile Image">
-                                                </div>
-
+                                                @if(isset(Auth::user()->image))
+                                                    <div class="left-area">
+                                                        <img src="{{asset('storage/'.Auth::user()->image)}}"
+                                                             alt="Profile Image">
+                                                    </div>
+                                                @else
+                                                @endif
                                                 <div class="middle-area">
                                                     <a class="name" href="#"><b>{{$reply->user->name}}</b></a>
                                                     <p class="card-text">Created: {{ $reply->user->created_at }}</p>

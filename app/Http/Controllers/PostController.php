@@ -71,7 +71,7 @@ class PostController extends Controller
             'description' => 'required',
             'editor1' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'video' => 'required|url',
+            'video' => 'url|nullable',
         ]);
         $post = new Post();
         $post->title = $request->input('title');

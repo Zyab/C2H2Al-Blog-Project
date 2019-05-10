@@ -68,7 +68,7 @@
                             <ul>
                                 @foreach($posts as $key => $post)
                                     <a href="{{ route('post.show', $post->id) }} " style="color: black">
-                                        <li><h4>{{$post->title}}</h4></li>
+                                        <li><h4>- {{$post->title}}</h4></li>
                                     </a>
                                     <br>
                                 @endforeach
