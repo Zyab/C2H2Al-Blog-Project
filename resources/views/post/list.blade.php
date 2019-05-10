@@ -28,7 +28,6 @@
                             </a>
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">{!! $post->content !!}</h4>
                             <p class="card-text">{{ $post->description }}</p>
                         </div>
                         <hr>
@@ -48,7 +47,6 @@
                             </a>
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">{!! $post->content !!}</h4>
                             <p class="card-text">{{ $post->description }}</p>
                         </div>
                         <div class="card-body">
