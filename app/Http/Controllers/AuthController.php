@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Album;
 use App\Comment;
+use App\Http\Requests\ChangePasswordRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Post;
 use App\Reply;
@@ -12,6 +13,7 @@ use App\User;
 use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
@@ -331,7 +333,28 @@ class AuthController extends Controller
 	public function showAlbumDetail($id) {
 		$user = $this->guard()->user();
 		$album = Album::findOrFail($id);
-		$album->images = \GuzzleHttp\json_decode($album->images);
-		dd($album);
+		$album->images = json_decode($album->images);
+		return $album;
+	}
+	public function deleteAlbum($id) {
+		$user = $this->guard()->user();
+		$album = Album::findOrFail($id);
+
+		$album->delete();
+		return $user->album;
+	}
+	public function changePassword(Request $request) {
+		$user = $this->guard()->user();
+		$hashedPassword = $user->password;
+		if (Hash::check($request->oldPassword, $hashedPassword)) {
+			$user = User::findOrFail($user->id);
+			$user->password = $request->password;
+			$user->save();
+			return response()->json('Change password successfully');
+
+		}
+		else {
+			return response()->json('Có lỗi xảy ra');
+		}
 	}
 }

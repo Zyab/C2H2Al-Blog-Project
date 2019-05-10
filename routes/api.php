@@ -53,5 +53,7 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 	Route::post('create-album', 'AuthController@createAlbum');
 	Route::get('get-all-album', 'AuthController@getAllAlbum');
 	Route::get('show-album/{id}', 'AuthController@showAlbumDetail');
+	Route::delete('delete-album/{id}', 'AuthController@deleteAlbum');
+	Route::post('change-password', 'AuthController@changePassword');
 });
 
